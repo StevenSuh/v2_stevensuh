@@ -46,15 +46,21 @@ body {
 }
 
 #logo {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  display: inline-block;
   font-size: 34px;
   font-weight: 800;
-  padding: 10px;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  text-align: center;
+  width: 60px;
 }
 
 .nav {
   float: right;
-  line-height: 40px;
-  vertical-align: middle;
+  line-height: 60px;
 }
 
 .nav-item {
