@@ -7,7 +7,21 @@ import style from '../style.module.css';
 
 class MainAnimation extends React.Component {
   componentDidMount() {
-    startAnimation();
+    const elems = {
+      container: document.getElementById(defs.MAIN_CONTAINER),
+      headerList: document.getElementById(defs.MAIN_TEXT).children,
+      left: document.getElementById(defs.MAIN_LEFT),
+      main: document.getElementById(defs.MAIN_TEXT),
+      right: document.getElementById(defs.MAIN_RIGHT),
+      scrollDown: document.getElementById(defs.SCROLL_DOWN),
+      wrapper: document.getElementById(defs.MAIN_WRAPPER),
+    };
+
+    elems.wrapper.style.height = elems.main.clientHeight + 'px';
+    elems.left.style.height = (elems.main.clientHeight * 0.9) + 'px';
+    elems.right.style.height = (elems.main.clientHeight * 0.9) + 'px';
+
+    startAnimation(elems);
   }
 
   render() {
@@ -17,7 +31,7 @@ class MainAnimation extends React.Component {
           className={style.main_container}
           id={defs.MAIN_CONTAINER}
         >
-          <span className={style.left}>{'〔'}</span>
+          <span id={defs.MAIN_LEFT}>{'〔'}</span>
           <div
             className={style.main_wrapper}
             id={defs.MAIN_WRAPPER}
@@ -36,9 +50,12 @@ class MainAnimation extends React.Component {
               ))}
             </div>
           </div>
-          <span className={style.right}>{'〕'}</span>
+          <span id={defs.MAIN_RIGHT}>{'〕'}</span>
         </div>
-        <div className={style.scroll_down}>_</div>
+        <div
+          className={style.scroll_down}
+          id={defs.SCROLL_DOWN}
+        >_</div>
       </div>
     );
   }

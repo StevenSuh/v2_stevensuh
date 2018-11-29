@@ -1,7 +1,7 @@
 import * as defs from './defs';
 import style from './style.module.css';
 
-const changeInputFactory = (type, el) => {
+export const changeInputFactory = (type, el) => {
   const list = defs.inputList[type];
   let index = 0;
 
@@ -20,24 +20,75 @@ const changeInputFactory = (type, el) => {
   };
 };
 
-const reset = (list) => {
-  list.forEach(item => {
-    item.classList.add(style.hidden);
-    item.classList.remove(style.slow_color);
-  });
+export const reset = (list) => {
+  for (let i = 0; i < list.length; i++) {
+    list[i].classList.add(style.hidden);
+    list[i].classList.remove(style.slow_color);
+  }
 };
 
-export const startAnimation = () => {
-  const container = document.getElementById(defs.MAIN_CONTAINER);
-  const main = document.getElementById(defs.MAIN_TEXT);
-  const wrapper = document.getElementById(defs.MAIN_WRAPPER);
+export const resetEl = (el, letter, intervals) => {
+  el.style.color = null;
+  el.textContent = letter;
+  el.classList.add(style.slow_color);
 
-  container.classList.add(style.blink);
-  wrapper.style.height = main.clientHeight + 'px';
+  intervals.forEach(interval => clearInterval(interval));
+};
 
-  const headerList = main.children;
-  reset(headerList);
+export const doOneStep = (elems, index) => {
+  if (index < defs.TEXT_TO_ANIMATE.length) {
+    const currHeader = elems.headerList[index];
+    const displayText = currHeader.textContent;
 
-  setTimeout(() => wrapper.style.width = expectedWidth + 'px', blink);
-  setTimeout(changeHeader, blink + transition + duration, 0);
+    let currDuration = defs.PER_DURATION - (defs.DECREMENT * index);
+    const intervals = [];
+
+    currHeader.classList.remove(style.hidden);
+
+    if (/^[a-z0-9]+$/i.test(displayText)) {
+      const changeInputColor = changeInputFactory(defs.inputDefs.COLORS, currHeader);
+      intervals.push(setInterval(changeInputColor, defs.COLOR_DURATION));
+
+      const changeInputAlphabet = changeInputFactory(defs.inputDefs.ALPHABETS, currHeader);
+      intervals.push(setInterval(changeInputAlphabet, defs.TEXT_DURATION));
+
+      setTimeout(resetEl, currDuration, currHeader, displayText, intervals);
+    } else {
+      currDuration = 0;
+    }
+
+    setTimeout(doOneStep, currDuration, elems, index + 1);
+  } else {
+    elems.scrollDown.classList.add(style.notify);
+
+    setTimeout(
+      () => {
+        elems.wrapper.style.width = '0px';
+        elems.scrollDown.classList.remove(style.notify);
+        elems.container.classList.remove(style.blink);
+      },
+      defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length,
+    );
+    setTimeout(
+      startAnimation,
+      (defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length) + defs.TRANSITION_DURATION + defs.PER_DURATION,
+      elems,
+    );
+  }
+};
+
+export const startAnimation = (elems) => {
+  const expectedWidth = elems.main.clientWidth + defs.MAIN_WRAPPER_PADDING_WIDTH;
+
+  elems.container.classList.add(style.blink);
+
+  reset(elems.headerList);
+
+  setTimeout(() => elems.wrapper.style.width = expectedWidth + 'px', defs.BLINK_DURATION);
+  setTimeout(
+    doOneStep,
+    defs.BLINK_DURATION + defs.TRANSITION_DURATION + defs.PER_DURATION,
+    elems,
+    0,
+  );
 };

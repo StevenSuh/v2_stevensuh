@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './components/header';
+import Header from 'src/scripts/shared/header';
 import MainAnimation from './components/mainAnimation';
 
 import * as defs from './defs';
@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header isLanding={true} />
         <MainAnimation />
       </div>
     );

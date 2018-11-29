@@ -1,0 +1,44 @@
+.header {
+  padding: 40px 0 20px;
+  background-color: var(--white-color);
+  opacity: 0.8;
+}
+
+.logo {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  display: inline-block;
+  font-size: 34px;
+  font-weight: 800;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  text-align: center;
+  width: 60px;
+}
+
+.nav {
+  float: right;
+  line-height: 60px;
+}
+
+.nav_item {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
+  position: relative;
+  transition: opacity 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav_item > span {
+  display: inline-block;
+  transition: transform 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav_item:hover {
+  opacity: 0.5;
+}
+
+.nav_item:hover > span {
+  transform: translateX(5px);
+}
