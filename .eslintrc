@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "extends": "eslint-config-airbnb",
+  "globals": {
+    "it": false,
+    "describe": false
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
