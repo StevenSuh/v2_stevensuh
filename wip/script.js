@@ -15,20 +15,11 @@ const container = document.getElementById('main-container');
 const main = document.getElementById('main-text');
 const bottomScroll = document.getElementById('bottom-scroll');
 
-for (let i = 0; i < text.length; i++) {
-  const partialHeader = document.createElement('h1');
-  partialHeader.id = `${header}-${i}`;
-  partialHeader.classList.add('hidden');
-  partialHeader.textContent = text[i];
 
-  headerList.push(partialHeader);
-  main.appendChild(partialHeader);
-}
 
 const expectedWidth = main.clientWidth + 40;
 
 const filler = document.getElementById('filler');
-filler.style.height = main.clientHeight + 'px';
 
 const blink = 1000;
 const transition = 500;
@@ -36,33 +27,6 @@ const duration = 400;
 const colorDuration = 100;
 const textDuration = 50;
 const decrement = 5;
-
-const resetHeader = function() {
-  for (let i = 0; i < text.length; i++) {
-    const partialHeader = headerList[i];
-    partialHeader.classList.add('hidden');
-    partialHeader.classList.remove('slow-color');
-  }
-};
-
-const changeInputFactory = function(type, el) {
-  const list = inputList[type];
-  let index = 0;
-
-  return () => {
-    index = (index + 1) % list.length;
-
-    if (type === inputDefs.ALPHABETS) {
-      el.textContent = list[index];
-    }
-    if (type === inputDefs.COLORS) {
-      el.style.color = list[index];
-    }
-    if (type === inputDefs.PUNC) {
-      el.textContent = list[index];
-    }
-  };
-};
 
 const changeHeader = function(index, letter, intervals) {
   if (index > 0) {
@@ -105,16 +69,3 @@ const changeHeader = function(index, letter, intervals) {
     }, duration * text.length);
   }
 };
-
-const startAnimation = function() {
-  container.classList.add('blink');
-  resetHeader();
-
-  setTimeout(() => {
-    filler.style.width = expectedWidth + 'px';
-  }, blink);
-
-  setTimeout(changeHeader, blink + transition + duration, 0);
-};
-
-startAnimation();

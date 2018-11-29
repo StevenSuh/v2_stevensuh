@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import App from './Component';
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = ({ state }) => ({
 
 });
 

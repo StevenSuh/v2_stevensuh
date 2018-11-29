@@ -1,8 +1,33 @@
+:root {
+  --dark-color: #090909;
+  --white-color: #f6f6f6;
+  --pure-white: #ffffff;
+}
+
+@font-face {
+  font-family: 'Skyhook Mono';
+  src: url('assets/SkyhookMono.ttf');
+}
+
 html,
 body {
-  font-family: 'SkyhookMono', monaco, Consolas, 'Courier New', Courier, monospace;
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
   height: 100%;
-  margin: 0;
   position: relative;
   width: 100%;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }

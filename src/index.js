@@ -7,8 +7,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import App from 'scripts/modules/app/Container';
-import store from 'scripts/config/setup';
+import App from 'src/scripts/modules/app/Container';
+import store from 'src/scripts/config/setup';
 
 import './style.css';
 
