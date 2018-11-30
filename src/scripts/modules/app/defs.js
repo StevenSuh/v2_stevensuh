@@ -16,7 +16,7 @@ export const MAIN_TEXT = 'main-text';
 export const MAIN_WRAPPER = 'main-wrapper';
 export const SCROLL_DOWN = 'scroll-down';
 
-export const TEXT_TO_ANIMATE = 'steven.suh';
+export const TEXT_TO_ANIMATE = '';
 
 export const MAIN_WRAPPER_PADDING_WIDTH = 40;
 export const BLINK_DURATION = 1000;

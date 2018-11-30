@@ -7,6 +7,7 @@ import MainAnimation from './components/mainAnimation';
 import ProjectRow from './components/projectRow';
 
 import * as defs from './defs';
+import * as indexDefs from 'src/defs';
 import style from './style.module.css';
 
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
         </div>
         <ProjectRow
           onSetCurrentProject={onSetCurrentProject}
+          project={indexDefs.PROJECTS[0]}
         />
       </div>
     );
