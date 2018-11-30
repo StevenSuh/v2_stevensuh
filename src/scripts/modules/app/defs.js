@@ -14,14 +14,15 @@ export const MAIN_LEFT = 'main-left';
 export const MAIN_RIGHT = 'main-right';
 export const MAIN_TEXT = 'main-text';
 export const MAIN_WRAPPER = 'main-wrapper';
+export const PROJECT_WRAPPER = 'project-wrapper';
 export const SCROLL_DOWN = 'scroll-down';
 
-export const TEXT_TO_ANIMATE = '';
+export const TEXT_TO_ANIMATE = 'steven.suh';
 
 export const MAIN_WRAPPER_PADDING_WIDTH = 40;
 export const BLINK_DURATION = 1000;
 export const TRANSITION_DURATION = 500;
-export const PER_DURATION = 400;
+export const PER_DURATION = 500;
 export const COLOR_DURATION = 100;
 export const TEXT_DURATION = 50;
 export const DECREMENT = 5;

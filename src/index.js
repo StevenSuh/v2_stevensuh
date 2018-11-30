@@ -16,7 +16,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route default path="/" component={App} />
+        <Route exact path="/" component={App} />
       </Switch>
     </Router>
   </Provider>,

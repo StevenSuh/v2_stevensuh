@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 import classNames from 'classnames';
 
+import { HEADER } from 'src/scripts/shared/defs';
 import style from './style.module.css';
 import sharedStyle from 'src/scripts/shared/style.module.css';
 
 const Header = ({ isLanding }) => (
-  <header className={style.header}>
+  <header
+    className={style.header}
+    id={HEADER}
+  >
     <div className={sharedStyle.container}>
       <Link
         className={classNames(style.logo, sharedStyle.hover)}

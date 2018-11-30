@@ -17,10 +17,6 @@ class MainAnimation extends React.Component {
       wrapper: document.getElementById(defs.MAIN_WRAPPER),
     };
 
-    elems.wrapper.style.height = elems.main.clientHeight + 'px';
-    elems.left.style.height = (elems.main.clientHeight * 0.9) + 'px';
-    elems.right.style.height = (elems.main.clientHeight * 0.9) + 'px';
-
     startAnimation(elems);
   }
 
@@ -31,7 +27,9 @@ class MainAnimation extends React.Component {
           className={style.main_container}
           id={defs.MAIN_CONTAINER}
         >
-          <span id={defs.MAIN_LEFT}>{'〔'}</span>
+          <span>
+            <img alt="left bracket" src="assets/bracket.png" />
+          </span>
           <div
             className={style.main_wrapper}
             id={defs.MAIN_WRAPPER}
@@ -50,7 +48,13 @@ class MainAnimation extends React.Component {
               ))}
             </div>
           </div>
-          <span id={defs.MAIN_RIGHT}>{'〕'}</span>
+          <span>
+            <img
+              alt="right bracket"
+              className={style.main_right}
+              src="assets/bracket.png"
+            />
+          </span>
         </div>
         <div
           className={style.scroll_down}

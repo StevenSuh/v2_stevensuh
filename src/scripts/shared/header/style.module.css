@@ -1,11 +1,14 @@
 .header {
   background-color: var(--white-color);
+  font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
   left: 0;
   opacity: 0.8;
   padding: 40px 0 20px;
-  position: absolute;
+  position: fixed;
   top: 0;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+  z-index: 100;
 }
 
 .logo {
@@ -45,4 +48,9 @@
 
 .nav_item:hover > span {
   transform: translateX(5px);
+}
+
+.scrolled {
+  background-color: var(--pure-white);
+  padding: 20px 0;
 }

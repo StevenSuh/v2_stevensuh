@@ -1,4 +1,7 @@
 import * as defs from './defs';
+import * as sharedDefs from 'src/scripts/shared/defs';
+
+import headerStyle from 'src/scripts/shared/header/style.module.css';
 import style from './style.module.css';
 
 export const changeInputFactory = (type, el) => {
@@ -91,4 +94,56 @@ export const startAnimation = (elems) => {
     elems,
     0,
   );
+};
+
+export const onScrollHeader = function() {
+  const header = document.getElementById(sharedDefs.HEADER);
+  const currentPosition = document.documentElement.scrollTop + header.clientHeight;
+  const { isScrolledHeader } = this.state;
+
+  if (!isScrolledHeader) {
+    if (currentPosition >= window.innerHeight) {
+      header.classList.add(headerStyle.scrolled);
+
+      this.setState({
+        ...this.state,
+        isScrolledHeader: true,
+      });
+    }
+  } else {
+    if (currentPosition < window.innerHeight) {
+      header.classList.remove(headerStyle.scrolled);
+
+      this.setState({
+        ...this.state,
+        isScrolledHeader: false,
+      });
+    }
+  }
+};
+
+export const onScrollProjects = function() {
+  const projects = document.getElementById(defs.PROJECT_WRAPPER);
+  const projectsPosition = projects.getBoundingClientRect();
+  const { isScrolledProjects } = this.state;
+
+  if (!isScrolledProjects) {
+    if (projectsPosition.top < window.innerHeight) {
+      projects.classList.add(style.fadeIn);
+
+      this.setState({
+        ...this.state,
+        isScrolledProjects: true,
+      });
+    }
+  } else {
+    if (projectsPosition.top >= window.innerHeight) {
+      projects.classList.remove(style.fadeIn);
+
+      this.setState({
+        ...this.state,
+        isScrolledProjects: false,
+      });
+    }
+  }
 };
