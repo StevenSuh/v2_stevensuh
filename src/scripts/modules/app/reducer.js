@@ -1,9 +1,10 @@
 import Immutable from 'immutable';
 
 import * as actionTypes from './action_types';
+import * as projectDefs from 'src/defs';
 
 export const initialState = Immutable.fromJS({
-  currentProject: '',
+  currentProject: projectDefs.NONE,
 });
 
 export default (state = initialState, action) => {

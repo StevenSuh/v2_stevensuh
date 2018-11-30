@@ -1,11 +1,7 @@
-.scroll_down {
-  bottom: 40px;
-  font-size: 40px;
-  font-weight: 800;
-  left: 50%;
-  opacity: 0.5;
-  position: absolute;
-  transform: translateX(-50%) translateY(0px);
+.landing_page {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .main_container {
@@ -61,6 +57,16 @@
   transform: translateX(-50%);
 }
 
+.scroll_down {
+  bottom: 40px;
+  font-size: 40px;
+  font-weight: 800;
+  left: 50%;
+  opacity: 0.5;
+  position: absolute;
+  transform: translateX(-50%) translateY(0px);
+}
+
 .blink {
   animation: blink 1s cubic-bezier(1, 0, 1, 0);
 }
@@ -103,4 +109,13 @@
     opacity: 0.5;
     transform: translateX(-50%) translateY(0px);
   }
+}
+
+.about_me {
+  background-color: var(--pure-white);
+}
+
+.project_row_wrapper {
+  height: 30vw;
+  width: 100%;
 }

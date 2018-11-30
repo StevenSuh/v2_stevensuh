@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { startAnimation } from '../effects';
+import { startAnimation } from 'src/scripts/modules/app/effects';
 
-import * as defs from '../defs';
-import style from '../style.module.css';
+import * as defs from 'src/scripts/modules/app/defs';
+import style from 'src/scripts/modules/app/style.module.css';
 
 class MainAnimation extends React.Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ class MainAnimation extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.landing_page}>
         <div
           className={style.main_container}
           id={defs.MAIN_CONTAINER}

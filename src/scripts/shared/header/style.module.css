@@ -1,7 +1,11 @@
 .header {
-  padding: 40px 0 20px;
   background-color: var(--white-color);
+  left: 0;
   opacity: 0.8;
+  padding: 40px 0 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .logo {

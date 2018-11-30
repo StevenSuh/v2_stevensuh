@@ -2,15 +2,11 @@ import { connect } from 'react-redux';
 
 import App from './Component';
 
-export const mapStateToProps = ({ state }) => ({
-
-});
-
-export const mapDispatchToProps = dispatch => ({
-
-});
+import * as actions from './actions';
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  null,
+  {
+    onSetCurrentProject: actions.setCurrentProject,
+  },
 )(App);
