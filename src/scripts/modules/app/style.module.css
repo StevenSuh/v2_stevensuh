@@ -113,6 +113,7 @@
 
 .about_me {
   background-color: var(--pure-white);
+  height: 450px;
 }
 
 .project_row_wrapper {
