@@ -9,11 +9,13 @@ export const inputList = {
   [inputDefs.COLORS]: ['#3cba54', '#f4c20d', '#db3236', '#4885ed'],
 };
 
+export const LANDING_PAGE = 'landing-page';
 export const MAIN_CONTAINER = 'main-container';
 export const MAIN_LEFT = 'main-left';
 export const MAIN_RIGHT = 'main-right';
 export const MAIN_TEXT = 'main-text';
 export const MAIN_WRAPPER = 'main-wrapper';
+export const PROJECT_CONTAINER = 'project-container';
 export const PROJECT_WRAPPER = 'project-wrapper';
 export const SCROLL_DOWN = 'scroll-down';
 

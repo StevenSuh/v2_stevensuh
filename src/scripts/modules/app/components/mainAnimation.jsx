@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { startAnimation } from 'src/scripts/modules/app/effects';
+import Bracket from 'src/assets/bracket.png';
+import ExpandMore from 'src/assets/baseline-expand_more-24px.svg';
 
+import { startAnimation } from 'src/scripts/modules/app/effects';
 import * as defs from 'src/scripts/modules/app/defs';
 import style from 'src/scripts/modules/app/style.module.css';
 
@@ -22,13 +24,16 @@ class MainAnimation extends React.Component {
 
   render() {
     return (
-      <div className={style.landing_page}>
+      <div
+        className={style.landing_page}
+        id={defs.LANDING_PAGE}
+      >
         <div
           className={style.main_container}
           id={defs.MAIN_CONTAINER}
         >
           <span>
-            <img alt="left bracket" src="assets/bracket.png" />
+            <img alt="left bracket" src={Bracket} />
           </span>
           <div
             className={style.main_wrapper}
@@ -52,14 +57,16 @@ class MainAnimation extends React.Component {
             <img
               alt="right bracket"
               className={style.main_right}
-              src="assets/bracket.png"
+              src={Bracket}
             />
           </span>
         </div>
         <div
           className={style.scroll_down}
           id={defs.SCROLL_DOWN}
-        >_</div>
+        >
+          _
+        </div>
       </div>
     );
   }

@@ -1,7 +1,8 @@
 .landing_page {
-  background-color: var(--white-color);
   position: relative;
   height: 100%;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
 
@@ -29,6 +30,15 @@
 
 .hidden {
   opacity: 0;
+}
+
+.project_wrapper {
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal {
+  opacity: 1;
 }
 
 .main_wrapper {
@@ -72,15 +82,16 @@
   opacity: 0.5;
   position: absolute;
   transform: translateX(-50%) translateY(0px);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll_down > img {
+  height: 48px;
+  width: 48px;
 }
 
 .blink {
   animation: blink 1s cubic-bezier(1, 0, 1, 0);
-}
-
-.notify {
-  animation: notify 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 1s;
 }
 
 @keyframes blink {
@@ -101,62 +112,33 @@
   100% { opacity: 1 }
 }
 
-@keyframes notify {
-  0% {
-    opacity: 0.5;
-    transform: translateX(-50%) translateY(0px);
-  }
-
-  50% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-10px);
-  }
-
-  100% {
-    opacity: 0.5;
-    transform: translateX(-50%) translateY(0px);
-  }
-}
-
-.fadeIn {
-  position: relative;
-}
-
-.fadeIn::before {
-  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: 0.1s;
-  background-color: var(--pure-white);
-  content: '';
-  height: 100%;
-  left: 0;
-  opacity: 1;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
+.filler {
+  height: 80px;
 }
 
 .about_me {
-  background-color: var(--pure-white);
-  height: 420px;
-  padding: 160px 0 50px;
+  font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
+  height: 60vh;
   width: 100%;
 }
 
+.about_me_container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.about_h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 60px;
+  margin-bottom: 30px;
+}
+
 .about_h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
+  line-height: 44px;
   margin: auto;
   width: 80vw;
 }
@@ -168,31 +150,63 @@
 }
 
 .project_row_wrapper {
+  align-items: center;
   display: flex;
-  height: 450px;
+  height: 100vh;
+  margin: auto;
   position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   z-index: 1;
 }
 
 .project_row_container {
-  height: 100%;
-  padding: 80px 0;
   margin: auto;
   position: relative;
-  width: 90%;
+  width: 80%;
+}
+
+.project_row_text_wrapper {
+  width: 50%;
 }
 
 .project_row_h1 {
   font-size: 26px;
 }
 
-.project_row_img {
-  right: 0;
-  height: 50%;
-  object-fit: cover;
-  padding: 50px;
+.project_row_p {
+  line-height: 1.5em;
+  margin-top: 40px;
+}
+
+.project_card_wrapper {
+  position: relative;
+  width: 40%;
+}
+
+.project_card_decorator {
+  display: inline-block;
   position: absolute;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.project_card {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.project_row_bg_img {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.project_row_img {
+  object-fit: cover;
+  position: absolute;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -206,7 +220,7 @@
 }
 
 .amazon_a {
-  color: #131A22;
+  color: #FF9900;
   font-family: 'Amazon Ember', sans-serif;
   font-size: 26px;
   font-weight: 800;

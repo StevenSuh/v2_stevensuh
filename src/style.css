@@ -1,5 +1,5 @@
 :root {
-  --dark-color: #090909;
+  --dark-color: #191919;
   --white-color: #f6f6f6;
   --pure-white: #ffffff;
 }
@@ -23,10 +23,11 @@ body,
 html,
 #root {
   color: var(--dark-color);
-  font-family: 'IBM Plex Mono', monaco, Consolas, 'Courier New', Courier, monospace;
+  font-family: 'Menlo', monaco, 'Courier New', Courier, monospace;
   height: 100%;
   letter-spacing: -0.5px;
   position: relative;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
 

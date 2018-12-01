@@ -62,12 +62,9 @@ export const doOneStep = (elems, index) => {
 
     setTimeout(doOneStep, currDuration, elems, index + 1);
   } else {
-    elems.scrollDown.classList.add(style.notify);
-
     setTimeout(
       () => {
         elems.wrapper.style.width = '0px';
-        elems.scrollDown.classList.remove(style.notify);
         elems.container.classList.remove(style.blink);
       },
       defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length,
@@ -96,54 +93,30 @@ export const startAnimation = (elems) => {
   );
 };
 
-export const onScrollHeader = function() {
+export const onScrollLanding = function() {
   const header = document.getElementById(sharedDefs.HEADER);
-  const currentPosition = document.documentElement.scrollTop + header.clientHeight;
-  const { isScrolledHeader } = this.state;
-
-  if (!isScrolledHeader) {
-    if (currentPosition >= window.innerHeight) {
-      header.classList.add(headerStyle.scrolled);
-
-      this.setState({
-        ...this.state,
-        isScrolledHeader: true,
-      });
-    }
-  } else {
-    if (currentPosition < window.innerHeight) {
-      header.classList.remove(headerStyle.scrolled);
-
-      this.setState({
-        ...this.state,
-        isScrolledHeader: false,
-      });
-    }
-  }
-};
-
-export const onScrollProjects = function() {
+  const headerBg = document.getElementById(sharedDefs.HEADER_BG);
+  const logo = document.getElementById(sharedDefs.HEADER_LOGO);
   const projects = document.getElementById(defs.PROJECT_WRAPPER);
-  const projectsPosition = projects.getBoundingClientRect();
-  const { isScrolledProjects } = this.state;
 
-  if (!isScrolledProjects) {
-    if (projectsPosition.top < window.innerHeight) {
-      projects.classList.add(style.fadeIn);
+  const currentPosition = window.scrollY;
 
-      this.setState({
-        ...this.state,
-        isScrolledProjects: true,
-      });
-    }
-  } else {
-    if (projectsPosition.top >= window.innerHeight) {
-      projects.classList.remove(style.fadeIn);
+  if (currentPosition < (window.innerHeight * 1.6 + 80)) {
+    header.style.color = null;
+    headerBg.style.background = null;
+    logo.style.backgroundColor = null;
+    logo.style.color = null;
 
-      this.setState({
-        ...this.state,
-        isScrolledProjects: false,
-      });
+    if ((currentPosition + header.clientHeight) >= window.innerHeight) {
+      header.classList.add(headerStyle.whiteBg);
+    } else if (currentPosition >= (window.innerHeight / 2)) {
+      header.classList.remove(headerStyle.whiteBg);
+      header.classList.add(headerStyle.scrolled);
+      projects.classList.add(style.reveal);
+    } else {
+      header.classList.remove(headerStyle.scrolled);
+      header.classList.remove(headerStyle.whiteBg);
+      projects.classList.remove(style.reveal);
     }
   }
 };

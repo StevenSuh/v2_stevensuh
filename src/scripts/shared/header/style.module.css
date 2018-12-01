@@ -1,14 +1,49 @@
 .header {
-  background-color: var(--white-color);
   font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
   left: 0;
-  opacity: 0.8;
   padding: 40px 0 20px;
+  overflow: hidden;
   position: fixed;
   top: 0;
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   z-index: 100;
+}
+
+.headerAboveBg {
+  height: 60vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.headerBelowBg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  z-index: -2;
+}
+
+.scrolled {
+  padding: 10px 0;
+}
+
+.scrolled > .headerAboveBg {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whiteBg > .headerBelowBg {
+  /* background-color: var(--pure-white); */
+}
+
+.scrolled .logo {
+  transform: scale(0.75);
 }
 
 .logo {
@@ -21,36 +56,63 @@
   line-height: 60px;
   position: relative;
   text-align: center;
+  transform-origin: 0;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 60px;
 }
 
-.nav {
-  float: right;
-  line-height: 60px;
+.whiteBg .project {
+  opacity: 1;
 }
 
-.nav_item {
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 800;
+.project {
+  opacity: 0;
+  padding-left: 20px;
   position: relative;
-  transition: opacity 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+  top: -2px;
 }
 
-.nav_item > span {
+.project_text {
+  font-size: 28px;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.prompt {
   display: inline-block;
-  transition: transform 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+  font-size: 32px;
 }
 
-.nav_item:hover {
-  opacity: 0.5;
+.cursor {
+  animation: blink 0.65s infinite;
+  display: inline-block;
+  font-size: 32px;
 }
 
-.nav_item:hover > span {
-  transform: translateX(5px);
+@keyframes blink {
+  0% { opacity: 1 }
+  30% { opacity: 1 }
+  31% { opacity: 0 }
+  69% { opacity: 0 }
+  70% { opacity: 1 }
+  100% { opacity: 1 }
 }
 
-.scrolled {
-  background-color: var(--pure-white);
-  padding: 20px 0;
+.nav {
+  right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav > img {
+  display: block;
+}
+
+.nav > img.up {
+  transform: translateY(1px);
+}
+
+.nav > img.down {
+  transform: translateY(-1px);
 }

@@ -4,7 +4,7 @@ import * as actionTypes from './action_types';
 import * as projectDefs from 'src/defs';
 
 export const initialState = Immutable.fromJS({
-  currentProject: projectDefs.NONE,
+  selectedProject: projectDefs.NONE,
 });
 
 export default (state = initialState, action) => {
