@@ -1,3 +1,5 @@
+import { isDesktop } from 'src/scripts/shared/utils';
+
 export const INITIAL_DURATION = 500;
 
 export const inputDefs = {
@@ -19,7 +21,7 @@ export const PROJECT_CONTAINER = 'project-container';
 export const PROJECT_WRAPPER = 'project-wrapper';
 export const SCROLL_DOWN = 'scroll-down';
 
-export const TEXT_TO_ANIMATE = 'steven.suh';
+export const TEXT_TO_ANIMATE = isDesktop() ? 'steven.suh' : 'steven';
 
 export const MAIN_WRAPPER_PADDING_WIDTH = 40;
 export const BLINK_DURATION = 1000;

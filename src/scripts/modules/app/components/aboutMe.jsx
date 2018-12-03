@@ -7,7 +7,7 @@ import style from 'src/scripts/modules/app/style.module.css';
 
 const AboutMe = () => (
   <div className={style.about_me}>
-    <div className={sharedStyle.container}>
+    <div className={classNames(style.about_container, sharedStyle.container)}>
       <div className={classNames(style.about_me_container, style.about_h2)}>
         <h1 className={style.about_h1}>
           Hi,

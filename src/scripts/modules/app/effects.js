@@ -93,30 +93,68 @@ export const startAnimation = (elems) => {
   );
 };
 
+export const onScrollProjectFactory = ({
+  id,
+  name,
+}) => {
+  return function() {
+    const header = document.getElementById(sharedDefs.HEADER);
+    const logo = document.getElementById(sharedDefs.HEADER_LOGO);
+    const project = document.getElementById(`${id}-wrapper`);
+
+    const { isScrolledProject } = this.state;
+
+    const projectPosition = project.getBoundingClientRect().top + header.clientHeight;
+
+    if (!header || !logo || !project) {
+      return;
+    }
+
+    if (!isScrolledProject) {
+      if (projectPosition <= (project.clientHeight / 2) &&
+          projectPosition >= -(project.clientHeight / 2)) {
+        project.classList.add(style.reveal);
+
+        this.setState({
+          isScrolledProject: true,
+        });
+      }
+    } else {
+      if (projectPosition > (project.clientHeight / 2) ||
+          projectPosition < -(project.clientHeight / 2)) {
+        project.classList.remove(style.reveal);
+
+        this.setState({
+          isScrolledProject: false,
+        });
+      }
+    }
+  };
+};
+
 export const onScrollLanding = function() {
   const header = document.getElementById(sharedDefs.HEADER);
-  const headerBg = document.getElementById(sharedDefs.HEADER_BG);
   const logo = document.getElementById(sharedDefs.HEADER_LOGO);
   const projects = document.getElementById(defs.PROJECT_WRAPPER);
 
   const currentPosition = window.scrollY;
 
-  if (currentPosition < (window.innerHeight * 1.6 + 80)) {
-    header.style.color = null;
-    headerBg.style.background = null;
+  if (!header || !logo || !projects) {
+    return;
+  }
+
+  if (currentPosition < (window.innerHeight * 2)) {
     logo.style.backgroundColor = null;
     logo.style.color = null;
+  }
 
-    if ((currentPosition + header.clientHeight) >= window.innerHeight) {
-      header.classList.add(headerStyle.whiteBg);
-    } else if (currentPosition >= (window.innerHeight / 2)) {
-      header.classList.remove(headerStyle.whiteBg);
-      header.classList.add(headerStyle.scrolled);
-      projects.classList.add(style.reveal);
-    } else {
-      header.classList.remove(headerStyle.scrolled);
-      header.classList.remove(headerStyle.whiteBg);
-      projects.classList.remove(style.reveal);
-    }
+  if (currentPosition >= (window.innerHeight - 100)) {
+    header.classList.add(headerStyle.scrolled);
+  } else if (currentPosition >= (window.innerHeight / 2)) {
+    projects.classList.add(style.reveal);
+    header.classList.remove(headerStyle.scrolled);
+  } else {
+    header.classList.remove(headerStyle.scrolled);
+    projects.classList.remove(style.reveal);
   }
 };

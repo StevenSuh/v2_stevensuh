@@ -25,8 +25,6 @@ const Header = () => (
         S
       </Link>
     </div>
-    <div className={style.headerAboveBg} id={HEADER_BG} />
-    <div className={style.headerBelowBg} />
   </header>
 );
 

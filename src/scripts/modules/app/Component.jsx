@@ -1,5 +1,5 @@
 import React from 'react';
-
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import AboutMe from './components/aboutMe';
@@ -38,25 +38,26 @@ class App extends React.Component {
     const { onSetCurrentProject } = this.props;
 
     return (
-      <div className={style.landing_page}>
+      <div className={classNames(style.landing_page, style.hidden)}>
         <Header />
         <MainAnimation />
         <div
-          className={style.project_wrapper}
+          className={classNames(style.project_wrapper, style.reveal)}
           id={defs.PROJECT_WRAPPER}
         >
           <AboutMe />
-          <div id={defs.PROJECT_CONTAINER}>
-            <ProjectRow
-              onChangeProjectView={this.onChangeProjectView}
-              onSetCurrentProject={onSetCurrentProject}
-              project={sharedDefs.PROJECTS[0]}
-            />
-            <ProjectRow
-              onChangeProjectView={this.onChangeProjectView}
-              onSetCurrentProject={onSetCurrentProject}
-              project={sharedDefs.PROJECTS[1]}
-            />
+          <div
+            className={style.project_container}
+            id={defs.PROJECT_CONTAINER}
+          >
+            {sharedDefs.PROJECTS.map(project => (
+              <ProjectRow
+                key={project.id}
+                onChangeProjectView={this.onChangeProjectView}
+                onSetCurrentProject={onSetCurrentProject}
+                project={project}
+              />
+            ))}
           </div>
         </div>
         <div className={style.filler} />

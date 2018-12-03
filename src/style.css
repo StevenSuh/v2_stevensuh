@@ -27,8 +27,17 @@ html,
   height: 100%;
   letter-spacing: -0.5px;
   position: relative;
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+}
+
+body {
+  /* animation: reveal 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; */
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
 
 body,
@@ -51,4 +60,31 @@ a {
 
 div {
   box-sizing: border-box;
+}
+
+.transition-group {
+  height: 100%;
+  width: 100%;
+}
+
+.reveal-appear,
+.reveal-enter {
+  opacity: 0;
+}
+
+.reveal-appear-active,
+.reveal-enter-active,
+.reveal-enter-done {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.reveal-exit {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.reveal-exit-active,
+.reveal-exit-done {
+  opacity: 0;
 }

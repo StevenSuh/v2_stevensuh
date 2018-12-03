@@ -3,43 +3,16 @@
   left: 0;
   padding: 40px 0 20px;
   overflow: hidden;
+  pointer-events: none;
   position: fixed;
   top: 0;
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  width: 100vw;
   z-index: 100;
-}
-
-.headerAboveBg {
-  height: 60vh;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  z-index: -1;
-}
-
-.headerBelowBg {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  z-index: -2;
 }
 
 .scrolled {
   padding: 10px 0;
-}
-
-.scrolled > .headerAboveBg {
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.whiteBg > .headerBelowBg {
-  /* background-color: var(--pure-white); */
 }
 
 .scrolled .logo {
@@ -54,15 +27,13 @@
   font-weight: 800;
   height: 60px;
   line-height: 60px;
+  pointer-events: all;
   position: relative;
   text-align: center;
   transform-origin: 0;
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.1s cubic-bezier(0.5, 0, 0.5, 1);
   width: 60px;
-}
-
-.whiteBg .project {
-  opacity: 1;
 }
 
 .project {
