@@ -1,4 +1,15 @@
 :root {
+  /*
+  @custom-media --xx-small-viewport only screen and (max-width: 320px);
+  @custom-media --x-small-viewport only screen and (max-width: 416px);
+  @custom-media --small-viewport only screen and (min-width: 416px) and (max-width: 580px);
+  @custom-media --medium-viewport only screen and (min-width: 580px) and (max-width: 864px);
+  @custom-media --large-viewport only screen and (min-width: 864px) and (max-width: 1096px);
+  @custom-media --x-large-viewport only screen and (min-width: 1096px);
+  @custom-media --phone (--x-small-viewport), (--small-viewport);
+  @custom-media --desktop (--large-viewport), (--x-large-viewport);
+  */
+
   --dark-color: #191919;
   --white-color: #f6f6f6;
   --pure-white: #ffffff;
@@ -38,6 +49,10 @@ body {
 @keyframes reveal {
   from { opacity: 0 }
   to { opacity: 1 }
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body,

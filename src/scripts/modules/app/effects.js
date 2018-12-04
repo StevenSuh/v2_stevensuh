@@ -148,13 +148,16 @@ export const onScrollLanding = function() {
     logo.style.color = null;
   }
 
-  if (currentPosition >= (window.innerHeight - 100)) {
+  if (currentPosition >= window.innerHeight) {
+    header.classList.add(headerStyle.scrolledTwo);
+  } else if (currentPosition >= (window.innerHeight - 120)) {
     header.classList.add(headerStyle.scrolled);
+    header.classList.remove(headerStyle.scrolledTwo);
   } else if (currentPosition >= (window.innerHeight / 2)) {
-    projects.classList.add(style.reveal);
     header.classList.remove(headerStyle.scrolled);
+    header.classList.remove(headerStyle.scrolledTwo);
   } else {
     header.classList.remove(headerStyle.scrolled);
-    projects.classList.remove(style.reveal);
+    header.classList.remove(headerStyle.scrolledTwo);
   }
 };

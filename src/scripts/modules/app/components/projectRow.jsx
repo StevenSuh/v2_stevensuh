@@ -78,7 +78,6 @@ class ProjectRow extends React.Component {
             style={{ boxShadow }}
           />
         </Link>
-        <br />
         <div className={classNames(style.project_row_container)}>
           <div
             className={classNames(style.project_row_text_wrapper, ...textClass)}
