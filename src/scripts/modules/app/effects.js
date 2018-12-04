@@ -1,7 +1,5 @@
 import * as defs from './defs';
-import * as sharedDefs from 'src/scripts/shared/defs';
 
-import headerStyle from 'src/scripts/shared/header/style.module.css';
 import style from './style.module.css';
 
 export const changeInputFactory = (type, el) => {
@@ -39,7 +37,7 @@ export const resetEl = (el, letter, intervals) => {
 };
 
 export const doOneStep = (elems, index) => {
-  if (index < defs.TEXT_TO_ANIMATE.length) {
+  if (index < defs.getTextToAnimate().length) {
     const currHeader = elems.headerList[index];
     const displayText = currHeader.textContent;
 
@@ -67,11 +65,11 @@ export const doOneStep = (elems, index) => {
         elems.wrapper.style.width = '0px';
         elems.container.classList.remove(style.blink);
       },
-      defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length,
+      (defs.PER_DURATION * defs.getTextToAnimate().length) / 2,
     );
     setTimeout(
       startAnimation,
-      (defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length) + defs.TRANSITION_DURATION + defs.PER_DURATION,
+      (defs.PER_DURATION * defs.getTextToAnimate().length) / 2 + defs.TRANSITION_DURATION + defs.PER_DURATION,
       elems,
     );
   }
@@ -91,73 +89,4 @@ export const startAnimation = (elems) => {
     elems,
     0,
   );
-};
-
-export const onScrollProjectFactory = ({
-  id,
-  name,
-}) => {
-  return function() {
-    const header = document.getElementById(sharedDefs.HEADER);
-    const logo = document.getElementById(sharedDefs.HEADER_LOGO);
-    const project = document.getElementById(`${id}-wrapper`);
-
-    const { isScrolledProject } = this.state;
-
-    const projectPosition = project.getBoundingClientRect().top + header.clientHeight;
-
-    if (!header || !logo || !project) {
-      return;
-    }
-
-    if (!isScrolledProject) {
-      if (projectPosition <= (project.clientHeight / 2) &&
-          projectPosition >= -(project.clientHeight / 2)) {
-        project.classList.add(style.reveal);
-
-        this.setState({
-          isScrolledProject: true,
-        });
-      }
-    } else {
-      if (projectPosition > (project.clientHeight / 2) ||
-          projectPosition < -(project.clientHeight / 2)) {
-        project.classList.remove(style.reveal);
-
-        this.setState({
-          isScrolledProject: false,
-        });
-      }
-    }
-  };
-};
-
-export const onScrollLanding = function() {
-  const header = document.getElementById(sharedDefs.HEADER);
-  const logo = document.getElementById(sharedDefs.HEADER_LOGO);
-  const projects = document.getElementById(defs.PROJECT_WRAPPER);
-
-  const currentPosition = window.scrollY;
-
-  if (!header || !logo || !projects) {
-    return;
-  }
-
-  if (currentPosition < (window.innerHeight * 2)) {
-    logo.style.backgroundColor = null;
-    logo.style.color = null;
-  }
-
-  if (currentPosition >= window.innerHeight) {
-    header.classList.add(headerStyle.scrolledTwo);
-  } else if (currentPosition >= (window.innerHeight - 120)) {
-    header.classList.add(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
-  } else if (currentPosition >= (window.innerHeight / 2)) {
-    header.classList.remove(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
-  } else {
-    header.classList.remove(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
-  }
 };

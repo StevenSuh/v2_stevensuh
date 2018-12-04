@@ -46,9 +46,6 @@ const AboutMe = () => (
           GoLinks
         </Link>
         {'.'}
-        <br />
-        <br />
-        <span>all / work / project</span>
       </div>
     </div>
   </div>

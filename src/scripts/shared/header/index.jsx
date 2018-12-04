@@ -3,29 +3,41 @@ import { Link } from 'react-router-dom';
 
 import classNames from 'classnames';
 
+import { onScrollLanding } from './effects';
 import {
   HEADER,
-  HEADER_BG,
   HEADER_LOGO,
 } from 'src/scripts/shared/defs';
 import style from './style.module.css';
 import sharedStyle from 'src/scripts/shared/style.module.css';
 
-const Header = () => (
-  <header
-    className={style.header}
-    id={HEADER}
-  >
-    <div className={sharedStyle.container}>
-      <Link
-        className={classNames(style.logo, sharedStyle.hover)}
-        id={HEADER_LOGO}
-        to="/"
+class Header extends React.Component {
+  componentWillMount() {
+    window.addEventListener('scroll', onScrollLanding);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', onScrollLanding);
+  }
+
+  render() {
+    return (
+      <header
+        className={style.header}
+        id={HEADER}
       >
-        S
-      </Link>
-    </div>
-  </header>
-);
+        <div className={sharedStyle.container}>
+          <Link
+            className={classNames(style.logo, sharedStyle.hover)}
+            id={HEADER_LOGO}
+            to="/"
+          >
+            S
+          </Link>
+        </div>
+      </header>
+    );
+  }
+}
 
 export default Header;

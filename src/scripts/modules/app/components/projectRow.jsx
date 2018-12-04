@@ -3,38 +3,19 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { onScrollProjectFactory } from 'src/scripts/modules/app/effects';
 import { ProjectType } from 'src/scripts/shared/defs';
 import sharedStyle from 'src/scripts/shared/style.module.css';
 import style from 'src/scripts/modules/app/style.module.css';
 
 class ProjectRow extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isScrolledProject: false,
-    };
-
-    const { project } = this.props;
-    this.onScrollProject = onScrollProjectFactory(project).bind(this);
-  }
-
   componentWillMount() {
     const { project } = this.props;
     const { background, id } = project;
     document.documentElement.style.setProperty(`--${id}-bg`, background);
-
-    window.addEventListener('scroll', this.onScrollProject);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScrollProject);
   }
 
   render() {
     const {
-      onSetCurrentProject,
       project: {
         backgroundImg = null,
         backgroundImgClass = [],
@@ -56,7 +37,6 @@ class ProjectRow extends React.Component {
       >
         <Link
           className={classNames(style.project_row_img_container, sharedStyle.hover)}
-          onClick={() => onSetCurrentProject(id)}
           to={`${type}/${name}`}
         >
           {backgroundImg && (
@@ -83,12 +63,16 @@ class ProjectRow extends React.Component {
             className={classNames(style.project_row_text_wrapper, ...textClass)}
             id={`${id}-text`}
           >
-            <p className={style.project_row_p}>
-              {type}/{name}
-            </p>
-            <h1 className={style.project_row_h1}>
-              {description}
-            </h1>
+            <Link to={`${type}/${name}`}>
+              <p className={style.project_row_p}>
+                {type}/{name}
+              </p>
+            </Link>
+            <Link to={`${type}/${name}`}>
+              <h1 className={style.project_row_h1}>
+                {description}
+              </h1>
+            </Link>
           </div>
         </div>
       </div>
@@ -97,7 +81,6 @@ class ProjectRow extends React.Component {
 };
 
 ProjectRow.propTypes = {
-  onSetCurrentProject: PropTypes.func.isRequired,
   project: ProjectType.isRequired,
 };
 

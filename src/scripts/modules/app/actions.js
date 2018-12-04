@@ -1,6 +1,11 @@
-import * as action_types from './action_types';
+import * as actionTypes from './action_types';
+
+export const setActiveFilter = filter => ({
+  type: actionTypes.setActiveFilter,
+  value: filter,
+})
 
 export const setCurrentProject = project => ({
-  type: action_types.setCurrentProject,
+  type: actionTypes.setCurrentProject,
   value: project,
 });

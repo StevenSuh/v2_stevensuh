@@ -6,7 +6,7 @@
 }
 
 .hover {
-  transition: opacity 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  transition: opacity 0.1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 .hover:hover {
@@ -34,7 +34,7 @@
 }
 
 .golinks_img {
-  height: 20%;
+  height: 18%;
 }
 
 .foodgo_img {

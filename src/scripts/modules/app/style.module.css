@@ -1,7 +1,11 @@
+.no_transition {
+  transition: none !important;
+}
+
 .landing_page {
   background-color: var(--white-color);
-  position: relative;
   height: 100%;
+  position: relative;
   transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
@@ -48,7 +52,7 @@
   display: inline-block;
   height: 85px;
   overflow: hidden;
-  transition: width 0.5s cubic-bezier(0.5, 0, 1, 0.25);
+  transition: width 0.5s cubic-bezier(0.7, 0, 1, 0.3);
   vertical-align: middle;
   white-space: nowrap;
   width: 0px;
@@ -124,20 +128,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
-  padding: 10% 0;
   position: relative;
-  width: 80%;
+  width: 90%;
 }
 
-.project_wrapper > .about_me,
-.project_wrapper > .project_container {
-  opacity: 0;
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project_wrapper.reveal > .about_me,
-.project_wrapper > .project_container {
-  opacity: 1;
+.project_wrapper {
+  background-color: var(--pure-white);
+  padding-bottom: 130px;
 }
 
 .about_me {
@@ -167,21 +164,40 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 44px;
-  margin: 0 auto 30px;
-  width: 80vw;
+  margin: 0 auto 50px;
+  width: 100%;
 }
 
 .about_h2_my_name {
   font-size: 29px;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   text-decoration: underline;
 }
 
+.filter_container {
+  font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
+  font-size: 18px;
+  margin-bottom: 100px;
+}
+
+.filter_span {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.filter_span:hover {
+  opacity: 1;
+}
+
+.filter_span.bold {
+  font-weight: 800;
+  opacity: 1 !important;
+}
+
 .project_row_wrapper {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   position: relative;
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
@@ -195,10 +211,10 @@
 
 .project_row_img_container {
   display: block;
-  height: 315px;
-  margin-bottom: 30px;
+  height: 24.5vw;
+  margin-bottom: 20px;
   position: relative;
-  width: 360px;
+  width: 28vw;
   z-index: 1;
 }
 
@@ -264,6 +280,11 @@
   transform: translate(-50%, -50%);
 }
 
+.project_row_bg_img,
+.project_row_img {
+  pointer-events: none;
+}
+
 .project_row_img.right {
   left: 10%;
   right: unset;
@@ -313,18 +334,44 @@
   background: var(--project-foodgo-bg);
 }
 
+.contact_me {
+  height: 200px;
+  padding: 50px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.contact_me_p {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 16px;
+  opacity: 1;
+}
+
+.contact_me_p:hover {
+  opacity: 0.5;
+}
+
+.contact_me_span {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 0 15px;
+  opacity: 0.3;
+}
+
 @media only screen and (max-width: 416px) {
-  .about_me {
-    height: 650px;
+  .project_wrapper {
+    padding-bottom: 0;
   }
 
-  .about_me_container {
-    margin-bottom: 80px;
+  .about_me {
+    height: 500px;
   }
 
   .project_container {
     display: inherit;
-    padding: 0;
     width: 100%;
   }
 
@@ -332,17 +379,53 @@
     margin: 0;
   }
 
-  .project_row_container {
-    display: none;
+  .project_row_wrapper.work-affirm > .project_row_container {
+    color: var(--dark-color);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   }
 
+  .project_row_wrapper.work-amazon > .project_row_container {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.15);
+  }
+
+  .project_row_wrapper.project-foodgo .project_row_p {
+    opacity: 0.9;
+  }
+
+  .project_row_container {
+    color: var(--pure-white);
+    left: 0;
+    padding: 5%;
+    pointer-events: none;
+    position: absolute;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .project_row_p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+
   .project_row_img_container {
-    height: 87.5vw;
+    height: 90vw;
+    /* height: 87.5vw; */
     margin-bottom: 0;
     width: 100%;
   }
 
   .project_row_img_box_shadow {
     opacity: 0;
+  }
+
+  .project_row_h1 {
+    display: none;
+  }
+
+  .contact_me {
+    height: 170px;
   }
 }
