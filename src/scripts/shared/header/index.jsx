@@ -21,9 +21,11 @@ class Header extends React.Component {
   }
 
   render() {
+    const { pathname } = this.props.location;
+
     return (
       <header
-        className={style.header}
+        className={classNames(style.header, pathname === '/' ? style.landing : '')}
         id={HEADER}
       >
         <div className={sharedStyle.container}>

@@ -33,7 +33,6 @@
 body,
 html,
 #root {
-  background-color: var(--white-color);
   color: var(--dark-color);
   font-family: 'Menlo', monaco, 'Courier New', Courier, monospace;
   height: 100%;

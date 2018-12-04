@@ -26,34 +26,32 @@ window.onload = () => {
         <Route
           render={({ location }) => (
             <TransitionGroup className="transition-group">
+              <Header location={location} />
               <CSSTransition
                 appear
                 classNames="reveal"
                 key={location.key}
                 timeout={200}
               >
-                <div className="transition-group">
-                  <Header />
-                  <Switch
-                    key={location.key}
-                    location={location}
-                  >
+                <Switch
+                  key={location.key}
+                  location={location}
+                >
+                  <Route
+                    component={App}
+                    exact
+                    path="/"
+                  />
+                  {sharedDefs.TYPES.map(type => (
                     <Route
-                      component={App}
+                      component={ProjectDetails}
                       exact
-                      path="/"
+                      key={type}
+                      path={`${type}/:projectName`}
                     />
-                    {sharedDefs.TYPES.map(type => (
-                      <Route
-                        component={ProjectDetails}
-                        exact
-                        key={type}
-                        path={`${type}/:projectName`}
-                      />
-                    ))}
-                    <Redirect to="/" />
-                  </Switch>
-                </div>
+                  ))}
+                  <Redirect to="/" />
+                </Switch>
               </CSSTransition>
             </TransitionGroup>
           )}

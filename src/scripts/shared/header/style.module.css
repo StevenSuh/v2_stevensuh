@@ -1,5 +1,4 @@
 .header {
-  background-color: var(--white-color);
   font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
   left: 0;
   padding: 40px 0 20px;
@@ -11,6 +10,10 @@
     padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100vw;
   z-index: 100;
+}
+
+.landing {
+  background-color: var(--white-color);
 }
 
 .scrolled {
