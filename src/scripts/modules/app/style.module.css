@@ -393,36 +393,17 @@
   }
 
   .project_row_container {
-    color: var(--pure-white);
-    left: 0;
-    padding: 5%;
-    pointer-events: none;
-    position: absolute;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-    top: 0;
-    width: 100%;
-    z-index: 1;
+    display: none;
   }
-
-  .project_row_p {
-    font-size: 14px;
-    opacity: 0.8;
-  }
-
 
   .project_row_img_container {
     height: 90vw;
-    /* height: 87.5vw; */
     margin-bottom: 0;
     width: 100%;
   }
 
   .project_row_img_box_shadow {
     opacity: 0;
-  }
-
-  .project_row_h1 {
-    display: none;
   }
 
   .contact_me {
