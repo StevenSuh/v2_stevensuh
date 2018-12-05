@@ -16,9 +16,11 @@ class ProjectRow extends React.Component {
 
   render() {
     const {
+      isDesktop,
       project: {
         backgroundImg = null,
         backgroundImgClass = [],
+        backgroundImgMobile = null,
         boxShadow,
         description,
         id,
@@ -39,15 +41,26 @@ class ProjectRow extends React.Component {
           className={classNames(style.project_row_img_container, sharedStyle.hover)}
           to={`${type}/${name}`}
         >
-          {backgroundImg && (
-            <div className={classNames(style.project_row_img_bg_container)}>
-              <img
-                alt={`${name} background`}
-                className={classNames(style.project_row_bg_img, ...backgroundImgClass)}
-                src={backgroundImg}
-              />
-            </div>
-          )}
+          {isDesktop ?
+            backgroundImg && (
+              <div className={classNames(style.project_row_img_bg_container)}>
+                <img
+                  alt={`${name} background`}
+                  className={classNames(style.project_row_bg_img, ...backgroundImgClass)}
+                  src={backgroundImg}
+                />
+              </div>
+            ) :
+            backgroundImg && (
+              <div className={classNames(style.project_row_img_bg_container)}>
+                <img
+                  alt={`${name} background`}
+                  className={classNames(style.project_row_bg_img, ...backgroundImgClass)}
+                  src={backgroundImgMobile}
+                />
+              </div>
+            )
+          }
           <img
             alt={`${name} logo`}
             className={classNames(style.project_row_img, ...logoImgClass)}
@@ -81,6 +94,7 @@ class ProjectRow extends React.Component {
 };
 
 ProjectRow.propTypes = {
+  isDesktop: PropTypes.bool.isRequired,
   project: ProjectType.isRequired,
 };
 

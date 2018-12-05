@@ -34,6 +34,7 @@ export const ProjectType = PropTypes.shape({
   background: PropTypes.string.isRequired,
   backgroundImg: PropTypes.string,
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
+  backgroundImgMobile: PropTypes.string,
   boxShadow: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, NONE]).isRequired,
@@ -47,8 +48,9 @@ export const ProjectType = PropTypes.shape({
 export const PROJECTS = [
   {
     background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
-    backgroundImg: '/assets/affirm-bg.png',
+    backgroundImg: '/assets/affirm-bg-details.png',
     backgroundImgClass: [style.affirm_bg_img],
+    backgroundImgMobile: '/assets/affirm-bg.png',
     boxShadow: '0 0 10px 1px rgba(15, 160, 234, 0.15)',
     description: 'Retail Engineering',
     id: AFFIRM,
@@ -60,8 +62,9 @@ export const PROJECTS = [
   },
   {
     background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
-    backgroundImg: '/assets/amazon-bg.png',
+    backgroundImg: '/assets/amazon-bg-details.png',
     backgroundImgClass: [style.amazon_bg_img],
+    backgroundImgMobile: '/assets/amazon-bg.png',
     boxShadow: '0 0 10px 1px rgba(255, 170, 0, 0.4)',
     description: 'Hardlines Customer Experience',
     id: AMAZON,
@@ -96,15 +99,18 @@ export const ProjectDetailsType = PropTypes.shape({
   background: PropTypes.string.isRequired,
   backgroundImg: PropTypes.string,
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
-  boxShadow: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, NONE]).isRequired,
-  logoImg: PropTypes.string.isRequired,
-  logoImgClass: PropTypes.arrayOf(PropTypes.string),
+  backgroundImgMobile: PropTypes.string,
+  fontFamily: PropTypes.string,
   name: PropTypes.string.isRequired,
-  textClass: PropTypes.arrayOf(PropTypes.string),
   type: PropTypes.string.isRequired,
 });
+
+ProjectDetailsType.defaultProps = {
+  backgroundImg: null,
+  backgroundImgClass: [],
+  backgroundImgMobile: null,
+  fontFamily: null,
+};
 
 export const PROJECT_DETAILS = {
   [AFFIRM_NAME]: {
@@ -114,6 +120,7 @@ export const PROJECT_DETAILS = {
     background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
     backgroundImg: '/assets/amazon-bg-details.png',
     backgroundImgClass: [style.amazon_details_bg_img],
+    backgroundImgMobile: '/assets/amazon-bg.png',
     fontFamily: "'Amazon Ember', sans-serif",
     name: 'Amazon',
     type: TYPE_WORK,

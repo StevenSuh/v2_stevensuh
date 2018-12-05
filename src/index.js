@@ -10,8 +10,8 @@ import {
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import App from 'src/scripts/modules/app/Container';
-import Header from 'src/scripts/shared/header';
-import ProjectDetails from 'src/scripts/modules/projectDetails/Component';
+import Header from 'src/scripts/shared/header/Container';
+import ProjectDetails from 'src/scripts/modules/projectDetails/Container';
 import ScrollToTop from 'src/scripts/hoc/scrollToTop';
 
 import store from 'src/scripts/config/setup';
@@ -53,10 +53,15 @@ window.onload = () => {
                     />
                     {sharedDefs.TYPES.map(type => (
                       <Route
-                        component={ProjectDetails}
                         exact
                         key={type}
                         path={`${type}/:projectName`}
+                        render={props =>
+                          <ProjectDetails
+                            project={sharedDefs.PROJECT_DETAILS[props.match.params.projectName]}
+                            {...props}
+                          />
+                        }
                       />
                     ))}
                     <Redirect to="/" />

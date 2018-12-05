@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Bracket from 'src/assets/bracket.png';
 
@@ -7,14 +8,6 @@ import * as defs from 'src/scripts/modules/app/defs';
 import style from 'src/scripts/modules/app/style.module.css';
 
 class MainAnimation extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { textToAnimate: defs.getTextToAnimate() };
-
-    this.getTextToAnimate = this.getTextToAnimate.bind(this);
-  }
-
   componentDidMount() {
     const elems = {
       container: document.getElementById(defs.MAIN_CONTAINER),
@@ -30,30 +23,29 @@ class MainAnimation extends React.Component {
   }
 
   componentWillMount() {
-    window.addEventListener('resize', this.getTextToAnimate);
+    window.addEventListener('resize', this.onResize);
   }
 
   componentWillUnmount() {
-    window.addEventListener('resize', this.getTextToAnimate);
+    window.addEventListener('resize', this.onResize);
   }
 
-  getTextToAnimate() {
-    this.setState(
-      { textToAnimate: defs.getTextToAnimate() },
-      () => {
-        const main = document.getElementById(defs.MAIN_TEXT);
-        const wrapper = document.getElementById(defs.MAIN_WRAPPER);
+  onResize() {
+    const main = document.getElementById(defs.MAIN_TEXT);
+    const wrapper = document.getElementById(defs.MAIN_WRAPPER);
 
-        const expectedWidth = main.clientWidth + defs.MAIN_WRAPPER_PADDING_WIDTH;
+    const expectedWidth = main.clientWidth + defs.MAIN_WRAPPER_PADDING_WIDTH;
 
-        wrapper.classList.add(style.no_transition);
-        wrapper.style.width = expectedWidth + 'px';
-        setTimeout(() => wrapper.classList.remove(style.no_transition), 0);
-      }
-    );
+    wrapper.classList.add(style.no_transition);
+    wrapper.style.width = expectedWidth + 'px';
+    setTimeout(() => wrapper.classList.remove(style.no_transition), 0);
   }
 
   render() {
+    const { isDesktop } = this.props;
+
+    const textToAnimate = isDesktop ? defs.TEXT_TO_ANIMATE : defs.TEXT_TO_ANIMATE_MOBILE;
+
     return (
       <div
         className={style.landing_page}
@@ -74,7 +66,7 @@ class MainAnimation extends React.Component {
               className={style.main_text}
               id={defs.MAIN_TEXT}
             >
-              {this.state.textToAnimate.split('').map((text, index) => (
+              {textToAnimate.split('').map((text, index) => (
                 <h1
                   className={style.hidden}
                   key={index}
@@ -102,5 +94,9 @@ class MainAnimation extends React.Component {
     );
   }
 }
+
+MainAnimation.propTypes = {
+  isDesktop: PropTypes.bool.isRequired,
+};
 
 export default MainAnimation;

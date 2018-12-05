@@ -15,10 +15,11 @@ import style from './style.module.css';
 
 const App = ({
   activeFilter,
-  onSetActiveFilter
+  isDesktop,
+  onSetActiveFilter,
 }) => (
   <div className={classNames(style.landing_page)}>
-    <MainAnimation />
+    <MainAnimation isDesktop={isDesktop} />
     <div
       className={classNames(style.project_wrapper)}
       id={defs.PROJECT_WRAPPER}
@@ -75,6 +76,7 @@ const App = ({
               >
                 <ProjectRow
                   key={project.id}
+                  isDesktop={isDesktop}
                   project={project}
                 />
               </CSSTransition>

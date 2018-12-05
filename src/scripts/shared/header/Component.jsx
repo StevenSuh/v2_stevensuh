@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
 import { onScrollLanding } from './effects';
+import * as utils from 'src/scripts/shared/utils';
+
 import {
   HEADER,
   HEADER_LOGO,
@@ -15,14 +18,21 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
 
+    this.onChangeIsDesktop = this.onChangeIsDesktop.bind(this);
     this.onScrollLanding = onScrollLanding.bind(this);
   }
 
+  onChangeIsDesktop() {
+    this.props.onChangeIsDesktop(utils.isDesktop());
+  }
+
   componentWillMount() {
+    window.addEventListener('resize', this.onChangeIsDesktop);
     window.addEventListener('scroll', this.onScrollLanding);
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.onChangeIsDesktop);
     window.removeEventListener('scroll', this.onScrollLanding);
   }
 
@@ -46,6 +56,10 @@ class Header extends React.Component {
       </header>
     );
   }
-}
+};
+
+Header.propTypes = {
+  onChangeIsDesktop: PropTypes.func.isRequired,
+};
 
 export default Header;

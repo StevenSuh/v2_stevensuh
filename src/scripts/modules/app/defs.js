@@ -25,7 +25,8 @@ export const PROJECT_CONTAINER = 'project-container';
 export const PROJECT_WRAPPER = 'project-wrapper';
 export const SCROLL_DOWN = 'scroll-down';
 
-export const getTextToAnimate = () => isDesktop() ? 'steven.suh' : 'steven';
+export const TEXT_TO_ANIMATE = 'steven.suh';
+export const TEXT_TO_ANIMATE_MOBILE = 'steven';
 
 export const MAIN_WRAPPER_PADDING_WIDTH = 40;
 export const BLINK_DURATION = 1000;

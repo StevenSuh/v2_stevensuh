@@ -1,2 +1,2 @@
-export const setActiveFilter = 'app/set-active-filter';
-export const setCurrentProject = 'app/set-current-project';
+export const onSetActiveFilter = 'app/set-active-filter';
+export const onSetCurrentProject = 'app/set-current-project';

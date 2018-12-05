@@ -1,16 +1,16 @@
 import Immutable from 'immutable';
 
 import * as actionTypes from './action_types';
-import * as defs from './defs';
+import * as utils from './utils';
 
 export const initialState = Immutable.fromJS({
-  activeFilter: defs.FILTER_ALL,
+  isDesktop: utils.isDesktop(),
 });
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.onSetActiveFilter: {
-      return state.set('activeFilter', action.value);
+    case actionTypes.onChangeIsDesktop: {
+      return state.set('isDesktop', action.value);
     }
     default: {
       return state;

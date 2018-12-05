@@ -37,7 +37,7 @@ export const resetEl = (el, letter, intervals) => {
 };
 
 export const doOneStep = (elems, index) => {
-  if (index < defs.getTextToAnimate().length) {
+  if (index < elems.headerList.length) {
     const currHeader = elems.headerList[index];
     const displayText = currHeader.textContent;
 
@@ -65,11 +65,11 @@ export const doOneStep = (elems, index) => {
         elems.wrapper.style.width = '0px';
         elems.container.classList.remove(style.blink);
       },
-      (defs.PER_DURATION * defs.getTextToAnimate().length) / 2,
+      (defs.PER_DURATION * elems.headerList.length) / 2,
     );
     setTimeout(
       startAnimation,
-      (defs.PER_DURATION * defs.getTextToAnimate().length) / 2 + defs.TRANSITION_DURATION + defs.PER_DURATION,
+      (defs.PER_DURATION * elems.headerList.length) / 2 + defs.TRANSITION_DURATION + defs.PER_DURATION,
       elems,
     );
   }

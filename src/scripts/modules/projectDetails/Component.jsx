@@ -3,30 +3,27 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-import * as sharedDefs from 'src/scripts/shared/defs';
+import { ProjectDetailsType } from 'src/scripts/shared/defs';
 import sharedStyle from 'src/scripts/shared/style.module.css';
 import style from './style.module.css';
 
 const ProjectDetails = ({
+  isDesktop,
   match: {
     params: { projectName },
     url,
   },
+  project = null,
 }) => {
-  const projectDetails = sharedDefs.PROJECT_DETAILS;
-  if (!projectDetails[projectName]) {
-    return <Redirect to="/" />;
-  }
-
-  const project = projectDetails[projectName];
-  if (!url.startsWith(project.type)) {
+  if (!project || !url.startsWith(project.type)) {
     return <Redirect to="/" />;
   }
 
   const {
     background,
-    backgroundImg = null,
-    backgroundImgClass = [],
+    backgroundImg,
+    backgroundImgClass,
+    backgroundImgMobile,
     fontFamily,
     name,
   } = project;
@@ -49,18 +46,38 @@ const ProjectDetails = ({
           background,
         }}
       >
-        {backgroundImg && (
-          <img
-            alt={`${projectName} background`}
-            className={classNames(style.project_detail_bg_img, ...backgroundImgClass)}
-            src={backgroundImg}
-          />
-        )}
+        {isDesktop ?
+          backgroundImg && (
+            <img
+              alt={`${projectName} background`}
+              className={classNames(style.project_detail_bg_img, ...backgroundImgClass)}
+              src={backgroundImg}
+            />
+          ) :
+          backgroundImgMobile && (
+            <img
+              alt={`${projectName} background`}
+              className={classNames(style.project_detail_bg_img, ...backgroundImgClass)}
+              src={backgroundImgMobile}
+            />
+          )
+        }
       </div>
       <div className={style.project_detail_bg}>
       </div>
     </div>
   );
+};
+
+ProjectDetails.propTypes = {
+  isDesktop: PropTypes.bool.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      projectName: PropTypes.string.isRequired,
+    }).isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired,
+  project: ProjectDetailsType.isRequired,
 };
 
 export default ProjectDetails;

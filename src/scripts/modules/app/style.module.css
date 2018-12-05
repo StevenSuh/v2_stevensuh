@@ -127,6 +127,16 @@
   padding-bottom: 130px;
 }
 
+.about_container,
+.filter_container,
+.project_container {
+  width: 1000px;
+}
+
+.project_row_img_container {
+  height: 675px;
+}
+
 .about_me {
   background-color: var(--pure-white);
   font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
@@ -141,7 +151,6 @@
 .about_container {
   align-items: flex-end;
   display: flex;
-  width: 65%;
 }
 
 .about_h1 {
@@ -168,8 +177,7 @@
 .filter_container {
   font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
   font-size: 18px;
-  margin-bottom: 100px;
-  width: 65%;
+  margin-bottom: 120px;
 }
 
 .filter_span {
@@ -189,7 +197,6 @@
 .project_container {
   margin: auto;
   position: relative;
-  width: 65%;
 }
 
 .project_row_wrapper {
@@ -208,18 +215,22 @@
 
 .project_row_img_container {
   display: block;
-  height: 50vw;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   overflow: hidden;
   position: relative;
   width: 100%;
   z-index: 1;
 }
 
+.project_row_img_container > * {
+  pointer-events: none;
+}
+
 .project_row_img_container::before {
   content: '';
   left: 0;
   height: 100%;
+  pointer-events: none;
   position: absolute;
   top: 0;
   width: 100%;
@@ -258,13 +269,13 @@
 }
 
 .project_row_h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   margin-top: 10px;
 }
 
 .project_row_p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.5;
 }
 
@@ -359,6 +370,18 @@
   line-height: 16px;
   margin: 0 15px;
   opacity: 0.3;
+}
+
+@media only screen and (max-width: 1200px) {
+  .about_container,
+  .filter_container,
+  .project_container {
+    width: 80%;
+  }
+
+  .project_row_img_container {
+    height: 54vw;
+  }
 }
 
 @media only screen and (max-width: 416px) {
