@@ -14,7 +14,8 @@
   padding: 10px 0;
 }
 
-.scrolled .logo {
+.scrolled .logo,
+.scrolled .logo_bg {
   transform: scale(0.75);
 }
 
@@ -32,6 +33,17 @@
   transform-origin: 0;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+  width: 60px;
+}
+
+.logo_bg {
+  background-color: var(--pure-white);
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 0;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 60px;
 }
 
@@ -105,6 +117,11 @@
     height: 46px;
     line-height: 46px;
     transform-origin: 0 0;
+    width: 46px;
+  }
+
+  .logo_bg {
+    height: 46px;
     width: 46px;
   }
 }

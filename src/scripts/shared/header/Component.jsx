@@ -45,6 +45,7 @@ class Header extends React.Component {
         id={HEADER}
       >
         <div className={sharedStyle.container}>
+          <div className={style.logo_bg} />
           <Link
             className={classNames(style.logo, sharedStyle.hover)}
             id={HEADER_LOGO}

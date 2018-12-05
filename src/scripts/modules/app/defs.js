@@ -1,5 +1,3 @@
-import { isDesktop } from 'src/scripts/shared/utils';
-
 export const INITIAL_DURATION = 500;
 
 export const inputDefs = {

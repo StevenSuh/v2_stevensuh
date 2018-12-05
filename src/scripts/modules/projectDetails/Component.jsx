@@ -21,6 +21,7 @@ const ProjectDetails = ({
 
   const {
     background,
+    backgroundClass,
     backgroundImg,
     backgroundImgClass,
     backgroundImgMobile,
@@ -30,18 +31,13 @@ const ProjectDetails = ({
 
   return (
     <div className={style.project_detail_wrapper}>
-      <div
-        className={classNames(style.project_detail_title_container)}
-        style={{
-          fontFamily,
-        }}
-      >
-        <h1>
+      <div className={classNames(style.project_detail_title_container)}>
+        <h1 style={{ fontFamily }}>
           {name}
         </h1>
       </div>
       <div
-        className={style.project_detail_bg}
+        className={classNames(style.project_detail_bg)}
         style={{
           background,
         }}
@@ -62,6 +58,7 @@ const ProjectDetails = ({
             />
           )
         }
+        <div className={classNames(style.project_detail_bg_overlay, ...backgroundClass)} />
       </div>
       <div className={style.project_detail_bg}>
       </div>

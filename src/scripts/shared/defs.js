@@ -97,6 +97,7 @@ export const PROJECTS = [
 
 export const ProjectDetailsType = PropTypes.shape({
   background: PropTypes.string.isRequired,
+  backgroundClass: PropTypes.arrayOf(PropTypes.string),
   backgroundImg: PropTypes.string,
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
   backgroundImgMobile: PropTypes.string,
@@ -107,6 +108,7 @@ export const ProjectDetailsType = PropTypes.shape({
 
 ProjectDetailsType.defaultProps = {
   backgroundImg: null,
+  backgroundClass: [],
   backgroundImgClass: [],
   backgroundImgMobile: null,
   fontFamily: null,
@@ -118,9 +120,10 @@ export const PROJECT_DETAILS = {
   },
   [AMAZON_NAME]: {
     background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
-    backgroundImg: '/assets/amazon-bg-details.png',
+    backgroundClass: [style.amazon_details_bg],
+    backgroundImg: '/assets/amazon-screenshot-1.png',
     backgroundImgClass: [style.amazon_details_bg_img],
-    backgroundImgMobile: '/assets/amazon-bg.png',
+    backgroundImgMobile: '/assets/amazon-screenshot-1-mobile.png',
     fontFamily: "'Amazon Ember', sans-serif",
     name: 'Amazon',
     type: TYPE_WORK,
