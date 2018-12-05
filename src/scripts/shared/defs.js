@@ -47,12 +47,12 @@ export const ProjectType = PropTypes.shape({
 export const PROJECTS = [
   {
     background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
-    backgroundImg: 'assets/affirm-bg.png',
+    backgroundImg: '/assets/affirm-bg.png',
     backgroundImgClass: [style.affirm_bg_img],
     boxShadow: '0 0 10px 1px rgba(15, 160, 234, 0.15)',
     description: 'Retail Engineering',
     id: AFFIRM,
-    logoImg: 'assets/affirm.svg',
+    logoImg: '/assets/affirm.svg',
     logoImgClass: [style.affirm_img],
     name: AFFIRM_NAME,
     textClass: [style.affirm_text],
@@ -60,45 +60,62 @@ export const PROJECTS = [
   },
   {
     background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
-    backgroundImg: 'assets/amazon-bg.png',
+    backgroundImg: '/assets/amazon-bg.png',
     backgroundImgClass: [style.amazon_bg_img],
     boxShadow: '0 0 10px 1px rgba(255, 170, 0, 0.4)',
     description: 'Hardlines Customer Experience',
     id: AMAZON,
-    logoImg: 'assets/amazon.png',
+    logoImg: '/assets/amazon.png',
     logoImgClass: [style.amazon_img],
     name: AMAZON_NAME,
     type: TYPE_WORK,
   },
   {
     background: 'linear-gradient(154deg, #008fe2 0%, #00b29c 100%)',
-    backgroundImgClass: [style.golink_bg_img],
     boxShadow: '0 0 10px 1px rgba(0, 178, 156, 0.4)',
     description: 'Software Engineer',
     id: GOLINKS,
-    logoImg: 'assets/golinks.png',
+    logoImg: '/assets/golinks.png',
     logoImgClass: [style.golinks_img],
     name: GOLINKS_NAME,
     type: TYPE_WORK,
   },
   {
     background: 'rgb(255, 138, 128)',
-    backgroundImgClass: [style.foodgo_bg_img],
     boxShadow: '0 0 10px 1px rgba(255, 138, 128, 0.4)',
     description: 'Restaurant Voting App',
     id: FOODGO,
-    logoImg: 'assets/foodgo.png',
+    logoImg: '/assets/foodgo.png',
     logoImgClass: [style.foodgo_img],
     name: FOODGO_NAME,
     type: TYPE_PROJECT,
   },
 ];
 
+export const ProjectDetailsType = PropTypes.shape({
+  background: PropTypes.string.isRequired,
+  backgroundImg: PropTypes.string,
+  backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
+  boxShadow: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, NONE]).isRequired,
+  logoImg: PropTypes.string.isRequired,
+  logoImgClass: PropTypes.arrayOf(PropTypes.string),
+  name: PropTypes.string.isRequired,
+  textClass: PropTypes.arrayOf(PropTypes.string),
+  type: PropTypes.string.isRequired,
+});
+
 export const PROJECT_DETAILS = {
   [AFFIRM_NAME]: {
     type: TYPE_WORK,
   },
   [AMAZON_NAME]: {
+    background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
+    backgroundImg: '/assets/amazon-bg-details.png',
+    backgroundImgClass: [style.amazon_details_bg_img],
+    fontFamily: "'Amazon Ember', sans-serif",
+    name: 'Amazon',
     type: TYPE_WORK,
   },
   [FOODGO_NAME]: {

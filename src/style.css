@@ -12,6 +12,7 @@
 
   --dark-color: #191919;
   --white-color: #f6f6f6;
+  --gray-color: #d7d7d7;
   --pure-white: #ffffff;
 }
 
@@ -49,6 +50,10 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+hr {
+  background-color: var(--gray-color);
+}
+
 body,
 h1,
 h2,
@@ -70,6 +75,7 @@ a {
 div,
 header {
   box-sizing: border-box;
+  position: relative;
 }
 
 .transition-group {

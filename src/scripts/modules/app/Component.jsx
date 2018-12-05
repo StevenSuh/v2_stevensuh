@@ -71,7 +71,7 @@ const App = ({
                 appear
                 classNames="reveal"
                 key={project.id}
-                timeout={200}
+                timeout={400}
               >
                 <ProjectRow
                   key={project.id}

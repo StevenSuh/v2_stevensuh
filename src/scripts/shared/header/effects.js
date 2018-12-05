@@ -5,23 +5,23 @@ import headerStyle from 'src/scripts/shared/header/style.module.css';
 export const onScrollLanding = function() {
   const header = document.getElementById(sharedDefs.HEADER);
 
-  const currentPosition = window.scrollY || window.scrollTop;
-
   if (!header) {
     return;
   }
 
-  if (currentPosition >= window.innerHeight) {
+  const currentPosition = window.scrollY || window.scrollTop;
+
+  const { pathname } = this.props.location;
+  const isLanding = pathname === '/';
+
+  const distance = isLanding ? window.innerHeight : 350;
+  const diff = isLanding ? 120 : 0;
+
+  if (currentPosition >= (distance - diff)) {
     header.classList.add(headerStyle.scrolled);
-    header.classList.add(headerStyle.scrolledTwo);
-  } else if (currentPosition >= (window.innerHeight - 120)) {
-    header.classList.add(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
-  } else if (currentPosition >= (window.innerHeight / 2)) {
+  } else if (currentPosition >= (distance / 2)) {
     header.classList.remove(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
   } else {
     header.classList.remove(headerStyle.scrolled);
-    header.classList.remove(headerStyle.scrolledTwo);
   }
 };

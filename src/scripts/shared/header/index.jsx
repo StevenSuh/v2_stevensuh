@@ -12,12 +12,18 @@ import style from './style.module.css';
 import sharedStyle from 'src/scripts/shared/style.module.css';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onScrollLanding = onScrollLanding.bind(this);
+  }
+
   componentWillMount() {
-    window.addEventListener('scroll', onScrollLanding);
+    window.addEventListener('scroll', this.onScrollLanding);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', onScrollLanding);
+    window.removeEventListener('scroll', this.onScrollLanding);
   }
 
   render() {

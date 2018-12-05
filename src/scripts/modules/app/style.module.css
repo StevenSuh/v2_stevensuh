@@ -122,16 +122,6 @@
   height: 80px;
 }
 
-.project_container {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-  position: relative;
-  width: 90%;
-}
-
 .project_wrapper {
   background-color: var(--pure-white);
   padding-bottom: 130px;
@@ -140,7 +130,7 @@
 .about_me {
   background-color: var(--pure-white);
   font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
-  height: 550px;
+  height: 400px;
   width: 100%;
 }
 
@@ -149,8 +139,9 @@
 }
 
 .about_container {
-  display: flex;
   align-items: flex-end;
+  display: flex;
+  width: 65%;
 }
 
 .about_h1 {
@@ -169,16 +160,16 @@
 }
 
 .about_h2_my_name {
-  font-size: 29px;
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: -1.5px;
-  text-decoration: underline;
+  letter-spacing: -2px;
 }
 
 .filter_container {
   font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
   font-size: 18px;
   margin-bottom: 100px;
+  width: 65%;
 }
 
 .filter_span {
@@ -195,8 +186,14 @@
   opacity: 1 !important;
 }
 
+.project_container {
+  margin: auto;
+  position: relative;
+  width: 65%;
+}
+
 .project_row_wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 150px;
   position: relative;
   z-index: 1;
 }
@@ -211,10 +208,11 @@
 
 .project_row_img_container {
   display: block;
-  height: 24.5vw;
+  height: 50vw;
   margin-bottom: 20px;
+  overflow: hidden;
   position: relative;
-  width: 28vw;
+  width: 100%;
   z-index: 1;
 }
 
@@ -238,10 +236,12 @@
 }
 
 .project_row_img_bg_container {
-  height: 100%;
+  height: calc(100% + 2px);
+  left: -1px;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  top: -1px;
+  width: calc(100% + 2px);
 }
 
 .project_row_container {
@@ -293,7 +293,7 @@
 .affirm_a {
   color: #0fa0ea;
   font-family: 'Proxima Nova', sans-serif;
-  font-size: 32px;
+  font-size: 31px;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -397,7 +397,7 @@
   }
 
   .project_row_img_container {
-    height: 90vw;
+    height: 87.5vw;
     margin-bottom: 0;
     width: 100%;
   }

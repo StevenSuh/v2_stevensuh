@@ -40,3 +40,10 @@
 .foodgo_img {
   height: 20%;
 }
+
+.amazon_details_bg_img {
+  opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
