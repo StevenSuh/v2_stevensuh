@@ -21,7 +21,6 @@ class ProjectRow extends React.Component {
         backgroundImg = null,
         backgroundImgClass = [],
         backgroundImgMobile = null,
-        boxShadow,
         description,
         id,
         logoImg,
@@ -65,10 +64,6 @@ class ProjectRow extends React.Component {
             alt={`${name} logo`}
             className={classNames(style.project_row_img, ...logoImgClass)}
             src={logoImg}
-          />
-          <div
-            className={style.project_row_img_box_shadow}
-            style={{ boxShadow }}
           />
         </Link>
         <div className={classNames(style.project_row_container)}>

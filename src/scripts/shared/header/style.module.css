@@ -4,7 +4,7 @@
   padding: 40px 0;
   overflow: hidden;
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -13,7 +13,14 @@
 }
 
 .scrolled {
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 10px 0;
+  position: fixed;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%) }
+  to { transform: translateY(0) }
 }
 
 .scrolled .logo,

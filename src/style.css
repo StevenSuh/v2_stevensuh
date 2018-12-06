@@ -71,8 +71,7 @@ a {
   text-decoration: none;
 }
 
-div,
-header {
+* {
   box-sizing: border-box;
   position: relative;
 }

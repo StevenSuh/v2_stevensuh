@@ -114,7 +114,7 @@
 
 .project_wrapper {
   background-color: var(--pure-white);
-  padding-bottom: 130px;
+  padding-bottom: 160px;
 }
 
 .about_container,
@@ -125,11 +125,11 @@
 .about_container,
 .filter_container,
 .project_container {
-  width: 1000px;
+  width: 900px;
 }
 
 .project_row_img_container {
-  height: 675px;
+  height: 607.5px;
 }
 
 .about_me {
@@ -377,10 +377,11 @@
 }
 
 .amazon_bg_img {
-  opacity: 0.7;
+  bottom: 2px;
+  left: 3px;
+  opacity: 0.6;
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  width: calc(100% - 6px);
 }
 
 .golinks_img {
@@ -395,11 +396,11 @@
   .about_container,
   .filter_container,
   .project_container {
-    width: 80%;
+    width: 70%;
   }
 
   .project_row_img_container {
-    height: 54vw;
+    height: 47.25vw;
   }
 }
 

@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom';
 import * as defs from './defs';
 import { ProjectDetailsType } from 'src/scripts/shared/defs';
 
-import sharedStyle from 'src/scripts/shared/style.module.css';
 import style from './style.module.css';
 
 const ProjectDetails = ({
@@ -24,11 +23,6 @@ const ProjectDetails = ({
   const {
     background: {
       classes: bgClasses,
-      img: {
-        classes: bgImgClasses,
-        src: bgImgSrc,
-        srcMobile: bgImgMobileSrc,
-      },
       style: bgStyle,
     },
     bodyElements,
@@ -41,50 +35,30 @@ const ProjectDetails = ({
   return (
     <div className={style.project_detail_wrapper}>
       <div
-        className={classNames(style.project_detail_bg)}
+        className={classNames(style.project_detail_bg, ...bgClasses)}
         id={defs.DETAILS_BG}
         style={bgStyle}
       >
-        {isDesktop ? (
-          bgImgSrc && (
-            <img
-              alt={`${projectName} background`}
-              className={classNames(style.project_detail_bg_img, ...bgImgClasses)}
-              src={bgImgSrc}
-            />
-          )
-        ) : (
-          bgImgMobileSrc && (
-            <img
-              alt={`${projectName} background`}
-              className={classNames(style.project_detail_bg_img, ...bgImgClasses)}
-              src={bgImgMobileSrc}
-            />
-          )
-        )}
-        <div className={classNames(style.project_detail_bg_overlay, ...bgClasses)} />
-      </div>
-      <div className={classNames(style.project_detail_title_container)}>
-        <span>
-          <img
-            alt={`${projectName} logo`}
-            className={classNames(style.project_detail_title_img, ...logoClasses)}
-            src={logoSrc}
-          />
-        </span>
+        <img
+          alt={`${projectName} logo`}
+          className={classNames(style.project_detail_logo, ...logoClasses)}
+          src={logoSrc}
+        />
       </div>
       <div className={style.project_detail_body}>
         {bodyElements.map(
           ({
             classes,
+            classesMobile,
             content,
             src,
+            srcMobile,
             tagName: $TagName,
           }, index) => (
             <$TagName
-              className={classNames(...classes)}
+              className={classNames(...(isDesktop ? classes : classesMobile))}
               key={index}
-              src={src}
+              src={isDesktop ? src : srcMobile}
             >
               {content}
             </$TagName>

@@ -26,6 +26,9 @@ export const FOODGO_NAME = 'foodgo';
 export const GOLINKS = 'work-golinks';
 export const GOLINKS_NAME = 'golinks';
 
+export const ONCAREER = 'project-oncareer';
+export const ONCAREER_NAME = 'oncareer';
+
 export const NONE = 'project-none';
 
 export const TYPE_PROJECT = '/project';
@@ -37,9 +40,8 @@ export const ProjectType = PropTypes.shape({
   backgroundImg: PropTypes.string,
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
   backgroundImgMobile: PropTypes.string,
-  boxShadow: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, NONE]).isRequired,
+  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, ONCAREER, NONE]).isRequired,
   logoImg: PropTypes.string.isRequired,
   logoImgClass: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string.isRequired,
@@ -53,7 +55,6 @@ export const PROJECTS = [
     backgroundImg: '/assets/affirm-bg-details.png',
     backgroundImgClass: [appStyle.affirm_bg_img],
     backgroundImgMobile: '/assets/affirm-bg.png',
-    boxShadow: '0 0 10px 1px rgba(15, 160, 234, 0.15)',
     description: 'Retail Engineering',
     id: AFFIRM,
     logoImg: '/assets/affirm.svg',
@@ -67,7 +68,6 @@ export const PROJECTS = [
     backgroundImg: '/assets/amazon-bg-details.png',
     backgroundImgClass: [appStyle.amazon_bg_img],
     backgroundImgMobile: '/assets/amazon-bg.png',
-    boxShadow: '0 0 10px 1px rgba(255, 170, 0, 0.4)',
     description: 'Hardlines Customer Experience',
     id: AMAZON,
     logoImg: '/assets/amazon.png',
@@ -77,7 +77,6 @@ export const PROJECTS = [
   },
   {
     background: 'linear-gradient(154deg, #008fe2 0%, #00b29c 100%)',
-    boxShadow: '0 0 10px 1px rgba(0, 178, 156, 0.4)',
     description: 'Software Engineer',
     id: GOLINKS,
     logoImg: '/assets/golinks.png',
@@ -87,7 +86,6 @@ export const PROJECTS = [
   },
   {
     background: 'rgb(255, 138, 128)',
-    boxShadow: '0 0 10px 1px rgba(255, 138, 128, 0.4)',
     description: 'Restaurant Voting App',
     id: FOODGO,
     logoImg: '/assets/foodgo.png',
@@ -97,27 +95,26 @@ export const PROJECTS = [
   },
 ];
 
-const BodyElementType = PropTypes.shape({
+export const BodyElementType = PropTypes.shape({
   classes: PropTypes.arrayOf(PropTypes.string),
+  classesMobile: PropTypes.arrayOf(PropTypes.string),
   content: PropTypes.string,
   src: PropTypes.string,
-  tagName: PropTypes.oneOf(['h2', 'img', 'p']).isRequired,
+  srcMobile: PropTypes.string,
+  tagName: PropTypes.oneOf(['h2', 'img', 'p', 'span']).isRequired,
 });
 
 BodyElementType.defaultProps = {
   classes: [],
+  classesMobile: [],
   content: null,
   src: null,
+  srcMobile: null,
 };
 
 export const ProjectDetailsType = PropTypes.shape({
   background: PropTypes.shape({
     classes: PropTypes.arrayOf(PropTypes.string),
-    img: PropTypes.shape({
-      classes: PropTypes.arrayOf(PropTypes.string),
-      src: PropTypes.string,
-      srcMobile: PropTypes.string,
-    }),
     style: PropTypes.objectOf(PropTypes.string).isRequired,
   }).isRequired,
   bodyElements: PropTypes.arrayOf(BodyElementType).isRequired,
@@ -150,25 +147,62 @@ export const PROJECT_DETAILS = {
   [AMAZON_NAME]: {
     background: {
       classes: [detailsStyle.amazon_detail_bg],
-      img: {
-        classes: [detailsStyle.amazon_detail_bg_img],
-        src: '/assets/amazon-screenshot-1.png',
-        srcMobile: '/assets/amazon-screenshot-1-mobile.png',
-      },
       style: {
         background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
       },
     },
     bodyElements: [
       {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        content: '06/2018 - 09/2018\nSeattle, WA',
+        tagName: 'p',
+      },
+      {
         classes: [detailsStyle.project_detail_p],
-        content: 'hello world',
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'In 2018, I was given the opportunity to work as a Software Development Engineer intern at Amazon. ' +
+          'During my internship, I worked in Hardlines Customer Experience, which focuses on building customer-centric ' +
+          'products and features within Amazon.com.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/amazon-screenshot-1.png',
+        srcMobile: '/assets/amazon-screenshot-1-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Amazon.com product detail page.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/amazon-screenshot-2.png',
+        srcMobile: '/assets/amazon-screenshot-2-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Save or Upgrade widget that my team owned.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'As part of product-centric a team, I got to learn a lot of product-driven software engineering. ' +
+          '',
         tagName: 'p',
       },
     ],
     logo: {
       classes: [detailsStyle.amazon_detail_img],
-      src: '/assets/amazon-dark.svg',
+      src: '/assets/amazon.png',
     },
     name: 'Amazon',
     type: TYPE_WORK,

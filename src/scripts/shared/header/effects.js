@@ -14,10 +14,9 @@ export const onScrollLanding = function() {
   const { pathname } = this.props.location;
   const isLanding = pathname === '/';
 
-  const distance = isLanding ? window.innerHeight : 350;
-  const diff = isLanding ? 120 : 0;
+  const distance = isLanding ? window.innerHeight : 570;
 
-  if (currentPosition >= (distance - diff)) {
+  if (currentPosition >= distance) {
     header.classList.add(headerStyle.scrolled);
   } else if (currentPosition >= (distance / 2)) {
     header.classList.remove(headerStyle.scrolled);
