@@ -142,6 +142,17 @@ ProjectDetailsType.defaultProps = {
 
 export const PROJECT_DETAILS = {
   [AFFIRM_NAME]: {
+    background: {
+      classes: [detailsStyle.affirm_detail_bg],
+      style: {
+        background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
+      },
+    },
+    logo: {
+      classes: [detailsStyle.affirm_detail_img],
+      src: '/assets/affirm.png',
+    },
+    name: 'Affirm',
     type: TYPE_WORK,
   },
   [AMAZON_NAME]: {

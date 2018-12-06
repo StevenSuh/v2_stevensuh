@@ -67,10 +67,6 @@ const ProjectDetails = ({
       </div>
       <div className={style.project_detail_bg}>
       </div>
-      <div className={style.project_detail_bg}>
-      </div>
-      <div className={style.project_detail_bg}>
-      </div>
     </div>
   );
 };
