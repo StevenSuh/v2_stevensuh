@@ -101,7 +101,7 @@ export const BodyElementType = PropTypes.shape({
   content: PropTypes.string,
   src: PropTypes.string,
   srcMobile: PropTypes.string,
-  tagName: PropTypes.oneOf(['h2', 'img', 'p', 'span']).isRequired,
+  tagName: PropTypes.oneOf(['h2', 'img', 'li', 'p', 'span', 'ul']).isRequired,
 });
 
 BodyElementType.defaultProps = {
@@ -206,8 +206,41 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_p],
         classesMobile: [detailsStyle.project_detail_p],
-        content: 'As part of a product-centric team, I got to learn a lot of product-driven software engineering. ' +
-          '',
+        content: 'As part of a product-centric team, I got to learn a lot of product-driven engineering. During my time at Amazon, ' +
+          'I worked on the widget above, which operated on a stack of its own. Due to its stack, I learned the entire spectrum of ' +
+          'the architecture of a product and the required tooling for execution.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'More specific to our team\'s widget, I had the chance to dive deeper into its selection flow, which I got to ' +
+          'modify to improve various numbers and add numerous features. By the end of the internship, I was able to ship my work, ' +
+          'which was projected to output millions in revenue yearly.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        content: 'Some of the most important takeaways:',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'How numerous organizations collaborate to build a product',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'Importance behind business context in development',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        content: 'Overall development knowledge (testing, CI/CD, ...)',
         tagName: 'p',
       },
     ],
