@@ -195,7 +195,7 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_p],
         classesMobile: [detailsStyle.project_detail_p],
-        content: 'As part of product-centric a team, I got to learn a lot of product-driven software engineering. ' +
+        content: 'As part of a product-centric team, I got to learn a lot of product-driven software engineering. ' +
           '',
         tagName: 'p',
       },
