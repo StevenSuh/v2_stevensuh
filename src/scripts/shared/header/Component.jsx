@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import { onScrollLanding } from './effects';
 import * as utils from 'src/scripts/shared/utils';
@@ -45,7 +44,6 @@ class Header extends React.Component {
         id={HEADER}
       >
         <div className={sharedStyle.container}>
-          <div className={style.logo_bg} />
           <Link
             className={classNames(style.logo, sharedStyle.hover)}
             id={HEADER_LOGO}

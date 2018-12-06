@@ -27,7 +27,7 @@ class MainAnimation extends React.Component {
   }
 
   componentWillUnmount() {
-    window.addEventListener('resize', this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   onResize() {

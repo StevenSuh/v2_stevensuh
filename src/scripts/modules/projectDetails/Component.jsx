@@ -3,7 +3,9 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
+import * as defs from './defs';
 import { ProjectDetailsType } from 'src/scripts/shared/defs';
+
 import sharedStyle from 'src/scripts/shared/style.module.css';
 import style from './style.module.css';
 
@@ -20,45 +22,78 @@ const ProjectDetails = ({
   }
 
   const {
-    background,
-    backgroundClass,
-    backgroundImg,
-    backgroundImgClass,
-    backgroundImgMobile,
-    fontFamily,
-    name,
+    background: {
+      classes: bgClasses,
+      img: {
+        classes: bgImgClasses,
+        src: bgImgSrc,
+        srcMobile: bgImgMobileSrc,
+      },
+      style: bgStyle,
+    },
+    bodyElements,
+    logo: {
+      classes: logoClasses,
+      src: logoSrc,
+    },
   } = project;
 
   return (
     <div className={style.project_detail_wrapper}>
-      <div className={classNames(style.project_detail_title_container)}>
-        <h1 style={{ fontFamily }}>
-          {name}
-        </h1>
-      </div>
       <div
         className={classNames(style.project_detail_bg)}
-        style={{
-          background,
-        }}
+        id={defs.DETAILS_BG}
+        style={bgStyle}
       >
-        {isDesktop ?
-          backgroundImg && (
+        {isDesktop ? (
+          bgImgSrc && (
             <img
               alt={`${projectName} background`}
-              className={classNames(style.project_detail_bg_img, ...backgroundImgClass)}
-              src={backgroundImg}
-            />
-          ) :
-          backgroundImgMobile && (
-            <img
-              alt={`${projectName} background`}
-              className={classNames(style.project_detail_bg_img, ...backgroundImgClass)}
-              src={backgroundImgMobile}
+              className={classNames(style.project_detail_bg_img, ...bgImgClasses)}
+              src={bgImgSrc}
             />
           )
-        }
-        <div className={classNames(style.project_detail_bg_overlay, ...backgroundClass)} />
+        ) : (
+          bgImgMobileSrc && (
+            <img
+              alt={`${projectName} background`}
+              className={classNames(style.project_detail_bg_img, ...bgImgClasses)}
+              src={bgImgMobileSrc}
+            />
+          )
+        )}
+        <div className={classNames(style.project_detail_bg_overlay, ...bgClasses)} />
+      </div>
+      <div className={classNames(style.project_detail_title_container)}>
+        <span>
+          <img
+            alt={`${projectName} logo`}
+            className={classNames(style.project_detail_title_img, ...logoClasses)}
+            src={logoSrc}
+          />
+        </span>
+      </div>
+      <div className={style.project_detail_body}>
+        {bodyElements.map(
+          ({
+            classes,
+            content,
+            src,
+            tagName: $TagName,
+          }, index) => (
+            <$TagName
+              className={classNames(...classes)}
+              key={index}
+              src={src}
+            >
+              {content}
+            </$TagName>
+          ),
+        )}
+      </div>
+      <div className={style.project_detail_bg}>
+      </div>
+      <div className={style.project_detail_bg}>
       </div>
       <div className={style.project_detail_bg}>
       </div>

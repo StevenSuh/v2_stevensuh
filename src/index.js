@@ -12,6 +12,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import App from 'src/scripts/modules/app/Container';
 import Header from 'src/scripts/shared/header/Container';
 import ProjectDetails from 'src/scripts/modules/projectDetails/Container';
+import ScrollBar from 'src/scripts/shared/scrollBar/Component';
 import ScrollToTop from 'src/scripts/hoc/scrollToTop';
 
 import store from 'src/scripts/config/setup';
@@ -32,6 +33,7 @@ window.onload = () => {
                 appear
                 classNames="reveal"
                 timeout={400}
+                unmountOnExit
               >
                 <Header location={location} />
               </CSSTransition>
@@ -40,8 +42,10 @@ window.onload = () => {
                 classNames="reveal"
                 key={location.key + '-main'}
                 timeout={400}
+                unmountOnExit
               >
                 <div className="transition-group">
+                  <ScrollBar pathname={location.pathname} />
                   <Switch
                     key={location.key}
                     location={location}

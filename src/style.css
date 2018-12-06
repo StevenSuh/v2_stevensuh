@@ -36,7 +36,6 @@ html,
 #root {
   color: var(--dark-color);
   font-family: 'Menlo', monaco, 'Courier New', Courier, monospace;
-  height: 100%;
   letter-spacing: -0.5px;
   position: relative;
   width: 100%;

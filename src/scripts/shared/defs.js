@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
 import style from './style.module.css';
+import appStyle from 'src/scripts/modules/app/style.module.css';
+import detailsStyle from 'src/scripts/modules/projectDetails/style.module.css';
 
 export const CURSOR = 'cursor-element';
 export const HEADER = 'header-element';
@@ -49,27 +51,27 @@ export const PROJECTS = [
   {
     background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
     backgroundImg: '/assets/affirm-bg-details.png',
-    backgroundImgClass: [style.affirm_bg_img],
+    backgroundImgClass: [appStyle.affirm_bg_img],
     backgroundImgMobile: '/assets/affirm-bg.png',
     boxShadow: '0 0 10px 1px rgba(15, 160, 234, 0.15)',
     description: 'Retail Engineering',
     id: AFFIRM,
     logoImg: '/assets/affirm.svg',
-    logoImgClass: [style.affirm_img],
+    logoImgClass: [appStyle.affirm_img],
     name: AFFIRM_NAME,
-    textClass: [style.affirm_text],
+    textClass: [appStyle.affirm_text],
     type: TYPE_WORK,
   },
   {
     background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
     backgroundImg: '/assets/amazon-bg-details.png',
-    backgroundImgClass: [style.amazon_bg_img],
+    backgroundImgClass: [appStyle.amazon_bg_img],
     backgroundImgMobile: '/assets/amazon-bg.png',
     boxShadow: '0 0 10px 1px rgba(255, 170, 0, 0.4)',
     description: 'Hardlines Customer Experience',
     id: AMAZON,
     logoImg: '/assets/amazon.png',
-    logoImgClass: [style.amazon_img],
+    logoImgClass: [appStyle.amazon_img],
     name: AMAZON_NAME,
     type: TYPE_WORK,
   },
@@ -79,7 +81,7 @@ export const PROJECTS = [
     description: 'Software Engineer',
     id: GOLINKS,
     logoImg: '/assets/golinks.png',
-    logoImgClass: [style.golinks_img],
+    logoImgClass: [appStyle.golinks_img],
     name: GOLINKS_NAME,
     type: TYPE_WORK,
   },
@@ -89,29 +91,56 @@ export const PROJECTS = [
     description: 'Restaurant Voting App',
     id: FOODGO,
     logoImg: '/assets/foodgo.png',
-    logoImgClass: [style.foodgo_img],
+    logoImgClass: [appStyle.foodgo_img],
     name: FOODGO_NAME,
     type: TYPE_PROJECT,
   },
 ];
 
+const BodyElementType = PropTypes.shape({
+  classes: PropTypes.arrayOf(PropTypes.string),
+  content: PropTypes.string,
+  src: PropTypes.string,
+  tagName: PropTypes.oneOf(['h2', 'img', 'p']).isRequired,
+});
+
+BodyElementType.defaultProps = {
+  classes: [],
+  content: null,
+  src: null,
+};
+
 export const ProjectDetailsType = PropTypes.shape({
-  background: PropTypes.string.isRequired,
-  backgroundClass: PropTypes.arrayOf(PropTypes.string),
-  backgroundImg: PropTypes.string,
-  backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
-  backgroundImgMobile: PropTypes.string,
-  fontFamily: PropTypes.string,
+  background: PropTypes.shape({
+    classes: PropTypes.arrayOf(PropTypes.string),
+    img: PropTypes.shape({
+      classes: PropTypes.arrayOf(PropTypes.string),
+      src: PropTypes.string,
+      srcMobile: PropTypes.string,
+    }),
+    style: PropTypes.objectOf(PropTypes.string).isRequired,
+  }).isRequired,
+  bodyElements: PropTypes.arrayOf(BodyElementType).isRequired,
+  logo: PropTypes.shape({
+    classes: PropTypes.arrayOf(PropTypes.string),
+    src: PropTypes.string.isRequired,
+  }).isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 });
 
 ProjectDetailsType.defaultProps = {
-  backgroundImg: null,
-  backgroundClass: [],
-  backgroundImgClass: [],
-  backgroundImgMobile: null,
-  fontFamily: null,
+  background: {
+    classes: [],
+    img: {
+      classes: [],
+      src: null,
+      srcMobile: null,
+    },
+  },
+  logo: {
+    classes: [],
+  },
 };
 
 export const PROJECT_DETAILS = {
@@ -119,12 +148,28 @@ export const PROJECT_DETAILS = {
     type: TYPE_WORK,
   },
   [AMAZON_NAME]: {
-    background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
-    backgroundClass: [style.amazon_details_bg],
-    backgroundImg: '/assets/amazon-screenshot-1.png',
-    backgroundImgClass: [style.amazon_details_bg_img],
-    backgroundImgMobile: '/assets/amazon-screenshot-1-mobile.png',
-    fontFamily: "'Amazon Ember', sans-serif",
+    background: {
+      classes: [detailsStyle.amazon_detail_bg],
+      img: {
+        classes: [detailsStyle.amazon_detail_bg_img],
+        src: '/assets/amazon-screenshot-1.png',
+        srcMobile: '/assets/amazon-screenshot-1-mobile.png',
+      },
+      style: {
+        background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
+      },
+    },
+    bodyElements: [
+      {
+        classes: [detailsStyle.project_detail_p],
+        content: 'hello world',
+        tagName: 'p',
+      },
+    ],
+    logo: {
+      classes: [detailsStyle.amazon_detail_img],
+      src: '/assets/amazon-dark.svg',
+    },
     name: 'Amazon',
     type: TYPE_WORK,
   },

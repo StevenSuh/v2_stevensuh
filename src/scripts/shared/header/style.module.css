@@ -1,11 +1,13 @@
 .header {
   font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
   left: 0;
-  padding: 40px 0 20px;
+  padding: 40px 0;
   overflow: hidden;
   pointer-events: none;
   position: fixed;
   top: 0;
+  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   width: 100vw;
   z-index: 100;
 }
@@ -33,17 +35,6 @@
   transform-origin: 0;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.1s cubic-bezier(0.5, 0, 0.5, 1);
-  width: 60px;
-}
-
-.logo_bg {
-  background-color: var(--pure-white);
-  height: 60px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform-origin: 0;
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 60px;
 }
 

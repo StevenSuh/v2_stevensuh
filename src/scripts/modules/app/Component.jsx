@@ -73,6 +73,7 @@ const App = ({
                 classNames="reveal"
                 key={project.id}
                 timeout={400}
+                unmountOnExit
               >
                 <ProjectRow
                   key={project.id}
