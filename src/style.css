@@ -49,6 +49,11 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+a:focus,
+button:focus {
+  outline: 0;
+}
+
 hr {
   background-color: var(--gray-color);
 }

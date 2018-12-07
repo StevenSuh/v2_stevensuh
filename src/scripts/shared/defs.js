@@ -123,6 +123,7 @@ export const ProjectDetailsType = PropTypes.shape({
     src: PropTypes.string.isRequired,
   }).isRequired,
   name: PropTypes.string.isRequired,
+  pathname: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 });
 
@@ -153,6 +154,7 @@ export const PROJECT_DETAILS = {
       src: '/assets/affirm.png',
     },
     name: 'Affirm',
+    pathname: '/work/affirm',
     type: TYPE_WORK,
   },
   [AMAZON_NAME]: {
@@ -200,60 +202,86 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
         classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
-        content: 'Save or Upgrade widget that my team owned.',
+        content: 'Save or Upgrade widget on detail page.',
         tagName: 'span',
       },
       {
         classes: [detailsStyle.project_detail_p],
         classesMobile: [detailsStyle.project_detail_p],
-        content: 'As part of a product-centric team, I got to learn a lot of product-driven engineering. During my time at Amazon, ' +
-          'I worked on the widget above, which operated on a stack of its own. Due to its stack, I learned the entire spectrum of ' +
-          'the architecture of a product and the required tooling for execution.',
+        content: 'As part of a product-centric team, I got to learn a lot of product-driven software engineering. During my time at Amazon, ' +
+          'I worked on the widget above, which operated as a microservice architecture. While learning the architecture + business context of ' +
+          'the widget, I also got to learn the advanced tooling + frameworks needed to iterate on the widget.',
         tagName: 'p',
       },
       {
         classes: [detailsStyle.project_detail_p],
         classesMobile: [detailsStyle.project_detail_p],
-        content: 'More specific to our team\'s widget, I had the chance to dive deeper into its selection flow, which I got to ' +
-          'modify to improve various numbers and add numerous features. By the end of the internship, I was able to ship my work, ' +
-          'which was projected to output millions in revenue yearly.',
+        content: 'More specific to my work, I had the chance to dive deeper into its selection algorithm, which I got to ' +
+          'modify a lot to improve its performance and add additional features planned on the roadmap. By the end of the internship, ' +
+          'I was able to ship my work after thorough A/B testing, which was projected to output millions in revenue yearly.',
         tagName: 'p',
       },
       {
-        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
-        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
-        content: 'Some of the most important takeaways:',
-        tagName: 'p',
-      },
-      {
-        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
-        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
-        content: 'How numerous organizations collaborate to build a product',
-        tagName: 'p',
-      },
-      {
-        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
-        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
-        content: 'Importance behind business context in development',
-        tagName: 'p',
-      },
-      {
-        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
-        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
-        content: 'Overall development knowledge (testing, CI/CD, ...)',
-        tagName: 'p',
-      },
-      {
-        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
         classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
-        src: '/assets/amazon-screenshot-2.png',
-        srcMobile: '/assets/amazon-screenshot-2-mobile.png',
+        src: '/assets/amazon-pic-3.png',
+        srcMobile: '/assets/amazon-pic-3.png',
         tagName: 'img',
       },
       {
         classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
         classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
-        content: 'Some caption.',
+        content: 'Not so sunny picture of dog park.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/amazon-pic-1.png',
+        srcMobile: '/assets/amazon-pic-1.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'My badge at Amazon.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_h2, detailsStyle.project_detail_list],
+        classesMobile: [detailsStyle.project_detail_h2, detailsStyle.project_detail_list],
+        content: 'Some key takeaways:',
+        tagName: 'h2',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.first],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.first],
+        content: 'How numerous organizations collaborate and function',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'Importance behind business context in building a product',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        content: 'Overall development knowledge (software testing, CI/CD, A/B testing, ...)',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        src: '/assets/amazon-pic-2.png',
+        srcMobile: '/assets/amazon-pic-2.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Martha Lake in the north of Seattle.',
         tagName: 'span',
       },
     ],
@@ -262,12 +290,15 @@ export const PROJECT_DETAILS = {
       src: '/assets/amazon.png',
     },
     name: 'Amazon',
+    pathname: '/work/amazon',
     type: TYPE_WORK,
   },
   [FOODGO_NAME]: {
+    pathname: '/project/foodgo',
     type: TYPE_PROJECT,
   },
   [GOLINKS_NAME]: {
+    pathname: '/project/golinks',
     type: TYPE_WORK,
   },
 };

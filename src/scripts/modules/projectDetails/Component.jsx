@@ -3,6 +3,9 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
+import ContactMe from 'src/scripts/shared/contactMe';
+import EnlargeImg from './components/enlargeImg';
+
 import * as defs from './defs';
 import { ProjectDetailsType } from 'src/scripts/shared/defs';
 
@@ -10,10 +13,15 @@ import style from './style.module.css';
 
 const ProjectDetails = ({
   isDesktop,
+  isModalOpen,
   match: {
     params: { projectName },
     url,
   },
+  modalImgSrc,
+  onChangeModalImgSrc,
+  onCloseModal,
+  onCloseModalOnEsc,
   project = null,
 }) => {
   if (!project || !url.startsWith(project.type)) {
@@ -53,19 +61,33 @@ const ProjectDetails = ({
             content,
             src,
             srcMobile,
-            tagName: $TagName,
+            tagName: TagName,
           }, index) => (
-            <$TagName
-              className={classNames(...(isDesktop ? classes : classesMobile))}
+            <EnlargeImg
               key={index}
-              src={isDesktop ? src : srcMobile}
+              onChangeModalImgSrc={onChangeModalImgSrc}
+              onCloseModalOnEsc={onCloseModalOnEsc}
             >
-              {content}
-            </$TagName>
+              <TagName
+                className={classNames(...(isDesktop ? classes : classesMobile))}
+                src={isDesktop ? src : srcMobile}
+              >
+                {content}
+              </TagName>
+            </EnlargeImg>
           ),
         )}
       </div>
-      <div className={style.project_detail_bg}>
+      <ContactMe />
+      <div
+        className={classNames(style.project_detail_modal, isModalOpen ? style.show : '')}
+        onClick={onCloseModal}
+      >
+        <div className={style.project_detail_modal_bg}/>
+        <img
+          alt={`zoomed in pic of ${modalImgSrc}`}
+          src={modalImgSrc}
+        />
       </div>
     </div>
   );

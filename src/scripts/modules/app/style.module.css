@@ -114,7 +114,7 @@
 
 .project_wrapper {
   background-color: var(--pure-white);
-  padding-bottom: 160px;
+  padding-bottom: 120px;
 }
 
 .about_container,
@@ -336,33 +336,6 @@
   background: var(--project-foodgo-bg);
 }
 
-.contact_me {
-  height: 200px;
-  padding: 50px 0;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-
-.contact_me_p {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 16px;
-  opacity: 1;
-}
-
-.contact_me_p:hover {
-  opacity: 0.5;
-}
-
-.contact_me_span {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 16px;
-  margin: 0 15px;
-  opacity: 0.3;
-}
-
 .affirm_img {
   height: 25%;
 }
@@ -406,7 +379,7 @@
 
 @media only screen and (max-width: 416px) {
   .project_wrapper {
-    padding-bottom: 0;
+    padding-bottom: 40px;
   }
 
   .about_me {
@@ -447,9 +420,5 @@
 
   .project_row_img_box_shadow {
     opacity: 0;
-  }
-
-  .contact_me {
-    height: 170px;
   }
 }

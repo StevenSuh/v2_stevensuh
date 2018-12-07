@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 import AboutMe from './components/aboutMe';
+import ContactMe from 'src/scripts/shared/contactMe';
 import MainAnimation from './components/mainAnimation';
 import ProjectRow from './components/projectRow';
 
@@ -86,6 +87,7 @@ const App = ({
         </TransitionGroup>
       </div>
     </div>
+    <ContactMe />
   </div>
 );
 

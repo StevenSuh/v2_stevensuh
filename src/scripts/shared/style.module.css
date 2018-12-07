@@ -12,3 +12,20 @@
 .hover:hover {
   opacity: 0.5;
 }
+
+.contact_me {
+  display: block;
+  font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
+  font-size: 18px;
+  line-height: 2em;
+  margin: auto;
+  padding: 50px 0 100px;
+  position: relative;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.contact_me > span > a {
+  cursor: pointer;
+  font-weight: 500;
+}
