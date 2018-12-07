@@ -243,6 +243,19 @@ export const PROJECT_DETAILS = {
         content: 'Overall development knowledge (testing, CI/CD, ...)',
         tagName: 'p',
       },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/amazon-screenshot-2.png',
+        srcMobile: '/assets/amazon-screenshot-2-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Some caption.',
+        tagName: 'span',
+      },
     ],
     logo: {
       classes: [detailsStyle.amazon_detail_img],
