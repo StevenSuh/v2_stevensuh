@@ -66,11 +66,11 @@ export const doOneStep = (elems, index) => {
         elems.wrapper.style.width = '0px';
         elems.container.classList.remove(style.blink);
       },
-      (defs.PER_DURATION * elems.headerList.length) / 2,
+      (defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length) / 2,
     );
     setTimeout(
       startAnimation,
-      (defs.PER_DURATION * elems.headerList.length) / 2
+      (defs.PER_DURATION * defs.TEXT_TO_ANIMATE.length) / 2
         + defs.TRANSITION_DURATION + defs.PER_DURATION,
       elems,
     );
