@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import {
-  Router,
+  BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import createHistory from 'history/createBrowserHistory';
 
 import App from 'src/scripts/modules/app/Container';
 import Header from 'src/scripts/shared/header/Container';
@@ -23,13 +22,9 @@ import * as sharedDefs from 'src/scripts/shared/defs';
 import './style.css';
 
 window.onload = () => {
-  const history = createHistory({
-    basename: '/',
-  });
-
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={history}>
+      <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
         <Route
           render={({ location }) => (
