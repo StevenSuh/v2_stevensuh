@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
+import Immutable from 'immutable';
 
 import ProjectDetails from './Component';
 
 import * as actions from './actions';
 
 export const mapStateToProps = ({
-  [window.location.pathname]: { details },
+  [window.location.pathname]: { details } = { details: Immutable.fromJS({}) },
   shared,
 }) => ({
   isDesktop: shared.get('isDesktop'),
-  isModalOpen: details.get('isModalOpen'),
-  modalImgSrc: details.get('modalImgSrc'),
+  isModalOpen: details.get('isModalOpen') || false,
+  modalImgSrc: details.get('modalImgSrc') || '',
 });
 
 export default connect(

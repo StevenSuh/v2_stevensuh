@@ -21,7 +21,7 @@ const ProjectDetails = ({
   modalImgSrc,
   onChangeModalImgSrc,
   onCloseModal,
-  project = null,
+  project,
 }) => {
   if (!project || !url.startsWith(project.type)) {
     return <Redirect to="/" />;
@@ -106,7 +106,11 @@ ProjectDetails.propTypes = {
   modalImgSrc: PropTypes.string.isRequired,
   onChangeModalImgSrc: PropTypes.func.isRequired,
   onCloseModal: PropTypes.func.isRequired,
-  project: ProjectDetailsType.isRequired,
+  project: ProjectDetailsType,
+};
+
+ProjectDetails.defaultProps = {
+  project: null,
 };
 
 export default ProjectDetails;

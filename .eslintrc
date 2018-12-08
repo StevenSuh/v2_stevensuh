@@ -4,7 +4,10 @@
     "jasmine": true,
     "jest": true
   },
-  "extends": "eslint-config-airbnb",
+  "extends": [
+    "eslint-config-airbnb",
+    "prettier"
+  ],
   "globals": {
     "it": false,
     "describe": false
