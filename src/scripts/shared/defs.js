@@ -160,13 +160,14 @@ export const PROJECT_DETAILS = {
         classes: [detailsStyle.project_Detail_p],
         classesMobile: [detailsStyle.project_Detail_p],
         content: 'In the fall of 2018, I got to work as a Software Engineer intern at Affirm in San Francisco. ' +
-          'For the internship, I worked in Retail Engineering, which is an organization that focuses on building products +',
+          'For the internship, I worked in Retail Engineering, which is an organization focused building revenue ' +
+          'generating products for Affirm\'s business parters and consumers.',
         tagName: 'p',
       },
     ],
     logo: {
       classes: [detailsStyle.affirm_detail_img],
-      src: '/assets/affirm.png',
+      src: '/assets/affirm.svg',
     },
     name: 'Affirm',
     pathname: '/work/affirm',

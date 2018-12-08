@@ -8,15 +8,24 @@ import * as defs from 'src/scripts/modules/app/defs';
 import style from 'src/scripts/modules/app/style.module.css';
 
 class MainAnimation extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onResize = this.onResize.bind(this);
+
+    this.containerRef = React.createRef();
+    this.scrollDownRef = React.createRef();
+    this.textRef = React.createRef();
+    this.wrapperRef = React.createRef();
+  }
+
   componentDidMount() {
     const elems = {
-      container: document.getElementById(defs.MAIN_CONTAINER),
-      headerList: document.getElementById(defs.MAIN_TEXT).children,
-      left: document.getElementById(defs.MAIN_LEFT),
-      main: document.getElementById(defs.MAIN_TEXT),
-      right: document.getElementById(defs.MAIN_RIGHT),
-      scrollDown: document.getElementById(defs.SCROLL_DOWN),
-      wrapper: document.getElementById(defs.MAIN_WRAPPER),
+      container: this.containerRef.current,
+      headerList: this.textRef.current.children,
+      main: this.textRef.current,
+      scrollDown: this.scrollDownRef.current,
+      wrapper: this.wrapperRef.current,
     };
 
     startAnimation(elems);
@@ -31,8 +40,8 @@ class MainAnimation extends React.Component {
   }
 
   onResize() {
-    const main = document.getElementById(defs.MAIN_TEXT);
-    const wrapper = document.getElementById(defs.MAIN_WRAPPER);
+    const main = this.textRef.current;
+    const wrapper = this.wrapperRef.current;
 
     const expectedWidth = main.clientWidth + defs.MAIN_WRAPPER_PADDING_WIDTH;
 
@@ -53,18 +62,18 @@ class MainAnimation extends React.Component {
       >
         <div
           className={style.main_container}
-          id={defs.MAIN_CONTAINER}
+          ref={this.containerRef}
         >
           <span>
             <img alt="left bracket" src={Bracket} />
           </span>
           <div
             className={style.main_wrapper}
-            id={defs.MAIN_WRAPPER}
+            ref={this.wrapperRef}
           >
             <div
               className={style.main_text}
-              id={defs.MAIN_TEXT}
+              ref={this.textRef}
             >
               {textToAnimate.split('').map((text, index) => (
                 <h1
@@ -86,7 +95,7 @@ class MainAnimation extends React.Component {
         </div>
         <div
           className={style.scroll_down}
-          id={defs.SCROLL_DOWN}
+          ref={this.scrollDownRef}
         >
           _
         </div>

@@ -1,3 +1,4 @@
+import * as detailsDefs from 'src/scripts/modules/projectDetails/defs';
 import * as sharedDefs from 'src/scripts/shared/defs';
 
 import headerStyle from 'src/scripts/shared/header/style.module.css';
@@ -14,7 +15,13 @@ export const onScrollLanding = function() {
   const { pathname } = this.props.location;
   const isLanding = pathname === '/';
 
-  const distance = isLanding ? window.innerHeight : 570;
+  let distance;
+  if (isLanding) {
+    distance = window.innerHeight;
+  } else {
+    const detailsBg = document.getElementById(detailsDefs.DETAILS_BG);
+    distance = detailsBg.clientHeight + detailsBg.offsetTop;
+  }
 
   if (currentPosition >= distance) {
     header.classList.add(headerStyle.scrolled);

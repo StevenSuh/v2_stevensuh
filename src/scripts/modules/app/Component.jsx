@@ -21,10 +21,7 @@ const App = ({
 }) => (
   <div className={classNames(style.landing_page)}>
     <MainAnimation isDesktop={isDesktop} />
-    <div
-      className={classNames(style.project_wrapper)}
-      id={defs.PROJECT_WRAPPER}
-    >
+    <div className={classNames(style.project_wrapper)}>
       <AboutMe />
       <div className={classNames(sharedStyle.container, style.filter_container)}>
         <span>
@@ -59,9 +56,7 @@ const App = ({
           </span>
         </span>
       </div>
-      <div
-        id={defs.PROJECT_CONTAINER}
-      >
+      <div>
         <TransitionGroup className={style.project_container}>
           {sharedDefs.PROJECTS
             .filter(({ type }) =>
