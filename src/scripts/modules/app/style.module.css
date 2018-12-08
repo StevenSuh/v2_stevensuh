@@ -169,6 +169,30 @@
   letter-spacing: -2px;
 }
 
+.affirm_a {
+  color: #0fa0ea;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.amazon_a {
+  color: #FF9900;
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.golinks_a {
+  color: #00beac;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
 .filter_container {
   font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
   font-size: 18px;
@@ -292,30 +316,6 @@
   right: unset;
 }
 
-.affirm_a {
-  color: #0fa0ea;
-  font-family: 'Proxima Nova', sans-serif;
-  font-size: 31px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.amazon_a {
-  color: #FF9900;
-  font-family: 'Amazon Ember', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.golinks_a {
-  color: #00beac;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
 .work-amazon .project_row_img_container::before,
 .work-amazon .project_row_img_bg_container {
   background: var(--work-amazon-bg);
@@ -384,6 +384,30 @@
 
   .about_me {
     height: 500px;
+  }
+
+  .about_h1 {
+    font-size: 36px;
+  }
+
+  .about_h2 {
+    font-size: 18px;
+  }
+
+  .about_h2_my_name {
+    font-size: 26px;
+  }
+
+  .affirm_a {
+    font-size: 28px;
+  }
+
+  .amazon_a {
+    font-size: 24px;
+  }
+
+  .golinks_a {
+    font-size: 24px;
   }
 
   .project_container {
