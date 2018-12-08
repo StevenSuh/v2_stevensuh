@@ -125,11 +125,11 @@
 .about_container,
 .filter_container,
 .project_container {
-  width: 900px;
+  width: 800px;
 }
 
 .project_row_img_container {
-  height: 607.5px;
+  height: 540px;
 }
 
 .about_me {
@@ -358,7 +358,7 @@
 }
 
 .golinks_img {
-  height: 18%;
+  height: 19%;
 }
 
 .foodgo_img {

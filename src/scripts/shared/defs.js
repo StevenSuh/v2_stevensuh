@@ -99,15 +99,17 @@ export const BodyElementType = PropTypes.shape({
   classes: PropTypes.arrayOf(PropTypes.string),
   classesMobile: PropTypes.arrayOf(PropTypes.string),
   content: PropTypes.string,
+  href: PropTypes.string,
   src: PropTypes.string,
   srcMobile: PropTypes.string,
-  tagName: PropTypes.oneOf(['h2', 'img', 'li', 'p', 'span', 'ul']).isRequired,
+  tagName: PropTypes.oneOf(['a', 'h2', 'img', 'li', 'p', 'span', 'ul']).isRequired,
 });
 
 BodyElementType.defaultProps = {
   classes: [],
   classesMobile: [],
   content: null,
+  href: null,
   src: null,
   srcMobile: null,
 };
@@ -144,7 +146,7 @@ ProjectDetailsType.defaultProps = {
 export const PROJECT_DETAILS = {
   [AFFIRM_NAME]: {
     background: {
-      classes: [detailsStyle.affirm_detail_bg],
+      classes: [],
       style: {
         background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
       },
@@ -157,12 +159,124 @@ export const PROJECT_DETAILS = {
         tagName: 'p',
       },
       {
-        classes: [detailsStyle.project_Detail_p],
-        classesMobile: [detailsStyle.project_Detail_p],
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
         content: 'In the fall of 2018, I got to work as a Software Engineer intern at Affirm in San Francisco. ' +
-          'For the internship, I worked in Retail Engineering, which is an organization focused building revenue ' +
+          'For the internship, I worked in Retail Engineering, which is an organization focused on building revenue ' +
           'generating products for Affirm\'s business parters and consumers.',
         tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'During my time at Affirm, I had the chance to start on merchant self-service initiative, which required ' +
+          'development on two different products: merchant onboarding and merchant dashboard. As I iterated upon these ' +
+          'products, I got to collaborate with designers, product managers and engineers from other organizations.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/affirm-screenshot-1.png',
+        srcMobile: '/assets/affirm-screenshot-1-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Merchant onboarding reachable from affirm.com/business.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        src: '/assets/affirm-screenshot-2.png',
+        srcMobile: '/assets/affirm-screenshot-2.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Merchant dashboard, which you can access after signing up.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'While picking up best practices and tooling used at Affirm, I was also able to gain a lot of business context ' +
+          'behind these products, allowing me to develop more quicker and confidently. Most importantly, I had ownership over these ' +
+          'products by the end of the internship.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'In conclusion, I was able to make significant contributions and work on the merchant self-service initiative, ' +
+          'which is expected to bring on thousands of merchants to Affirm\'s platform in 2019.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/affirm-pic-1.jpg',
+        srcMobile: '/assets/affirm-pic-1.jpg',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'My favorite spot in the office.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/affirm-pic-2.jpg',
+        srcMobile: '/assets/affirm-pic-2.jpg',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Affirm swag!!',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_h2, detailsStyle.project_detail_list],
+        classesMobile: [detailsStyle.project_detail_h2, detailsStyle.project_detail_list],
+        content: 'Important takeaways include:',
+        tagName: 'h2',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.first],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.first],
+        content: 'Knowledge over various tooling + framework per use case',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'Business context-driven software engineering',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item, detailsStyle.last],
+        content: 'Product execution at rapidly growing environment',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        src: '/assets/affirm-pic-3.jpg',
+        srcMobile: '/assets/affirm-pic-3.jpg',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: '5:32pm, San Francisco.',
+        tagName: 'span',
       },
     ],
     logo: {
@@ -175,7 +289,7 @@ export const PROJECT_DETAILS = {
   },
   [AMAZON_NAME]: {
     background: {
-      classes: [detailsStyle.amazon_detail_bg],
+      classes: [],
       style: {
         background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
       },
@@ -234,14 +348,14 @@ export const PROJECT_DETAILS = {
         classesMobile: [detailsStyle.project_detail_p],
         content: 'More specific to my work, I had the chance to dive deeper into its selection algorithm, which I got to ' +
           'modify a lot to improve its performance and add additional features planned on the roadmap. By the end of the internship, ' +
-          'I was able to ship my work after thorough A/B testing, which was projected to output millions in revenue yearly.',
+          'with thorough A/B testing, I was able to ship my work, which is projected to output millions in revenue yearly.',
         tagName: 'p',
       },
       {
         classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
         classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
-        src: '/assets/amazon-pic-3.png',
-        srcMobile: '/assets/amazon-pic-3.png',
+        src: '/assets/amazon-pic-3.jpg',
+        srcMobile: '/assets/amazon-pic-3.jpg',
         tagName: 'img',
       },
       {
@@ -253,8 +367,8 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
         classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
-        src: '/assets/amazon-pic-1.png',
-        srcMobile: '/assets/amazon-pic-1.png',
+        src: '/assets/amazon-pic-1.jpg',
+        srcMobile: '/assets/amazon-pic-1.jpg',
         tagName: 'img',
       },
       {
@@ -290,8 +404,8 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
         classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
-        src: '/assets/amazon-pic-2.png',
-        srcMobile: '/assets/amazon-pic-2.png',
+        src: '/assets/amazon-pic-2.jpg',
+        srcMobile: '/assets/amazon-pic-2.jpg',
         tagName: 'img',
       },
       {
@@ -309,12 +423,141 @@ export const PROJECT_DETAILS = {
     pathname: '/work/amazon',
     type: TYPE_WORK,
   },
+  [GOLINKS_NAME]: {
+    background: {
+      classes: [],
+      style: {
+        background: 'linear-gradient(154deg, #008fe2 0%, #00b29c 100%)',
+      },
+    },
+    bodyElements: [
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        content: '03/2018 - 08/2018',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'At GoLinks, I worked as a Software Engineer intern. GoLinks is a productivity SaaS product that provides ' +
+          'secure, enterprise-grade, short url go/links only accessible by groups. During my time at GoLinks, I had the freedom ' +
+          'to explore and work on every part of the product and startup.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'I got to work on numerous parts of the app, including unsubscribe feature, search history, front-end redesigns ' +
+          'interactive navigation menu, and more. While working on the app, I also got an exposure to best software development ' +
+          'practices. At GoLinks, I had the experience of learning the process of starting a company and receiving a great mentorship.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/golinks-screenshot-1.png',
+        srcMobile: '/assets/golinks-screenshot-1-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'GoLinks.io redesigned home page.',
+        tagName: 'span',
+      },
+      {
+        classes: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.imgCaption, detailsStyle.vertical],
+        src: '/assets/golinks-screenshot-2.png',
+        srcMobile: '/assets/golinks-screenshot-2.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_caption],
+        content: 'Interactive navigation menu!',
+        tagName: 'span',
+      },
+    ],
+    logo: {
+      classes: [detailsStyle.golinks_detail_img],
+      src: '/assets/golinks.png',
+    },
+    name: 'GoLinks',
+    pathname: '/work/golinks',
+    type: TYPE_WORK,
+  },
   [FOODGO_NAME]: {
+    background: {
+      classes: [],
+      style: {
+        background: 'rgb(255, 138, 128)',
+      },
+    },
+    bodyElements: [
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        content: '02/2018',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_a, style.hover],
+        classesMobile: [detailsStyle.project_detail_a, style.hover],
+        content: 'foodgo183.herokuapp.com',
+        href: 'https://foodgo183.herokuapp.com',
+        tagName: 'a',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'foodgo is a web application built in Node + Firebase + React that interacts with Yelp API to help a group of ' +
+          'people decide on a restaurant so no one is starving by the time they start eating!',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/foodgo-screenshot-1.png',
+        srcMobile: '/assets/foodgo-screenshot-1-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/foodgo-screenshot-2.png',
+        srcMobile: '/assets/foodgo-screenshot-2-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/foodgo-screenshot-3.png',
+        srcMobile: '/assets/foodgo-screenshot-3-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/foodgo-screenshot-4.png',
+        srcMobile: '/assets/foodgo-screenshot-4-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/foodgo-screenshot-5.png',
+        srcMobile: '/assets/foodgo-screenshot-5-mobile.png',
+        tagName: 'img',
+      },
+    ],
+    logo: {
+      classes: [detailsStyle.foodgo_detail_img],
+      src: '/assets/foodgo.png',
+    },
+    name: 'foodgo',
     pathname: '/project/foodgo',
     type: TYPE_PROJECT,
-  },
-  [GOLINKS_NAME]: {
-    pathname: '/project/golinks',
-    type: TYPE_WORK,
   },
 };

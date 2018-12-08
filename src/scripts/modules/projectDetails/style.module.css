@@ -24,6 +24,7 @@
   width: 100%;
 }
 
+.project_detail_a,
 .project_detail_h2,
 .project_detail_img,
 .project_detail_p,
@@ -54,6 +55,20 @@
 
 .project_detail_p {
   font-size: 17px;
+}
+
+.project_detail_a {
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 20%;
+  padding: 5px 0;
+  opacity: 0.6;
+  text-decoration: underline;
+  width: auto;
+}
+
+.project_detail_a:hover {
+  opacity: 1;
 }
 
 .project_detail_sub_p {
@@ -104,10 +119,6 @@
   text-align: center;
 }
 
-.amazon_detail_img {
-  height: 30%;
-}
-
 .project_detail_modal {
   height: 100vh;
   left: 0;
@@ -143,6 +154,19 @@
   width: 100%;
 }
 
+.affirm_detail_img,
+.amazon_detail_img,
+.golinks_detail_img,
+.foodgo_detail_img {
+  object-fit: cover;
+  height: 30%;
+  max-width: 90%;
+}
+
+.foodgo_detail_img {
+  height: 28%;
+}
+
 @media only screen and (max-width: 416px) {
   .project_detail_bg {
     height: 80vw;
@@ -154,6 +178,11 @@
   .project_detail_sub_p {
     padding: 50px 0;
     width: 90%;
+  }
+
+  .project_detail_a {
+    margin-left: 5%;
+    padding: 0;
   }
 
   .project_detail_sub_p_intro {
@@ -182,5 +211,9 @@
 
   .project_detail_img.vertical {
     width: 80%;
+  }
+
+  .golinks_detail_img {
+    height: 25%;
   }
 }

@@ -86,7 +86,10 @@ const App = ({
   </div>
 );
 
-// App.propTypes = {
-// };
+App.propTypes = {
+  activeFilter: PropTypes.string.isRequired,
+  isDesktop: PropTypes.bool.isRequired,
+  onSetActiveFilter: PropTypes.func.isRequired,
+};
 
 export default App;

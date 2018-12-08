@@ -56,10 +56,7 @@ class MainAnimation extends React.Component {
     const textToAnimate = isDesktop ? defs.TEXT_TO_ANIMATE : defs.TEXT_TO_ANIMATE_MOBILE;
 
     return (
-      <div
-        className={style.landing_page}
-        id={defs.LANDING_PAGE}
-      >
+      <div className={style.landing_page}>
         <div
           className={style.main_container}
           ref={this.containerRef}

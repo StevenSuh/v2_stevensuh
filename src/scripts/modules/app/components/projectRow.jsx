@@ -32,10 +32,7 @@ class ProjectRow extends React.Component {
     } = this.props;
 
     return (
-      <div
-        className={classNames(style.project_row_wrapper, style[id])}
-        id={`${id}-wrapper`}
-      >
+      <div className={classNames(style.project_row_wrapper, style[id])}>
         <Link
           className={classNames(style.project_row_img_container, sharedStyle.hover)}
           to={`${type}/${name}`}
@@ -67,10 +64,7 @@ class ProjectRow extends React.Component {
           />
         </Link>
         <div className={classNames(style.project_row_container)}>
-          <div
-            className={classNames(style.project_row_text_wrapper, ...textClass)}
-            id={`${id}-text`}
-          >
+          <div className={classNames(style.project_row_text_wrapper, ...textClass)}>
             <Link to={`${type}/${name}`}>
               <p className={style.project_row_p}>
                 {type}/{name}

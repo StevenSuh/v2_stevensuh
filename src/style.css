@@ -95,7 +95,6 @@ a {
 .reveal-enter-active,
 .reveal-enter-done {
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0.2s;
   opacity: 1;
 }
 

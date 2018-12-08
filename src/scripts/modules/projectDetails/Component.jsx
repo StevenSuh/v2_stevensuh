@@ -21,7 +21,6 @@ const ProjectDetails = ({
   modalImgSrc,
   onChangeModalImgSrc,
   onCloseModal,
-  onCloseModalOnEsc,
   project = null,
 }) => {
   if (!project || !url.startsWith(project.type)) {
@@ -59,6 +58,7 @@ const ProjectDetails = ({
             classes,
             classesMobile,
             content,
+            href,
             src,
             srcMobile,
             tagName: TagName,
@@ -66,11 +66,12 @@ const ProjectDetails = ({
             <EnlargeImg
               key={index}
               onChangeModalImgSrc={onChangeModalImgSrc}
-              onCloseModalOnEsc={onCloseModalOnEsc}
             >
               <TagName
                 className={classNames(...(isDesktop ? classes : classesMobile))}
+                href={href}
                 src={isDesktop ? src : srcMobile}
+                target={TagName === 'a' ? '_blank' : null}
               >
                 {content}
               </TagName>
@@ -95,12 +96,16 @@ const ProjectDetails = ({
 
 ProjectDetails.propTypes = {
   isDesktop: PropTypes.bool.isRequired,
+  isModalOpen: PropTypes.bool.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       projectName: PropTypes.string.isRequired,
     }).isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
+  modalImgSrc: PropTypes.string.isRequired,
+  onChangeModalImgSrc: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
   project: ProjectDetailsType.isRequired,
 };
 

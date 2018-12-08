@@ -43,7 +43,7 @@ class Header extends React.Component {
         className={classNames(style.header, pathname === '/' ? style.landing : '')}
         id={HEADER}
       >
-        <div className={sharedStyle.container}>
+        <div className={style.header_container}>
           <Link
             className={classNames(style.logo, sharedStyle.hover)}
             id={HEADER_LOGO}
@@ -58,6 +58,9 @@ class Header extends React.Component {
 };
 
 Header.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   onChangeIsDesktop: PropTypes.func.isRequired,
 };
 

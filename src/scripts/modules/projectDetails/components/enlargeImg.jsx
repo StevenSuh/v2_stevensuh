@@ -17,6 +17,9 @@ const EnlargeImg = ({ children, onChangeModalImgSrc }) => {
   return children;
 };
 
-EnlargeImg.propTypes = {};
+EnlargeImg.propTypes = {
+  children: PropTypes.element.isRequired,
+  onChangeModalImgSrc: PropTypes.func.isRequired,
+};
 
 export default EnlargeImg;
