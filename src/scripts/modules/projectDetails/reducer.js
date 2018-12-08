@@ -7,7 +7,7 @@ export const initialState = Immutable.fromJS({
   modalImgSrc: '',
 });
 
-export default (scope) => (state = initialState, action) => {
+export default scope => (state = initialState, action) => {
   switch (action.type) {
     case `${scope}/${actionTypes.onChangeModalImgSrc}`: {
       return state.set('modalImgSrc', action.value);

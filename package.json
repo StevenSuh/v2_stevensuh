@@ -5,6 +5,7 @@
   "homepage": "https://StevenSuh.github.io/",
   "dependencies": {
     "classnames": "^2.2.6",
+    "eslint-config-airbnb": "^17.1.0",
     "immutable": "^4.0.0-rc.12",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -22,7 +23,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "prettier": "prettier --single-quote --trailing-comma es5 --print-width 80 --write --no-bracket-spacing **/*.js",
+    "lint": "yarn eslint && yarn prettier"
   },
   "eslintConfig": {
     "extends": "react-app"

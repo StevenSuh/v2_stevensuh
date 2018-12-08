@@ -6,7 +6,7 @@ const EnlargeImg = ({ children, onChangeModalImgSrc }) => {
     return React.cloneElement(
       children,
       {
-        onClick: event => {
+        onClick: (event) => {
           const { src } = event.target;
           onChangeModalImgSrc(src);
         },

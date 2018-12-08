@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { onScrollLanding } from './effects';
-import * as utils from 'src/scripts/shared/utils';
-
 import {
   HEADER,
   HEADER_LOGO,
 } from 'src/scripts/shared/defs';
-import style from './style.module.css';
 import sharedStyle from 'src/scripts/shared/style.module.css';
+import * as utils from 'src/scripts/shared/utils';
+
+import { onScrollLanding } from './effects';
+import style from './style.module.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -19,10 +19,6 @@ class Header extends React.Component {
 
     this.onChangeIsDesktop = this.onChangeIsDesktop.bind(this);
     this.onScrollLanding = onScrollLanding.bind(this);
-  }
-
-  onChangeIsDesktop() {
-    this.props.onChangeIsDesktop(utils.isDesktop());
   }
 
   componentWillMount() {
@@ -35,8 +31,13 @@ class Header extends React.Component {
     window.removeEventListener('scroll', this.onScrollLanding);
   }
 
+  onChangeIsDesktop() {
+    const { onChangeIsDesktop } = this.props;
+    onChangeIsDesktop(utils.isDesktop());
+  }
+
   render() {
-    const { pathname } = this.props.location;
+    const { location: { pathname } } = this.props;
 
     return (
       <header
@@ -55,7 +56,7 @@ class Header extends React.Component {
       </header>
     );
   }
-};
+}
 
 Header.propTypes = {
   location: PropTypes.shape({

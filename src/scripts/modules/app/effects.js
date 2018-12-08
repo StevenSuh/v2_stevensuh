@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign, no-use-before-define */
 import * as defs from './defs';
 
 import style from './style.module.css';
@@ -22,7 +23,7 @@ export const changeInputFactory = (type, el) => {
 };
 
 export const reset = (list) => {
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i += 1) {
     list[i].classList.add(style.hidden);
     list[i].classList.remove(style.slow_color);
   }
@@ -69,7 +70,8 @@ export const doOneStep = (elems, index) => {
     );
     setTimeout(
       startAnimation,
-      (defs.PER_DURATION * elems.headerList.length) / 2 + defs.TRANSITION_DURATION + defs.PER_DURATION,
+      (defs.PER_DURATION * elems.headerList.length) / 2
+        + defs.TRANSITION_DURATION + defs.PER_DURATION,
       elems,
     );
   }
@@ -82,7 +84,7 @@ export const startAnimation = (elems) => {
 
   reset(elems.headerList);
 
-  setTimeout(() => elems.wrapper.style.width = expectedWidth + 'px', defs.BLINK_DURATION);
+  setTimeout(() => { elems.wrapper.style.width = `${expectedWidth}px`; }, defs.BLINK_DURATION);
   setTimeout(
     doOneStep,
     defs.BLINK_DURATION + defs.TRANSITION_DURATION + defs.PER_DURATION,
@@ -90,3 +92,4 @@ export const startAnimation = (elems) => {
     0,
   );
 };
+/* eslint-enable no-param-reassign, no-use-before-define */

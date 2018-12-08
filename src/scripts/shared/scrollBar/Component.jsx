@@ -8,22 +8,26 @@ class ScrollBar extends React.Component {
   constructor(props) {
     super(props);
 
+    const { pathname } = this.props;
+
     this.state = {
       barPercentage: 0,
-      isLanding: this.props.pathname === '/',
+      isLanding: pathname === '/',
     };
 
     this.onScrollBar = onScrollBar.bind(this);
   }
 
   componentWillMount() {
-    if (!this.state.isLanding) {
+    const { isLanding } = this.state;
+    if (!isLanding) {
       window.addEventListener('scroll', this.onScrollBar);
     }
   }
 
   componentWillUnmount() {
-    if (!this.state.isLanding) {
+    const { isLanding } = this.state;
+    if (!isLanding) {
       window.removeEventListener('scroll', this.onScrollBar);
     }
   }
@@ -45,7 +49,7 @@ class ScrollBar extends React.Component {
       />
     );
   }
-};
+}
 
 ScrollBar.propTypes = {
   pathname: PropTypes.string.isRequired,

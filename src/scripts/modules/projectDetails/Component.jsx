@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 import ContactMe from 'src/scripts/shared/contactMe';
+import { ProjectDetailsType } from 'src/scripts/shared/defs';
+
 import EnlargeImg from './components/enlargeImg';
 
 import * as defs from './defs';
-import { ProjectDetailsType } from 'src/scripts/shared/defs';
-
 import style from './style.module.css';
 
 const ProjectDetails = ({
@@ -64,7 +64,7 @@ const ProjectDetails = ({
             tagName: TagName,
           }, index) => (
             <EnlargeImg
-              key={index}
+              key={parseInt(index.toString(), 10)}
               onChangeModalImgSrc={onChangeModalImgSrc}
             >
               <TagName
@@ -84,7 +84,7 @@ const ProjectDetails = ({
         className={classNames(style.project_detail_modal, isModalOpen ? style.show : '')}
         onClick={onCloseModal}
       >
-        <div className={style.project_detail_modal_bg}/>
+        <div className={style.project_detail_modal_bg} />
         <img
           alt={`zoomed in pic of ${modalImgSrc}`}
           src={modalImgSrc}

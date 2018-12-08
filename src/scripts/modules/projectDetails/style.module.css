@@ -32,7 +32,7 @@
   display: block;
   line-height: 2em;
   margin: auto;
-  padding: 70px 0;
+  padding: 50px 0;
   white-space: pre-wrap;
   width: 60%;
 }
@@ -51,6 +51,7 @@
 .project_detail_img {
   cursor: zoom-in;
   object-fit: cover;
+  padding: 70px 0;
 }
 
 .project_detail_p {
@@ -176,8 +177,12 @@
   .project_detail_img,
   .project_detail_p,
   .project_detail_sub_p {
-    padding: 50px 0;
+    padding: 40px 0;
     width: 90%;
+  }
+
+  .project_detail_img {
+    padding: 50px 0;
   }
 
   .project_detail_a {
@@ -186,7 +191,7 @@
   }
 
   .project_detail_sub_p_intro {
-    padding: 30px 0 0;
+    padding: 30px 0 20px;
   }
 
   .project_detail_list {

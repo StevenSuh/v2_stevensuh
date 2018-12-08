@@ -3,15 +3,15 @@ import classNames from 'classnames';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-import AboutMe from './components/aboutMe';
 import ContactMe from 'src/scripts/shared/contactMe';
+import * as sharedDefs from 'src/scripts/shared/defs';
+import sharedStyle from 'src/scripts/shared/style.module.css';
+
+import AboutMe from './components/aboutMe';
 import MainAnimation from './components/mainAnimation';
 import ProjectRow from './components/projectRow';
 
 import * as defs from './defs';
-import * as sharedDefs from 'src/scripts/shared/defs';
-
-import sharedStyle from 'src/scripts/shared/style.module.css';
 import style from './style.module.css';
 
 const App = ({
@@ -59,16 +59,17 @@ const App = ({
       <div>
         <TransitionGroup className={style.project_container}>
           {sharedDefs.PROJECTS
-            .filter(({ type }) =>
-              activeFilter === defs.FILTER_ALL ?
-                true :
-                activeFilter === type
-            ).map(project => (
+            .filter(({ type }) => {
+              if (activeFilter === defs.FILTER_ALL) {
+                return true;
+              }
+              return activeFilter === type;
+            }).map(project => (
               <CSSTransition
                 appear
                 classNames="reveal"
                 key={project.id}
-                timeout={400}
+                timeout={200}
                 unmountOnExit
               >
                 <ProjectRow
@@ -77,8 +78,8 @@ const App = ({
                   project={project}
                 />
               </CSSTransition>
-            )
-          )}
+            ))
+          }
         </TransitionGroup>
       </div>
     </div>

@@ -19,6 +19,10 @@ class MainAnimation extends React.Component {
     this.wrapperRef = React.createRef();
   }
 
+  componentWillMount() {
+    window.addEventListener('resize', this.onResize);
+  }
+
   componentDidMount() {
     const elems = {
       container: this.containerRef.current,
@@ -29,10 +33,6 @@ class MainAnimation extends React.Component {
     };
 
     startAnimation(elems);
-  }
-
-  componentWillMount() {
-    window.addEventListener('resize', this.onResize);
   }
 
   componentWillUnmount() {
@@ -46,7 +46,7 @@ class MainAnimation extends React.Component {
     const expectedWidth = main.clientWidth + defs.MAIN_WRAPPER_PADDING_WIDTH;
 
     wrapper.classList.add(style.no_transition);
-    wrapper.style.width = expectedWidth + 'px';
+    wrapper.style.width = `${expectedWidth}px`;
     setTimeout(() => wrapper.classList.remove(style.no_transition), 0);
   }
 
@@ -75,7 +75,7 @@ class MainAnimation extends React.Component {
               {textToAnimate.split('').map((text, index) => (
                 <h1
                   className={style.hidden}
-                  key={index}
+                  key={parseInt(index.toString(), 10)}
                 >
                   {text}
                 </h1>

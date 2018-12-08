@@ -3,7 +3,7 @@ import * as sharedDefs from 'src/scripts/shared/defs';
 
 import headerStyle from 'src/scripts/shared/header/style.module.css';
 
-export const onScrollLanding = function() {
+export const onScrollLanding = function () {
   const header = document.getElementById(sharedDefs.HEADER);
 
   if (!header) {

@@ -37,8 +37,8 @@ class ProjectRow extends React.Component {
           className={classNames(style.project_row_img_container, sharedStyle.hover)}
           to={`${type}/${name}`}
         >
-          {isDesktop ?
-            backgroundImg && (
+          {isDesktop
+            ? backgroundImg && (
               <div className={classNames(style.project_row_img_bg_container)}>
                 <img
                   alt={`${name} background`}
@@ -46,8 +46,8 @@ class ProjectRow extends React.Component {
                   src={backgroundImg}
                 />
               </div>
-            ) :
-            backgroundImg && (
+            )
+            : backgroundImg && (
               <div className={classNames(style.project_row_img_bg_container)}>
                 <img
                   alt={`${name} background`}
@@ -67,7 +67,7 @@ class ProjectRow extends React.Component {
           <div className={classNames(style.project_row_text_wrapper, ...textClass)}>
             <Link to={`${type}/${name}`}>
               <p className={style.project_row_p}>
-                {type}/{name}
+                {`${type}/${name}`}
               </p>
             </Link>
             <Link to={`${type}/${name}`}>
@@ -80,7 +80,7 @@ class ProjectRow extends React.Component {
       </div>
     );
   }
-};
+}
 
 ProjectRow.propTypes = {
   isDesktop: PropTypes.bool.isRequired,

@@ -8,7 +8,7 @@ export const openModal = () => ({
   type: `${window.location.pathname}/${actionTypes.onOpenModal}`,
 });
 
-export const changeModalImgSrc = src => dispatch => {
+export const changeModalImgSrc = src => (dispatch) => {
   dispatch({
     type: `${window.location.pathname}/${actionTypes.onChangeModalImgSrc}`,
     value: src,
