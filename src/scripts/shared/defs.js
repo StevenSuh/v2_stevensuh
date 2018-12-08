@@ -149,6 +149,21 @@ export const PROJECT_DETAILS = {
         background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
       },
     },
+    bodyElements: [
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        content: '09/2018 - 12/2018\nSan Francisco, CA',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_Detail_p],
+        classesMobile: [detailsStyle.project_Detail_p],
+        content: 'In the fall of 2018, I got to work as a Software Engineer intern at Affirm in San Francisco. ' +
+          'For the internship, I worked in Retail Engineering, which is an organization that focuses on building products +',
+        tagName: 'p',
+      },
+    ],
     logo: {
       classes: [detailsStyle.affirm_detail_img],
       src: '/assets/affirm.png',
@@ -174,7 +189,7 @@ export const PROJECT_DETAILS = {
       {
         classes: [detailsStyle.project_detail_p],
         classesMobile: [detailsStyle.project_detail_p],
-        content: 'In 2018, I was given the opportunity to work as a Software Development Engineer intern at Amazon. ' +
+        content: 'In the summer of 2018, I had the opportunity to work as a Software Development Engineer intern at Amazon. ' +
           'During my internship, I worked in Hardlines Customer Experience, which focuses on building customer-centric ' +
           'products and features within Amazon.com.',
         tagName: 'p',
