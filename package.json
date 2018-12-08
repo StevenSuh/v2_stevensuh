@@ -2,7 +2,7 @@
   "name": "v2_stevensuh",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stevensuh.github.io/",
+  "homepage": "https://stevensuh.github.io/v2_stevensuh",
   "dependencies": {
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.12",
