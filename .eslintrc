@@ -19,6 +19,7 @@
     }
   },
   "rules": {
+    "class-methods-use-this": "off",
     "func-names": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",

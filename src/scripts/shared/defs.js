@@ -286,12 +286,16 @@ export const PROJECT_DETAILS = {
         tagName: 'span',
       },
     ],
+    headerStyle: {
+      background: '#0FA0EA',
+    },
     logo: {
       classes: [detailsStyle.affirm_detail_img],
       src: '/assets/affirm.svg',
     },
     name: 'Affirm',
     pathname: '/work/affirm',
+    theme: '#0FA0EA',
     type: TYPE_WORK,
   },
   [AMAZON_NAME]: {
@@ -430,12 +434,16 @@ export const PROJECT_DETAILS = {
         tagName: 'span',
       },
     ],
+    headerStyle: {
+      background: 'linear-gradient(to bottom right, #232F3E, #131A22)',
+    },
     logo: {
       classes: [detailsStyle.amazon_detail_img],
       src: '/assets/amazon.png',
     },
     name: 'Amazon',
     pathname: '/work/amazon',
+    theme: '#131A22',
     type: TYPE_WORK,
   },
   [GOLINKS_NAME]: {
@@ -497,12 +505,16 @@ export const PROJECT_DETAILS = {
         tagName: 'span',
       },
     ],
+    headerStyle: {
+      background: 'linear-gradient(154deg, #009bcb 0%, #00a6b5 100%)',
+    },
     logo: {
       classes: [detailsStyle.golinks_detail_img],
       src: '/assets/golinks.png',
     },
     name: 'GoLinks',
     pathname: '/work/golinks',
+    theme: '#009bcb',
     type: TYPE_WORK,
   },
   [FOODGO_NAME]: {
@@ -569,12 +581,16 @@ export const PROJECT_DETAILS = {
         tagName: 'img',
       },
     ],
+    headerStyle: {
+      background: 'rgb(255, 138, 128)',
+    },
     logo: {
       classes: [detailsStyle.foodgo_detail_img],
       src: '/assets/foodgo.png',
     },
     name: 'foodgo',
     pathname: '/project/foodgo',
+    theme: '#ff8a80',
     type: TYPE_PROJECT,
   },
 };

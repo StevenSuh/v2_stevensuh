@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { PROJECT_DETAILS } from 'src/scripts/shared/defs';
+
 import { onScrollBar } from './effects';
 import style from './style.module.css';
 
@@ -8,44 +10,44 @@ class ScrollBar extends React.Component {
   constructor(props) {
     super(props);
 
-    const { pathname } = this.props;
-
-    this.state = {
-      barPercentage: 0,
-      isLanding: pathname === '/',
-    };
-
+    this.state = { barPercentage: 0 };
     this.onScrollBar = onScrollBar.bind(this);
   }
 
   componentWillMount() {
-    const { isLanding } = this.state;
-    if (!isLanding) {
+    const { pathname } = this.props;
+    if (pathname !== '/') {
       window.addEventListener('scroll', this.onScrollBar);
     }
   }
 
   componentWillUnmount() {
-    const { isLanding } = this.state;
-    if (!isLanding) {
+    const { pathname } = this.props;
+    if (pathname !== '/') {
       window.removeEventListener('scroll', this.onScrollBar);
     }
   }
 
   render() {
-    const {
-      barPercentage,
-      isLanding,
-    } = this.state;
+    const { barPercentage } = this.state;
+    const { pathname } = this.props;
 
-    if (isLanding) {
+    if (pathname === '/') {
       return null;
     }
+
+    const projectName = pathname.slice(pathname.lastIndexOf('/') + 1);
+
+    const headerStyle = pathname === '/' ? {}
+      : PROJECT_DETAILS[projectName].headerStyle;
 
     return (
       <div
         className={style.scrollBar}
-        style={{ transform: `scaleX(${barPercentage})` }}
+        style={{
+          ...headerStyle,
+          transform: `scaleX(${barPercentage})`,
+        }}
       />
     );
   }

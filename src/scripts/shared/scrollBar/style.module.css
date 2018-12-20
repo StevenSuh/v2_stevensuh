@@ -1,10 +1,11 @@
 .scrollBar {
-  background-color: var(--dark-color);
+  background: var(--dark-color);
   height: 3px;
   left: 0;
   position: fixed;
   top: 0;
   transform-origin: 0;
+  transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   z-index: 100;
 }
