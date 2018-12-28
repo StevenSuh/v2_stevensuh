@@ -22,23 +22,37 @@ const AboutMe = () => (
         </a>
         {'.'}
         <br />
-        {"I'm a software engineer intern at "}
+        {'I will be joining '}
+        <a
+          className={classNames(style.google_a, sharedStyle.hover)}
+          href="https://www.google.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span>G</span>
+          <span>o</span>
+          <span>o</span>
+          <span>g</span>
+          <span>l</span>
+          <span>e</span>
+        </a>
+        {' in 2019.'}
+        <br />
+        {'I was previously at '}
         <Link
           className={classNames(style.affirm_a, sharedStyle.hover)}
           to="/work/affirm"
         >
           Affirm
         </Link>
-        {'.'}
-        <br />
-        {'I was previously at '}
+        {', '}
         <Link
           className={classNames(style.amazon_a, sharedStyle.hover)}
           to="/work/amazon"
         >
           Amazon
         </Link>
-        {' and '}
+        {', and '}
         <Link
           className={classNames(style.golinks_a, sharedStyle.hover)}
           to="/work/golinks"
