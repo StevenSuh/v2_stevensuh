@@ -164,9 +164,10 @@
 }
 
 .about_h2_my_name {
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 28px;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: 0px;
 }
 
 .affirm_a {
