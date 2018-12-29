@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Projects - Steven Suh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta id="theme-color" name="theme-color" content="#e97876">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="student, computer science, internship, intern, web development, frontend, front-end, web application">
+    <!-- facebook -->
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Steven Suh">
+    <meta property="og:url" content="https://stevensuh.me/">
+    <meta property="og:image" content="https://stevensuh.me/img/screenshot.png">
+    <meta property="og:site_name" content="Steven Suh">
+    <meta property="og:description" content="Hi, my name is Steven! I'm an undergrad studying CS at UCSC looking for software engineering opportunities.">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:400,500,600|Saira Semi Condensed:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107494314-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107494314-1');
+    </script>
+  </head>
+  <body class="allowY">
+    <div id="loading">
+      <div id="typeLoad_box" class="inactive">
+        <span id="typeLoad_cursor" class="cursorBlink">_<span style="opacity: 0;">_</span></span>
+      </div>
+    </div>
+    <script>
+      if (window.addEventListener) window.addEventListener('DOMMouseScroll', preventDefault, false);
+      window.onwheel = document.onmousewheel = preventDefault;
+      window.onmousewheel = preventDefault;
+      document.ontouchmove = preventDefault;
+      document.body.classList.add('touchAction');
+
+      function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) e.preventDefault();
+        e.returnValue = false;
+      }
+    </script>
+    <div class="load active"></div>
+    <div id="threeJS" class="threeJS-projects fadeUp">
+      <div class="pulse stop inactive"></div>
+    </div>
+    <main class="main fadeOut displayNone">
+      <div class="container">
+        <div class="typeBox">
+          <div id="typeBox_box">
+            <span id="typeBox_cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="container">
+      <header class="header">
+        <div class="container">
+          <a href="/" data-pjax id="home" class="logo">Steven.</a>
+          <a href="#" class="hamburger">
+            <div class="line-one"></div>
+            <div class="line-two"></div>
+            <div class="line-three"></div>
+          </a>
+          <nav class="menu" id="links">
+            <div class="menu_item-wrapper">
+              <a href="/" data-pjax id="home" class="menu_item">HOME
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="about" data-pjax id="about" class="menu_item">ABOUT
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="projects" data-pjax id="projects" class="menu_item active">PROJECTS
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="widget">
+        <!--email_off-->
+        <a href="mailto:stevenesuh@gmail.com" target="_top">
+          <div class="circle">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <!--/email_off-->
+        <a href="/asset/StevenSuh_Resume.pdf" target="_blank">
+          <div class="circle">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://github.com/StevenSuh" targe="_blank">
+          <div class="circle">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/Steven-Suh" target="_blank">
+          <div class="circle">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+      
+      <div id="pjax-container" class="projects">
+        <div class="projects_instructions"></div>
+        <div class="projects_navigation container"></div>
+      </div>
+    </div>
+    
+    <div class="bg-overlay"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

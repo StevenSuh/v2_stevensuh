@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Endorsify - Steven Suh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta id="theme-color" name="theme-color" content="#624de0">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="Hi! I'm Steven and welcome to my website! I'm a front-end developer and a student at UC Santa Cruz.">
+    <meta name="keywords" content="student, computer science, internship, intern, web development, frontend, front-end, web application, Steven, Suh">
+    <!-- facebook -->
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Steven Suh">
+    <meta property="og:url" content="https://stevensuh.me/">
+    <meta property="og:image" content="https://stevensuh.me/img/screenshot.png">
+    <meta property="og:site_name" content="Steven Suh">
+    <meta property="og:description" content="Hi! I'm Steven and welcome to my website! I'm a front-end developer and a student at UC Santa Cruz.">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:400,500,600|Saira Semi Condensed:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107494314-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107494314-1');
+    </script>
+  </head>
+  <body class="disallowY">
+    <div id="loading">
+      <div id="typeLoad_box" class="inactive">
+        <span id="typeLoad_cursor" class="cursorBlink">_<span style="opacity: 0;">_</span></span>
+      </div>
+    </div>
+    <script>
+      if (window.addEventListener) window.addEventListener('DOMMouseScroll', preventDefault, false);
+      window.onwheel = document.onmousewheel = preventDefault;
+      window.onmousewheel = preventDefault;
+      document.ontouchmove = preventDefault;
+      document.body.classList.add('touchAction');
+
+      function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) e.preventDefault();
+        e.returnValue = false;
+      }
+    </script>
+    <div class="load active detail"></div>
+    <div id="threeJS" class="threeJS-projects projects-detail fadeUp">
+      <div class="pulse stop inactive"></div>
+    </div>
+    <main class="main fadeOut displayNone">
+      <div class="container">
+        <div class="typeBox">
+          <div id="typeBox_box">
+            <span id="typeBox_cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <div id="container">
+      <header class="header">
+        <div class="container">
+          <a href="/" data-pjax id="home" class="logo">Steven.</a>
+          <a href="#" class="hamburger">
+            <div class="line-one"></div>
+            <div class="line-two"></div>
+            <div class="line-three"></div>
+          </a>
+          <nav class="menu">
+            <div class="menu_item-wrapper">
+              <a href="/" data-pjax id="home" class="menu_item">HOME
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="about" data-pjax id="about" class="menu_item">ABOUT
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="projects" data-pjax id="projects" class="menu_item active">PROJECTS
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="widget">
+        <!--email_off-->
+        <a href="mailto:stevenesuh@gmail.com" target="_top">
+          <div class="circle">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <!--/email_off-->
+        <a href="/asset/StevenSuh_Resume.pdf" target="_blank">
+          <div class="circle">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://github.com/StevenSuh" targe="_blank">
+          <div class="circle">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/Steven-Suh" target="_blank">
+          <div class="circle">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+
+      <div id="pjax-container" class="fadeUp">
+        <div class="projects_back" onclick="projectsBackClick(); return false;">
+          <div class="circle"></div>
+          <div class="line-wrapper">
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="projects_desc">
+          <div class="projects_desc_category">
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Time<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">July 2017 — Aug 2017</p>
+            </div>
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Type<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">Software Engineer Intern</p>
+            </div>
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Tech<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">HTML, CSS, JavaScript, jQuery, D3, PHP, Laravel</p>
+            </div>
+          </div>
+          <div class="projects_desc_paragraph">
+            <h2 class="projects_desc_h2">Overview<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">During summer 2017, I had a chance to work as a software engineer intern for a marketing startup, <a class="projects_desc_a" href="https://www.endorsify.co/" target="_blank">Endorsify<div class="typeBox-border-bottom"></div></a>, in Los Angeles. Endorsify is a SaaS (Software as a Service) platform that helps marketers establish connections with content creators.<br><br>I mostly worked on the web application's front-end, or the "view" of Laravel's MVC architecture. Throughout the internship, I was able to contribute to several projects by writing production code that got shipped onto the live web app.
+              <br>
+              <br>
+            Here is what I did during the internship: 
+            </div>
+            <ul class="projects_desc_p">
+              <li>New pricing page</li>
+              <li>Strategy calculator (CPM, CPE)</li>
+              <li>New landing page</li>
+              <li>Data Visualization Dashboard</li>
+              <li>LOTS of edits and bug fixes (i.e. ticket requests)</li>
+            </ul>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Pricing<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">
+            As I began the internship, I was assigned a simple project of updating the pricing page in order to kickoff my internship and familiarize myself with the development environment (PHP Laravel, Git), as well as setting up a new environment (.env configuration, dependencies, api keys, etc.).
+            <div class="left">
+              <br>
+              <div class="img1-wrapper">
+                <img data-src="img/endorsify_pricing.png" class="img1 pointer img1src"></img>
+              </div>
+              <div class="image_caption">New pricing page.</div>
+              <br>
+            </div>
+              <br>
+              <br>
+            After receiving the design for new pricing page from our lead designer, I built this page by modifying modal and button components from <a class="projects_desc_a" href="http://materializecss.com/" target="_blank">Materialize<div class="typeBox-border-bottom"></div></a>, a CSS framework inspired by Material Design, and other assets from the project.
+              <br>
+              <br>
+            I was also given a style guide to adhere to throughout the internship. As I built UI components, I had to make sure its font style, font size, color, margin, and other relevant properties followed the criterias listed on the style guide. 
+            <br>
+            </div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Calculator<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Strategy calculator is a feature built for marketers to use. It takes five inputs to calculate CPM and CPE (Cost per Impression and Cost per Engagement). 
+            <div class="right">
+              <br>
+              <div class="img1-wrapper">
+                <img data-src="img/endorsify_calculator.png" class="img1 pointer img1src video"></img>
+              </div>
+              <div class="image_caption">Strategy calculator.</div>
+            </div>
+              <br>
+              <br>
+            I built the calculator using modal and input components from our CSS framework and animations from <a class="projects_desc_a" href="https://limonte.github.io/sweetalert2/" target="_blank">SweetAlert2<div class="typeBox-border-bottom"></div></a> while adhering to given design. I added animations (modal closing, output)<div class="outline-br">, which you can see <a class="projects_desc_a" href="/img/endorsify_calculator.gif" target="_blank">here<div class="typeBox-border-bottom"></div></a>,</div> to the feature. The calculator checks for validation with regex (throws an error alert). 
+              <br>
+              <br>
+            On the back-end, the calculator asks for confirmation and saves the user's inputs onto database so that the data science team can utilize these values. Users are also able to revisit these inputs.
+            </div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Landing<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Building the new landing page was probably one of the most important contributions I made during the internship. I had to finish the new landing page under deadline before Endorsify's alpha launch.</div>
+            <br>
+            <br>
+            <div class="img1-wrapper">
+              <img data-src="img/endorsify_landingpage.png" class="img1 pointer img1src img-long"></img>
+            </div>
+            <div class="image_caption">New landing page.</div>
+            <br>
+            <div class="projects_desc_p">It was important for me to develop the page as precise to the design. Also, I had to make sure the new page was mobile-responsive (mobile <a class="projects_desc_a" href="/img/endorsify_mobile.jpg" target="_blank">look<div class="typeBox-border-bottom"></div></a>). I created an animation on the waves below the hero illustration (you can see it on <a class="projects_desc_a" href="https://endorsify.co" target="_blank">Endorsify<div class="typeBox-border-bottom"></div></a>). I utilized SVG's scalability and CSS's overflow property.
+              <br>
+              <br>
+            Developing this page was not entirely new to me. So I was able to take up this chance to build a more structured page of organized HTML and CSS by taking advantage of different HTML tags, as well as cleaner CSS classes. <br>
+            </div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Dashboard<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">The data visualization dashboard was to be used by the marketers and give access to data in an interactive way. </div>
+            <br>
+            <br>
+            <div class="img1-wrapper">
+              <img data-src="img/endorsify_dashboard.png" class="img1 pointer img1src img-long"></img>
+            </div>
+            <div class="image_caption">Data visualization dashboard.</div>
+            <br>
+            <div class="projects_desc_p">I used <a class="projects_desc_a" href="https://d3js.org" target="_blank">D3<div class="typeBox-border-bottom"></div></a> to develop the dashboard. D3 is a JavaScript library that allows data visualization using HTML, SVG, and CSS. D3 allows users to have a lot of control over what they build. As powerful D3 is, there was a lot for me to learn to use D3. 
+              <br>
+              <br>
+            The dashboard had 4 charts (3 types: world map, bar chart, bubble chart). While D3 provided many excellent <a class="projects_desc_a" href="https://github.com/d3/d3/wiki/gallery" target="_blank">examples<div class="typeBox-border-bottom"></div></a>, there was a lot to be done. For example, to build a world map, I had to work with JSON data (<a class="projects_desc_a" href="https://github.com/topojson/topojson" target="_blank">TopoJSON<div class="typeBox-border-bottom"></div></a>) and decide how to project the map (mercator, equirectangular, etc.). 
+              <br>
+              <br>
+              <div class="left">
+                <br>
+                <div class="img1-wrapper">
+                  <img data-src="img/endorsify_bubble.png" class="img1 pointer img1src video"></img>
+                </div>
+                <div class="image_caption">Bubble chart.</div>
+                <br>
+              </div>
+            I also had to append a modal of data to each element (bar, bubble, country, etc.) that appeared on mouse hover.
+              <br>
+              <br>
+            When I was working on the bubble chart, I decided that I wanted to add cool animations to the chart. To do so, I referred to D3's <a class="projects_desc_a" href="https://github.com/d3/d3-force" target="_blank">force<div class="typeBox-border-bottom"></div></a>, which I had to spend time a lot of time learning how to tinker with its properties and D3's physics implementation. D3's force and gravity property enabled for me to build really cool animations<div class="outline-br">, which you can see <a class="projects_desc_a" href="/img/endorsify_bubble.gif" target="_blank">here<div class="typeBox-border-bottom"></div></a>,</div> on the bubble chart.</div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Etc.<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Throughout my internship, I received a list of edits and bug fixes (or ticket requests) once per week. Arguably, I spent majority of my time working on them. The list ranged from fixing an issue with loading images via AJAX to updating a paragraph on the landing page.
+              <br>
+              <br>
+            Here are some from the 50+ items that I had to go through:
+            </div>
+            <ul class="projects_desc_p">
+              <li>Redirect "Get Started Button" to sign up.</li>
+              <li>Update the buttons on messages to style guide.</li>
+              <li>Fix filtering by location on influencers search.</li>
+              <li>Update text below logo on landing page.</li>
+              <li>Add a image modal popup when clicked.</li>
+              <li>Content search's "Load More" isn't working.</li>
+              <li>Delete "See Pricing" image.</li>
+              <li class="none">...</li>
+            </ul>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Takeaway<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Working at Endorsify was a learning experience. I produced tangible results and made contributions to the team.
+              <br>
+              <br>
+            Here is what I've learned during the internship:</div>
+            <!-- Regret: hacked the bubbles on landing page together rather than scalable solution. -->
+            <ol class="projects_desc_p">
+              <li><strong>Building real ideas.</strong> I had direct exposure to a large codebase, where I was able to write production code.</li>
+              <li><strong>Utilizing resources.</strong> There are a lot of libraries and frameworks that already solved most problems. These resources helped my development by providing me with reference to building out my ideas.</li>
+            </ol>
+            <br>
+            <div class="projects_desc_p">And here is where I could've done better: </div>
+            <ol class="projects_desc_p">
+              <li><strong>Better approach.</strong> There were many instances where I felt inefficient. For example, instead of using D3, I could have used <a class="projects_desc_a" href="http://www.chartjs.org/" target="_blank">Chart.js<div class="typeBox-border-bottom"></div></a>, which is a much simpler framework for data visualization on web.</li>
+              <li><strong>Varied work.</strong> Although I mostly worked on the front-end, I was open to working on the back-end as well as long as I was willing/able to. It would have been cool if I had worked and contributed more on the back-end.</li>
+            </ol>
+            <br>
+            <br>
+            <div class="projects_desc_p ending"><div class="typeBox-border-bottom"></div></div>
+            <br>
+            <br>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="scrollTop" onclick="scrollTopClick();">
+            <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+            <div>
+              Back to Top
+            </div>
+          </div>
+          <div class="icons">
+            <!--email_off-->
+            <a href="mailto:stevenesuh@gmail.com" target="_top">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+            <!--/email_off-->
+            <a href="/asset/StevenSuh_Resume.pdf" target="_blank">
+              <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/StevenSuh" targe="_blank">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/Steven-Suh" target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="copyright">Copyright &#169; 2018 Steven Suh.</p>
+        </footer>
+      </div>
+    </div>
+    
+    <div class="bg-overlay"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personal - Steven Suh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta id="theme-color" name="theme-color" content="#e97876">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="">
+    <meta name="keywords" content="student, computer science, internship, intern, web development, frontend, front-end, web application">
+    <!-- facebook -->
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Steven Suh">
+    <meta property="og:url" content="https://stevensuh.me/">
+    <meta property="og:image" content="https://stevensuh.me/img/screenshot.png">
+    <meta property="og:site_name" content="Steven Suh">
+    <meta property="og:description" content="Hi, my name is Steven! I'm an undergrad studying CS at UCSC looking for software engineering opportunities.">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:400,500,600|Saira+Semi+Condensed:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107494314-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107494314-1');
+    </script>
+  </head>
+  <body class="disallowY">
+    <div id="loading">
+      <div id="typeLoad_box" class="inactive">
+        <span id="typeLoad_cursor" class="cursorBlink">_<span style="opacity: 0;">_</span></span>
+      </div>
+    </div>
+    <script>
+      if (window.addEventListener) window.addEventListener('DOMMouseScroll', preventDefault, false);
+      window.onwheel = document.onmousewheel = preventDefault;
+      window.onmousewheel = preventDefault;
+      document.ontouchmove = preventDefault;
+      document.body.classList.add('touchAction');
+
+      function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault) e.preventDefault();
+        e.returnValue = false;
+      }
+    </script>
+    <div class="load active detail"></div>
+    <div id="threeJS" class="threeJS-projects projects-detail fadeUp">
+      <div class="pulse stop inactive"></div>
+    </div>
+    <main class="main fadeOut displayNone">
+      <div class="container">
+        <div class="typeBox">
+          <div id="typeBox_box">
+            <span id="typeBox_cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <div id="container">
+      <header class="header">
+        <div class="container">
+          <a href="/" data-pjax id="home" class="logo">Steven.</a>
+          <a href="#" class="hamburger">
+            <div class="line-one"></div>
+            <div class="line-two"></div>
+            <div class="line-three"></div>
+          </a>
+          <nav class="menu">
+            <div class="menu_item-wrapper">
+              <a href="/" data-pjax id="home" class="menu_item">HOME
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="about" data-pjax id="about" class="menu_item">ABOUT
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+            <div class="menu_item-wrapper">
+              <a href="projects" data-pjax id="projects" class="menu_item active">PROJECTS
+                <div class="typeBox-border-bottom"></div>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="widget">
+        <!--email_off-->
+        <a href="mailto:stevenesuh@gmail.com" target="_top">
+          <div class="circle">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <!--/email_off-->
+        <a href="/asset/StevenSuh_Resume.pdf" target="_blank">
+          <div class="circle">
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://github.com/StevenSuh" targe="_blank">
+          <div class="circle">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/Steven-Suh" target="_blank">
+          <div class="circle">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+
+      <div id="pjax-container" class="fadeUp">
+        <div class="projects_back" onclick="projectsBackClick(); return false;">
+          <div class="circle"></div>
+          <div class="line-wrapper">
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="projects_desc">
+          <div class="projects_desc_category">
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Time<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">Sept 2017</p>
+            </div>
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Type<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">Web Development</p>
+            </div>
+            <div class="blocks">
+              <h2 class="projects_desc_h2">Tech<div class="typeBox-border-bottom"></div></h2>
+              <p class="projects_desc_p">HTML, CSS, JavaScript, jQuery, three.js, smoothState.js</p>
+            </div>
+          </div>
+          <div class="projects_desc_paragraph">
+            <h2 class="projects_desc_h2">Overview<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">I wanted to establish my own creative space, as well as a way to showcase my personality on the Internet. And so, I decided to build my own website from scratch. <br><br>Here is what I wanted for my website: </div>
+            <ul class="projects_desc_p">
+              <li>An interactive way to present my work/projects</li>
+              <li>Clean ui and smooth transitions</li>
+              <li>Front-end engineering and attempt to follow conventions (such as <a class="projects_desc_a" href="https://tech.yandex.com/bem/" target="_blank">BEM<div class="typeBox-border-bottom"></div></a>)</li>
+              <li>Utilize JS libraries (like <a class="projects_desc_a" href="https://threejs.org" target="_blank">three.js<div class="typeBox-border-bottom"></div></a>)</li>
+              <li class="none">...</li>
+            </ul>
+            <br>
+            <div class="projects_desc_p">I decided to use GitHub Pages (static hosting) and Cloudflare (free SSL). I also bought a custom domain through Namecheap (didn't know that students can get one for <a class="projects_desc_a" href="https://education.github.com/pack" target="_blank">free<div class="typeBox-border-bottom"></div></a>). 
+            <br>
+            During my planning/designing phase, I came up with several ideas and layouts. To learn more about web design, I referred to many websites on <a class="projects_desc_a" href="https://www.awwwards.com" target="_blank">Awwwards<div class="typeBox-border-bottom"></div></a> (website awards and trends), which was extremely helpful and inspirational.</div>
+            <br>
+            <br>
+            <br>
+            <div class="img1-wrapper">
+              <img data-src="img/personal_nav.gif" class="img1 pointer img1src video"></img>
+            </div>
+            <div class="image_caption">Horizontal navigation.</div>
+            <br>
+            <h2 class="projects_desc_h2">Presentation<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">I had several ideas on how to present my portfolio. Grid, scroll navigation, interactive map, etc... In the end, I chose horizontal navigation for one main reason: mobile. Also, I found that horizontal navigation integrates well and able to scale as I add more projects.
+              <br>
+              <br>
+            To make horizontal navigation work, I added different ways to cycle through projects without having to wait in intervals. On mobile, you can swipe to navigate, while on desktop, you can use the arrow keys to cycle.</div>
+            <div class="projects_desc_p">
+              <br>
+              <div class="left">
+                <div class="img1-wrapper typewriter">
+                  <img data-src="img/personal_typewriter.gif" class="img1 pointer img1src video"></img>
+                </div>
+                <div class="image_caption">Typewriter animation.</div>
+                <br>
+              </div>
+              I wrote a JavaScript-based typewriter animation and use three.js's <a class="projects_desc_a" href="https://threejs.org/examples/#webgl_postprocessing_glitch" target="_blank">glitch<div class="typeBox-border-bottom"></div></a> example to create my own.
+              <br>
+              <br>
+              However, there was an issue: the glitch was too disturbing. To correct it, I created an alternative effect and control its speed.</div>
+            <br>
+            <div class="projects_desc_p">My solution was to dynamically generate sprites (used GSAP's TweenMax to animate with more control) and limit the speed by lowering the animation's frame-per-second.</div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Transition<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Because this was a static site, I was reluctant on using a front-end framework (e.g. React, Angular). However, I wanted to implement the smooth transitions that these frameworks carried out. Then I found <a class="projects_desc_a" href="https://github.com/defunkt/jquery-pjax" target="_blank">jquery-pjax<div class="typeBox-border-bottom"></div></a>, where pjax translates to pushState + <a class="projects_desc_a" href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="_blank">AJAX<div class="typeBox-border-bottom"></div></a>.</div>
+            <br>
+            <div class="projects_desc_p">Ajax allows one to dynamically load content without refreshing (reducing HTTP requests). JavaScript has a method called <a class="projects_desc_a" href="https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method" target="_blank">pushState<div class="typeBox-border-bottom"></div></a> that allows one to manipulate browser's history and url. With pushState and ajax, jquery-pjax allows a working dynamic loading on a website.</div>
+            <br>
+            <br>
+            <div class="img1-wrapper">
+              <img data-src="img/personal_transition.gif" class="img1 pointer pointer img1src video"></img>
+            </div>
+            <div class="image_caption">Transition with smoothState.js.</div>
+            <br>
+            <div class="projects_desc_p">I used <a class="projects_desc_a" href="https://github.com/miguel-perez/smoothState.js" target="_blank">smoothState.js<div class="typeBox-border-bottom"></div></a>, which is an alternative to jquery-pjax that has an emphasis on animated transitions (jquery-pjax does not allow animations in between).</div>
+            <br>
+            <div class="projects_desc_p">If you didn't know about this, you should try going back and forth!</div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Optimization<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">There are many ways to optimize, such as writing a cross-browser code, reducing HTTP requests, minifiying/gzipping, etc. 
+              <br>
+              <br>
+            This step was a very important step in development. I realized that my website was incompatible with numerous browsers. At the same time, I was serving images and scripts that had sizes of megabytes.
+              <br>
+              <br>
+            To solve these issues, I used these resources:
+            </div>
+            <ul class="projects_desc_p">
+              <li><a class="projects_desc_a" href="https://caniuse.com" target="_blank">Can I use<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://www.browserstack.com" target="_blank">BrowserStack<div class="typeBox-border-bottom"></div></a></li>
+              <li><a class="projects_desc_a" href="http://closure-compiler.appspot.com" target="_blank">Closure Compiler<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://cssminifier.com" target="_blank">CSS Minifier<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://tinypng.com" target="_blank">TinyPNG<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://ezgif.com" target="_blank">Ezgif<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://compressify.herokuapp.com/" target="_blank">Compressify<div class="typeBox-border-bottom"></div></a></li>
+              <li><a class="projects_desc_a" href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">PageSpeed Insights<div class="typeBox-border-bottom"></div></a>, <a class="projects_desc_a" href="https://jsperf.com" target="_blank">jsPerf<div class="typeBox-border-bottom"></div></a></li>
+            </ul>
+            <br>
+            <div class="projects_desc_p">I especially found BrowserStack to be useful in testing different devices (although its free-tier is limited). jsPerf introduced interesting code optimizations (a popular subject is jQuery vs. vanilla JS).</div>
+            <br>
+            <br>
+            <h2 class="projects_desc_h2">Takeaway<div class="typeBox-border-bottom"></div></h2>
+            <div class="projects_desc_p">Here is what I've learned: </div>
+            <ol class="projects_desc_p">
+              <li><strong>Understanding JavaScript.</strong> I gradually came to understand JavaScript-specific ideas, especially scope chains, prototypical inheritance, single-threaded event loop, etc.</li>
+              <li><strong>Cross-browser compatibility.</strong> This was especially important in CSS and JS, where browsers (Chrome, IE, Firefox, etc.) had different working syntax for specific events or properties.</li>
+            </ol>
+            <br>
+            <div class="projects_desc_p">And here is how I plan to become better: </div>
+            <ol class="projects_desc_p">
+              <li><strong>Write better code.</strong> I think there's no end to this, but what I really mean is that I should always further understand {insert language} I use to code. This <a class="projects_desc_a" href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank">article<div class="typeBox-border-bottom"></div></a> focuses on how Google's V8 compiles JavaScript. Just like how the article goes over what goes on behind V8, I think that it is important to learn how anything (language, compiler, intepreter, etc.) works and useful to keep in mind as I program in the future.</li>
+              <li><strong>Attempt different languages/frameworks.</strong> I hope to use a front-end framework (Angular, React) and HTML/CSS preprocessors (Pug, SCSS) to rebuild this website in the future. I also want to learn to utilize webpack and other tools for web development. What's important is that I should continue to learn new skills as they will allow me to develop with more capabilities.</li>
+            </ol>
+            <br>
+            <br>
+            <div class="projects_desc_p ending"><div class="typeBox-border-bottom"></div></div>
+            <br>
+            <br>
+            <!-- 1. Presentation
+                 2. Transition
+                 3. Design/Layout
+                 4. Optimization
+                 5. Challenges
+                 6. Takeaway -->
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="scrollTop" onclick="scrollTopClick();">
+            <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+            <div>
+              Back to Top
+            </div>
+          </div>
+          <div class="icons">
+            <!--email_off-->
+            <a href="mailto:stevenesuh@gmail.com" target="_top">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+            <!--/email_off-->
+            <a href="/asset/StevenSuh_Resume.pdf" target="_blank">
+              <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/StevenSuh" targe="_blank">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/Steven-Suh" target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="copyright">Copyright &#169; 2018 Steven Suh.</p>
+        </footer>
+      </div>
+    </div>
+    
+    <div class="bg-overlay"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
