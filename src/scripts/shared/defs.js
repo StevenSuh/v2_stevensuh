@@ -4,6 +4,12 @@ import appStyle from 'src/scripts/modules/app/style.module.css';
 import detailsStyle from 'src/scripts/modules/projectDetails/style.module.css';
 import style from './style.module.css';
 
+import {
+  BLOG,
+  // BLOG_ALL,
+  TYPE_BLOG,
+} from './blogDefs';
+
 export const CURSOR = 'cursor-element';
 export const HEADER = 'header-element';
 export const HEADER_BG = 'header-bg-element';
@@ -33,7 +39,7 @@ export const NONE = 'project-none';
 
 export const TYPE_PROJECT = '/project';
 export const TYPE_WORK = '/work';
-export const TYPES = [TYPE_PROJECT, TYPE_WORK];
+export const TYPES = [TYPE_BLOG, TYPE_PROJECT, TYPE_WORK];
 
 export const ProjectType = PropTypes.shape({
   background: PropTypes.string.isRequired,
@@ -41,7 +47,7 @@ export const ProjectType = PropTypes.shape({
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
   backgroundImgMobile: PropTypes.string,
   description: PropTypes.string.isRequired,
-  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, ONCAREER, NONE]).isRequired,
+  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, ONCAREER, BLOG, NONE]).isRequired,
   logoImg: PropTypes.string.isRequired,
   logoImgClass: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string.isRequired,
@@ -93,6 +99,13 @@ export const PROJECTS = [
     name: FOODGO_NAME,
     type: TYPE_PROJECT,
   },
+  // {
+  //   background: '#f6f6f6',
+  //   description: 'Blog Posts',
+  //   id: BLOG,
+  //   name: BLOG_ALL,
+  //   type: TYPE_BLOG,
+  // },
 ];
 
 export const BodyElementType = PropTypes.shape({
@@ -593,4 +606,39 @@ export const PROJECT_DETAILS = {
     theme: '#ff8a80',
     type: TYPE_PROJECT,
   },
+  // [BLOG_ALL]: {
+  //   background: {
+  //     classes: [],
+  //     style: {
+  //       background: 'rgb(255, 138, 128)',
+  //     },
+  //   },
+  //   bodyElements: [
+  //     {
+  //       classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       content: '02/2018',
+  //       tagName: 'p',
+  //     },
+  //     {
+  //       classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       content: '02/2018',
+  //       tagName: 'p',
+  //     },
+  //     {
+  //       classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+  //       content: '02/2018',
+  //       tagName: 'p',
+  //     },
+  //   ],
+  //   headerStyle: {
+  //     background: 'rgb(0, 0, 0)',
+  //   },
+  //   name: 'blog',
+  //   pathname: '/blog/all',
+  //   theme: '#000000',
+  //   type: TYPE_BLOG,
+  // },
 };

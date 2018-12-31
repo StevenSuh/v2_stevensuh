@@ -65,16 +65,19 @@ class ProjectRow extends React.Component {
         </Link>
         <div className={classNames(style.project_row_container)}>
           <div className={classNames(style.project_row_text_wrapper, ...textClass)}>
-            <Link to={`${type}/${name}`}>
+            <Link
+              className={classNames(sharedStyle.hover)}
+              to={`${type}/${name}`}
+            >
               <p className={style.project_row_p}>
                 {`${type}/${name}`}
               </p>
-            </Link>
-            <Link to={`${type}/${name}`}>
+              <br />
               <h1 className={style.project_row_h1}>
                 {description}
               </h1>
             </Link>
+            <br />
           </div>
         </div>
       </div>

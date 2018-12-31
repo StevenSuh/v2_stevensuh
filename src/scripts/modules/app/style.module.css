@@ -314,12 +314,14 @@
 }
 
 .project_row_h1 {
+  display: inline-block;
   font-size: 22px;
   font-weight: 400;
   margin-top: 10px;
 }
 
 .project_row_p {
+  display: inline-block;
   font-size: 14px;
   opacity: 0.5;
 }
@@ -364,6 +366,11 @@
 .project-foodgo .project_row_img_container::before,
 .project-foodgo .project_row_img_bg_container {
   background: var(--project-foodgo-bg);
+}
+
+.blog-all .project_row_img_container::before,
+.blog-all .project_row_img_bg_container {
+  background: var(--blog-all-bg);
 }
 
 .affirm_img {

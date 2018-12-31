@@ -36,6 +36,8 @@ const ProjectDetails = ({
     logo: {
       classes: logoClasses,
       src: logoSrc,
+    } = {
+      classes: [],
     },
   } = project;
 
