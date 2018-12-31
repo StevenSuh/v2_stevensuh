@@ -20,8 +20,9 @@
 }
 
 .project_detail_body {
+  margin: auto;
   padding: 50px 0;
-  width: 100%;
+  width: 60%;
 }
 
 .project_detail_a,
@@ -34,7 +35,7 @@
   margin: auto;
   padding: 50px 0;
   white-space: pre-wrap;
-  width: 60%;
+  width: 100%;
 }
 
 .project_detail_h2,
@@ -61,7 +62,6 @@
 .project_detail_a {
   display: inline-block;
   font-size: 16px;
-  margin-left: 20%;
   padding: 5px 0;
   opacity: 0.6;
   text-decoration: underline;
@@ -173,12 +173,15 @@
     height: 80vw;
   }
 
+  .project_detail_body {
+    width: 90%;
+  }
+
   .project_detail_h2,
   .project_detail_img,
   .project_detail_p,
   .project_detail_sub_p {
     padding: 40px 0;
-    width: 90%;
   }
 
   .project_detail_img {
@@ -186,7 +189,6 @@
   }
 
   .project_detail_a {
-    margin-left: 5%;
     padding: 0;
   }
 

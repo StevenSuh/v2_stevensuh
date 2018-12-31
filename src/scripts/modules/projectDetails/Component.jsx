@@ -59,8 +59,6 @@ const ProjectDetails = ({
             classesMobile,
             content,
             href,
-            isClosing,
-            isOpening,
             src,
             srcMobile,
             tagName: TagName,
