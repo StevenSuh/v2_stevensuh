@@ -102,7 +102,7 @@ export const BodyElementType = PropTypes.shape({
   href: PropTypes.string,
   src: PropTypes.string,
   srcMobile: PropTypes.string,
-  tagName: PropTypes.oneOf(['a', 'h2', 'img', 'li', 'p', 'span', 'ul']).isRequired,
+  tagName: PropTypes.oneOf(['a', 'h2', 'img', 'li', 'Link', 'p', 'span', 'ul']).isRequired,
 });
 
 BodyElementType.defaultProps = {

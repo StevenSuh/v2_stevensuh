@@ -53,7 +53,10 @@ class Header extends React.Component {
 
     if (pathname !== '/') {
       const projectName = pathname.slice(pathname.lastIndexOf('/') + 1);
-      themeColor = PROJECT_DETAILS[projectName].theme;
+
+      if (PROJECT_DETAILS[projectName]) {
+        themeColor = PROJECT_DETAILS[projectName].theme;
+      }
     }
     themeMeta.content = themeColor;
   }
@@ -63,7 +66,7 @@ class Header extends React.Component {
     const projectName = pathname.slice(pathname.lastIndexOf('/') + 1);
 
     const headerStyle = pathname === '/' ? {}
-      : PROJECT_DETAILS[projectName].headerStyle;
+      : PROJECT_DETAILS[projectName] && PROJECT_DETAILS[projectName].headerStyle;
 
     return (
       <header

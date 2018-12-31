@@ -31,12 +31,11 @@ class ScrollBar extends React.Component {
   render() {
     const { barPercentage } = this.state;
     const { pathname } = this.props;
+    const projectName = pathname.slice(pathname.lastIndexOf('/') + 1);
 
-    if (pathname === '/') {
+    if (pathname === '/' || !PROJECT_DETAILS[projectName]) {
       return null;
     }
-
-    const projectName = pathname.slice(pathname.lastIndexOf('/') + 1);
 
     const headerStyle = pathname === '/' ? {}
       : PROJECT_DETAILS[projectName].headerStyle;

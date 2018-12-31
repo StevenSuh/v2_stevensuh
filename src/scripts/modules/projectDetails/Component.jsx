@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import ContactMe from 'src/scripts/shared/contactMe';
 import { ProjectDetailsType } from 'src/scripts/shared/defs';
 
-import EnlargeImg from './components/enlargeImg';
+import BodyElementWrapper from './components/bodyElementWrapper';
 
 import * as defs from './defs';
 import style from './style.module.css';
@@ -59,11 +59,13 @@ const ProjectDetails = ({
             classesMobile,
             content,
             href,
+            isClosing,
+            isOpening,
             src,
             srcMobile,
             tagName: TagName,
           }, index) => (
-            <EnlargeImg
+            <BodyElementWrapper
               key={parseInt(index.toString(), 10)}
               onChangeModalImgSrc={onChangeModalImgSrc}
             >
@@ -75,7 +77,7 @@ const ProjectDetails = ({
               >
                 {content}
               </TagName>
-            </EnlargeImg>
+            </BodyElementWrapper>
           ),
         )}
       </div>
