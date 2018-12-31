@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "592de3aea9995a33a788",
-    "url": "/static/css/main.130a5d96.chunk.css"
+    "revision": "5f5cb8a033c242611bd7",
+    "url": "/static/css/main.82f01fb3.chunk.css"
   },
   {
-    "revision": "592de3aea9995a33a788",
-    "url": "/static/js/main.592de3ae.chunk.js"
+    "revision": "5f5cb8a033c242611bd7",
+    "url": "/static/js/main.5f5cb8a0.chunk.js"
   },
   {
     "revision": "8c79e75dc77a1f16a940",
@@ -24,15 +24,15 @@ self.__precacheManifest = [
     "url": "/static/media/SkyhookMono.c2519a94.ttf"
   },
   {
-    "revision": "77a27d41ef39c0a3b4105b5c2399969b",
-    "url": "/static/media/proxima-nova-semibold.77a27d41.ttf"
-  },
-  {
     "revision": "b5c77a6aed75cdad9489effd0d5ea411",
     "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
   },
   {
-    "revision": "c924da3bc27453067859a95716277a86",
+    "revision": "77a27d41ef39c0a3b4105b5c2399969b",
+    "url": "/static/media/proxima-nova-semibold.77a27d41.ttf"
+  },
+  {
+    "revision": "8b5f53c52a427c1d98c2412b6ac6eb9b",
     "url": "/index.html"
   }
 ];
