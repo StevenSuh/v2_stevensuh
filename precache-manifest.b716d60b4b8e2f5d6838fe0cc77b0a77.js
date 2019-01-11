@@ -16,6 +16,10 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
+    "revision": "b5c77a6aed75cdad9489effd0d5ea411",
+    "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
+  },
+  {
     "revision": "76666a38ff1cda13e51186b795623090",
     "url": "/static/media/Amazon-Ember-Regular.76666a38.ttf"
   },
@@ -24,15 +28,11 @@ self.__precacheManifest = [
     "url": "/static/media/SkyhookMono.c2519a94.ttf"
   },
   {
-    "revision": "b5c77a6aed75cdad9489effd0d5ea411",
-    "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
-  },
-  {
     "revision": "77a27d41ef39c0a3b4105b5c2399969b",
     "url": "/static/media/proxima-nova-semibold.77a27d41.ttf"
   },
   {
-    "revision": "8b5f53c52a427c1d98c2412b6ac6eb9b",
+    "revision": "56132fd31df950fd974389c45d28364e",
     "url": "/index.html"
   }
 ];
