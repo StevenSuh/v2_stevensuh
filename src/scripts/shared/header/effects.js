@@ -19,7 +19,7 @@ export const onScrollLanding = function () {
   if (isLanding) {
     distance = window.innerHeight;
   } else {
-    const detailsBg = document.getElementById(detailsDefs.DETAILS_BG);
+    const detailsBg = document.getElementById(detailsDefs.DETAILS_BG) || {};
     distance = detailsBg.clientHeight + detailsBg.offsetTop;
   }
 
