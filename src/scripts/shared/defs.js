@@ -302,8 +302,8 @@ export const PROJECT_DETAILS = {
           detailsStyle.last],
         classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
           detailsStyle.last],
-        content: 'Better practices - ironically, I skipped couple processes suited for team environment '
-          + '(setting up CI/CD, db migrations, more) because I was the only one working on Vinegar.',
+        content: 'Better practices - ironically, I skipped couple processes (setting up CI/CD, db migrations, more) '
+          + 'because I was the only one working on Vinegar.',
         tagName: 'p',
       },
       {
