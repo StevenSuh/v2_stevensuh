@@ -35,6 +35,9 @@ export const GOLINKS_NAME = 'golinks';
 export const ONCAREER = 'project-oncareer';
 export const ONCAREER_NAME = 'oncareer';
 
+export const VINEGAR = 'project-vinegar';
+export const VINEGAR_NAME = 'vinegar';
+
 export const NONE = 'project-none';
 
 export const TYPE_PROJECT = '/project';
@@ -47,7 +50,7 @@ export const ProjectType = PropTypes.shape({
   backgroundImgClass: PropTypes.arrayOf(PropTypes.string),
   backgroundImgMobile: PropTypes.string,
   description: PropTypes.string.isRequired,
-  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, ONCAREER, BLOG, NONE]).isRequired,
+  id: PropTypes.oneOf([AFFIRM, AMAZON, FOODGO, GOLINKS, ONCAREER, VINEGAR, BLOG, NONE]).isRequired,
   logoImg: PropTypes.string.isRequired,
   logoImgClass: PropTypes.arrayOf(PropTypes.string),
   name: PropTypes.string.isRequired,
@@ -56,6 +59,18 @@ export const ProjectType = PropTypes.shape({
 });
 
 export const PROJECTS = [
+  {
+    background: 'rgb(255, 248, 248)',
+    backgroundImg: '/assets/vinegar-bg.png',
+    backgroundImgClass: [appStyle.vinegar_bg_img],
+    backgroundImgMobile: '/assets/vinegar-bg-mobile.png',
+    description: 'Collaborative Note Taking App',
+    id: VINEGAR,
+    logoImg: '/assets/vinegar.png',
+    logoImgClass: [appStyle.vinegar_img],
+    name: VINEGAR_NAME,
+    type: TYPE_PROJECT,
+  },
   {
     background: 'linear-gradient(to bottom right, #f4fafe, #d0ecfb)',
     backgroundImg: '/assets/affirm-bg-details.png',
@@ -157,6 +172,160 @@ ProjectDetailsType.defaultProps = {
 };
 
 export const PROJECT_DETAILS = {
+  [VINEGAR_NAME]: {
+    background: {
+      classes: [],
+      style: {
+        background: 'rgb(255, 248, 248)',
+      },
+    },
+    bodyElements: [
+      {
+        classes: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        classesMobile: [detailsStyle.project_detail_sub_p, detailsStyle.project_detail_sub_p_intro],
+        content: '03/2019',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_a, style.hover],
+        classesMobile: [detailsStyle.project_detail_a, style.hover],
+        content: 'joinvinegar.com',
+        href: 'https://joinvinegar.com',
+        tagName: 'a',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'Vinegar is a real-time, colllaborative note taking app that allows students to take notes in '
+          + 'a more interactive way. The app allows real-time document editing and chat system. Vinegar also '
+          + 'automatically assigns students to take notes at certain time periods, allowing others to sit back '
+          + 'and relax until their turn comes around.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/vinegar-screenshot-1.png',
+        srcMobile: '/assets/vinegar-screenshot-1-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'My motivation behind working on Vinegar was that I wanted to practice building more software '
+          + '(learning best practices on whatever technology I use, attempting to write more meaningful code, etc.). '
+          + 'Along with that motivation, I just wanted to build a cool, fun app that I would like to use myself!',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/vinegar-screenshot-2.png',
+        srcMobile: '/assets/vinegar-screenshot-2-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_p],
+        classesMobile: [detailsStyle.project_detail_p],
+        content: 'Because I wanted to focus more on the product-side of things, I placed a lot of emphasis on '
+          + 'ideas such as building better user/perceived experience, structuring code around product context, and '
+          + 'learning more tools and ways to build features for users.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/vinegar-screenshot-3.png',
+        srcMobile: '/assets/vinegar-screenshot-3-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/vinegar-screenshot-4.png',
+        srcMobile: '/assets/vinegar-screenshot-4-mobile.png',
+        tagName: 'img',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        content: 'Here is some of what I learned:',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.first],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.first],
+        content: 'Knowledge over new tools + technologies + product domain',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'Deployed the app with Docker + Kubernetes on GCP',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.last],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.last],
+        content: 'In a way, built a distributed websocket system and a microservice',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list],
+        content: 'Here is what I hoped to have done:',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.first],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.first],
+        content: 'Choose better stack - I stuck with Node.js to convert document/html to pdf. To do so, I '
+          + 'had to use puppeteer (which downloads the entire chromium). Better choice might have been to '
+          + 'to use a python library.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item],
+        content: 'Testing - unit testing, integration testing, visual regression/UI testing, etc. Any testing '
+          + 'would have been a good learning/practice.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.last],
+        classesMobile: [detailsStyle.project_detail_p, detailsStyle.project_detail_list_item,
+          detailsStyle.last],
+        content: 'Better practices - ironically, I skipped couple processes suited for team environment '
+          + '(setting up CI/CD, db migrations, more) because I was the only one working on Vinegar.',
+        tagName: 'p',
+      },
+      {
+        classes: [detailsStyle.project_detail_img],
+        classesMobile: [detailsStyle.project_detail_img, detailsStyle.vertical],
+        src: '/assets/vinegar-screenshot-5.png',
+        srcMobile: '/assets/vinegar-screenshot-5-mobile.png',
+        tagName: 'img',
+      },
+    ],
+    headerStyle: {
+      background: 'rgb(248, 131, 121)',
+    },
+    logo: {
+      classes: [detailsStyle.vinegar_detail_img],
+      src: '/assets/vinegar.png',
+    },
+    name: 'vinegar',
+    pathname: '/project/vinegar',
+    theme: '#f88379',
+    type: TYPE_PROJECT,
+  },
   [AFFIRM_NAME]: {
     background: {
       classes: [],

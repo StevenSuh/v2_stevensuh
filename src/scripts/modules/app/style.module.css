@@ -371,6 +371,11 @@
   background: var(--project-foodgo-bg);
 }
 
+.project-vinegar .project_row_img_container::before,
+.project-vinegar .project_row_img_bg_container {
+  background: var(--project-vinegar-bg);
+}
+
 .blog-all .project_row_img_container::before,
 .blog-all .project_row_img_bg_container {
   background: var(--blog-all-bg);
@@ -383,6 +388,12 @@
 .affirm_bg_img {
   width: 100%;
   height: 100%;
+}
+
+.vinegar_bg_img {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .amazon_img {
@@ -403,6 +414,10 @@
 
 .foodgo_img {
   height: 20%;
+}
+
+.vinegar_img {
+  height: 17%;
 }
 
 @media only screen and (max-width: 1200px) {

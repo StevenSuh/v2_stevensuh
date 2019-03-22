@@ -158,7 +158,8 @@
 .affirm_detail_img,
 .amazon_detail_img,
 .golinks_detail_img,
-.foodgo_detail_img {
+.foodgo_detail_img,
+.vinegar_detail_img {
   object-fit: cover;
   height: 30%;
   max-width: 90%;
@@ -166,6 +167,10 @@
 
 .foodgo_detail_img {
   height: 28%;
+}
+
+.vinegar_detail_img {
+  height: 27%;
 }
 
 @media only screen and (max-width: 416px) {

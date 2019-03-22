@@ -104,11 +104,11 @@ a {
 }
 
 .reveal-exit {
-  transition: none;
   opacity: 1;
 }
 
 .reveal-exit-active,
 .reveal-exit-done {
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
 }
