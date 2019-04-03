@@ -190,7 +190,7 @@ export const PROJECT_DETAILS = {
         classes: [detailsStyle.project_detail_a, style.hover],
         classesMobile: [detailsStyle.project_detail_a, style.hover],
         content: 'joinvinegar.com',
-        href: 'https://joinvinegar.com',
+        href: 'http://joinvinegar.com',
         tagName: 'a',
       },
       {
