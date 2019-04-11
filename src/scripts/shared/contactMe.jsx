@@ -18,7 +18,7 @@ const ContactMe = () => (
       </span>
       <a
         className={style.hover}
-        href="mailto:stevensuh.me@gmail.com"
+        href="mailto:stevensuh777@gmail.com"
         target="_top"
       >
         email
