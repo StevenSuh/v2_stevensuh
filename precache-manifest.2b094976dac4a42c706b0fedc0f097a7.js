@@ -20,16 +20,16 @@ self.__precacheManifest = [
     "url": "/static/media/Amazon-Ember-Regular.76666a38.ttf"
   },
   {
-    "revision": "b5c77a6aed75cdad9489effd0d5ea411",
-    "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
-  },
-  {
     "revision": "c2519a94f580b2b2a7071446b0ed4b0b",
     "url": "/static/media/SkyhookMono.c2519a94.ttf"
   },
   {
     "revision": "77a27d41ef39c0a3b4105b5c2399969b",
     "url": "/static/media/proxima-nova-semibold.77a27d41.ttf"
+  },
+  {
+    "revision": "b5c77a6aed75cdad9489effd0d5ea411",
+    "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
   },
   {
     "revision": "c3088c809ad84ccff2c1d7a4217f2ce7",
