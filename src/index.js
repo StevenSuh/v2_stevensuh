@@ -38,7 +38,7 @@ window.onload = () => {
                 <CSSTransition
                   appear
                   classNames="reveal"
-                  timeout={200}
+                  timeout={{ enter: 200, exit: 0 }}
                   unmountOnExit
                 >
                   <Header location={location} />
@@ -47,7 +47,7 @@ window.onload = () => {
                   appear
                   classNames="reveal"
                   key={`${location.key}-main`}
-                  timeout={200}
+                  timeout={{ enter: 200, exit: 0 }}
                   unmountOnExit
                 >
                   <div className="transition-group">

@@ -69,7 +69,7 @@ const App = ({
                 appear
                 classNames="reveal"
                 key={project.id}
-                timeout={200}
+                timeout={{ enter: 200, exit: 0 }}
                 unmountOnExit
               >
                 <ProjectRow
