@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.97413d97.chunk.css",
-    "main.js": "/static/js/main.bfb78cc2.chunk.js",
-    "main.js.map": "/static/js/main.bfb78cc2.chunk.js.map",
+    "main.js": "/static/js/main.7009f89e.chunk.js",
+    "main.js.map": "/static/js/main.7009f89e.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.c8858336.chunk.js": "/static/js/2.c8858336.chunk.js",
     "static/js/2.c8858336.chunk.js.map": "/static/js/2.c8858336.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d11b01bedb03b9433602ce4904d68b0b.js": "/precache-manifest.d11b01bedb03b9433602ce4904d68b0b.js",
+    "precache-manifest.94a202f2f0a0e3e81ac65a4c162dd662.js": "/precache-manifest.94a202f2f0a0e3e81ac65a4c162dd662.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.97413d97.chunk.css.map": "/static/css/main.97413d97.chunk.css.map",
     "static/media/style.css": "/static/media/proxima-nova-semibold.77a27d41.ttf"
