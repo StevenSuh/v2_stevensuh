@@ -22,7 +22,7 @@ const AboutMe = () => (
         </a>
         {'.'}
         <br />
-        {'I will be joining '}
+        {'I am currently at '}
         <a
           className={classNames(style.google_a, sharedStyle.hover)}
           href="https://www.google.com"
@@ -36,7 +36,7 @@ const AboutMe = () => (
           <span>l</span>
           <span>e</span>
         </a>
-        {' in 2019.'}
+        {'.'}
         <br />
         {'I was previously at '}
         <Link
