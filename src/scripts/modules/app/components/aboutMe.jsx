@@ -15,7 +15,7 @@ const AboutMe = () => (
         {'My name is '}
         <a
           className={classNames(style.about_h2_my_name, sharedStyle.hover)}
-          href="/assets/StevenSuh_Resume.pdf"
+          href="https://docs.google.com/document/d/1-CfxFemzyY_IsUhY0irR0GiQKViPq5nMqhG72oIPIcw/edit?usp=sharing"
           target="_blank"
         >
           Steven

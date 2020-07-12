@@ -7,7 +7,7 @@ const ContactMe = () => (
     <span>
       <a
         className={style.hover}
-        href="/assets/StevenSuh_Resume.pdf"
+        href="https://docs.google.com/document/d/1-CfxFemzyY_IsUhY0irR0GiQKViPq5nMqhG72oIPIcw/edit?usp=sharing"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -18,7 +18,7 @@ const ContactMe = () => (
       </span>
       <a
         className={style.hover}
-        href="mailto:stevensuh777@gmail.com"
+        href="mailto:stevensuh.me@gmail.com"
         target="_top"
       >
         email
