@@ -26,7 +26,6 @@ const AboutMe = () => (
         <a
           className={classNames(style.google_a, sharedStyle.hover)}
           href="https://www.google.com"
-          rel="noopener noreferrer"
           target="_blank"
         >
           <span>G</span>

@@ -15,7 +15,7 @@
 
 .contact_me {
   display: block;
-  font-family: 'IBM Plex Mono', 'Menlo', monaco, 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', 'Menlo', 'Meslo', monaco, 'Courier New', Courier, monospace;
   font-size: 18px;
   line-height: 2em;
   margin: auto;
