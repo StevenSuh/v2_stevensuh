@@ -9,9 +9,7 @@ const AboutMe = () => (
   <div className={style.about_me}>
     <div className={classNames(style.about_container, sharedStyle.container)}>
       <div className={classNames(style.about_me_container, style.about_h2)}>
-        <h1 className={style.about_h1}>
-          Hi,
-        </h1>
+        <h1 className={style.about_h1}>Hi,</h1>
         {'My name is '}
         <a
           className={classNames(style.about_h2_my_name, sharedStyle.hover)}
@@ -24,6 +22,20 @@ const AboutMe = () => (
         <br />
         {'I am currently at '}
         <a
+          className={classNames(sharedStyle.hover)}
+          href="https://www.opendoor.com"
+          target="_blank"
+        >
+          <img
+            alt="Opendoor logo"
+            className={style.opendoor_a}
+            src="/assets/opendoor.svg"
+          />
+        </a>
+        {'.'}
+        <br />
+        {'I was previously at '}
+        <a
           className={classNames(style.google_a, sharedStyle.hover)}
           href="https://www.google.com"
           target="_blank"
@@ -35,9 +47,7 @@ const AboutMe = () => (
           <span>l</span>
           <span>e</span>
         </a>
-        {'.'}
-        <br />
-        {'I was previously at '}
+        {', '}
         <Link
           className={classNames(style.affirm_a, sharedStyle.hover)}
           to="/work/affirm"

@@ -198,6 +198,11 @@
   letter-spacing: 0.5px;
 }
 
+.opendoor_a {
+  height: 30px;
+  vertical-align: middle;
+}
+
 .google_a {
   bottom: -0.5px;
   color: #4285f4;
