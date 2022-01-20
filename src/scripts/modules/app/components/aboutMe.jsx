@@ -15,16 +15,18 @@ const AboutMe = () => (
           className={classNames(style.about_h2_my_name, sharedStyle.hover)}
           href="https://docs.google.com/document/d/1-CfxFemzyY_IsUhY0irR0GiQKViPq5nMqhG72oIPIcw/edit?usp=sharing"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Steven
         </a>
-        {'.'}
+        .
         <br />
         {'I am currently at '}
         <a
           className={classNames(sharedStyle.hover)}
           href="https://www.opendoor.com"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             alt="Opendoor logo"
@@ -32,13 +34,14 @@ const AboutMe = () => (
             src="/assets/opendoor.svg"
           />
         </a>
-        {'.'}
+        .
         <br />
         {'I was previously at '}
         <a
           className={classNames(style.google_a, sharedStyle.hover)}
           href="https://www.google.com"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <span>G</span>
           <span>o</span>
@@ -68,7 +71,7 @@ const AboutMe = () => (
         >
           GoLinks
         </Link>
-        {'.'}
+        .
       </div>
     </div>
   </div>
