@@ -198,6 +198,11 @@
   letter-spacing: 0.5px;
 }
 
+.coda_a > svg {
+  margin-bottom: 4px;
+  vertical-align: text-bottom;
+}
+
 .opendoor_a {
   height: 30px;
   vertical-align: middle;
