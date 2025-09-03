@@ -51,15 +51,16 @@
 
 .main_text > h1 {
   display: inline-block;
-  font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier, monospace;
+  font-family: 'Skyhook Mono', monaco, Consolas, 'Courier New', Courier,
+    monospace;
   font-weight: 400;
   margin: 0;
-  transition: color 0.04s ease-in-out;
+  transition: color 0s ease-in-out;
   will-change: color;
 }
 
 .main_text > h1.slow_color {
-  transition: color 0.3s ease-in-out !important;
+  transition: color 0s ease-in-out !important;
 }
 
 .main_text {
@@ -94,21 +95,51 @@
 }
 
 @keyframes blink {
-  20% { opacity: 0 }
-  21% { opacity: 1 }
-  40% { opacity: 1 }
-  41% { opacity: 0 }
-  50% { opacity: 0 }
-  51% { opacity: 1 }
-  55% { opacity: 1 }
-  56% { opacity: 0 }
-  60% { opacity: 0 }
-  61% { opacity: 1 }
-  65% { opacity: 1 }
-  66% { opacity: 0 }
-  70% { opacity: 0 }
-  71% { opacity: 1 }
-  100% { opacity: 1 }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  56% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  71% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .filler {
@@ -137,7 +168,8 @@
 
 .about_me {
   background-color: var(--pure-white);
-  font-family: 'IBM Plex Mono', 'Menlo', 'Meslo', monaco, 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', 'Menlo', 'Meslo', monaco, 'Courier New', Courier,
+    monospace;
   height: 420px;
   width: 100%;
 }
@@ -183,7 +215,7 @@
 }
 
 .amazon_a {
-  color: #FF9900;
+  color: #ff9900;
   font-family: 'Amazon Ember', sans-serif;
   font-size: 26px;
   font-weight: 800;
@@ -204,7 +236,7 @@
 }
 
 .opendoor_a {
-  height: 30px;
+  height: 26px;
   vertical-align: middle;
 }
 
@@ -237,7 +269,8 @@
 }
 
 .filter_container {
-  font-family: 'IBM Plex Mono', 'Menlo', 'Meslo', monaco, 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', 'Menlo', 'Meslo', monaco, 'Courier New', Courier,
+    monospace;
   font-size: 18px;
   margin-bottom: 120px;
 }
