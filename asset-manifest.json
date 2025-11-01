@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.277d75cd.chunk.css",
+    "main.css": "/static/css/main.91938e89.chunk.css",
     "main.js": "/static/js/main.bc7965ef.chunk.js",
     "main.js.map": "/static/js/main.bc7965ef.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b377aa34.js",
@@ -8,16 +8,16 @@
     "static/js/2.69335336.chunk.js": "/static/js/2.69335336.chunk.js",
     "static/js/2.69335336.chunk.js.map": "/static/js/2.69335336.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5e39c64b1e3c7de4816783027882f5db.js": "/precache-manifest.5e39c64b1e3c7de4816783027882f5db.js",
+    "precache-manifest.dabcc4fff653c6065ee0665b7fedc486.js": "/precache-manifest.dabcc4fff653c6065ee0665b7fedc486.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.277d75cd.chunk.css.map": "/static/css/main.277d75cd.chunk.css.map",
+    "static/css/main.91938e89.chunk.css.map": "/static/css/main.91938e89.chunk.css.map",
     "static/js/2.69335336.chunk.js.LICENSE.txt": "/static/js/2.69335336.chunk.js.LICENSE.txt",
     "static/media/style.css": "/static/media/proxima-nova-semibold.77a27d41.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.b377aa34.js",
     "static/js/2.69335336.chunk.js",
-    "static/css/main.277d75cd.chunk.css",
+    "static/css/main.91938e89.chunk.css",
     "static/js/main.bc7965ef.chunk.js"
   ]
 }
