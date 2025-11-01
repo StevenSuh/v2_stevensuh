@@ -36,22 +36,11 @@
   src: url('assets/SkyhookMono.ttf');
 }
 
-@font-face {
-  font-family: 'Meslo';
-  src: url('assets/MesloLGL-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Meslo';
-  src: url('assets/MesloLGL-Bold.ttf');
-  font-weight: 800;
-}
-
 body,
 html,
 #root {
   color: var(--dark-color);
-  font-family: 'Menlo', 'Meslo', monaco, 'Courier New', Courier, monospace;
+  font-family: 'Geist Mono', 'Courier New', Courier, monospace;
   letter-spacing: -0.5px;
   position: relative;
   width: 100%;
