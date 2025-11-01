@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f436d9d332e395541a5f6856fd44c1e",
+    "revision": "866ff2222454599fad09c8ecea169b02",
     "url": "/index.html"
   },
   {
-    "revision": "b2395661e58ccf1ad593",
-    "url": "/static/css/main.b54a16eb.chunk.css"
+    "revision": "2975337a57badbd998d6",
+    "url": "/static/css/main.277d75cd.chunk.css"
   },
   {
     "revision": "00e1eadbc97cb2da22a3",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.69335336.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b2395661e58ccf1ad593",
-    "url": "/static/js/main.7456aa8d.chunk.js"
+    "revision": "2975337a57badbd998d6",
+    "url": "/static/js/main.bc7965ef.chunk.js"
   },
   {
     "revision": "dbb6985b8bbba00091dc",
@@ -30,14 +30,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b5c77a6aed75cdad9489effd0d5ea411",
     "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
-  },
-  {
-    "revision": "fc00e91cb9eadf7a667c4d8af1b4926d",
-    "url": "/static/media/MesloLGL-Bold.fc00e91c.ttf"
-  },
-  {
-    "revision": "c1bad38fa12a7967d5a546f24d22e6fd",
-    "url": "/static/media/MesloLGL-Regular.c1bad38f.ttf"
   },
   {
     "revision": "c2519a94f580b2b2a7071446b0ed4b0b",
