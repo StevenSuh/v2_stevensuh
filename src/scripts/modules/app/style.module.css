@@ -237,6 +237,7 @@
 
 .grammarly_a > svg {
   margin-bottom: 2px;
+  margin-right: -4px;
   vertical-align: middle;
 }
 
